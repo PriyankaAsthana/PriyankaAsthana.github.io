@@ -2,17 +2,19 @@ import { motion } from "framer-motion";
 import { useMemo } from "react";
 
 const WIDTH = 1000;
-const HEIGHT = 700;
+const HEIGHT = 900;
 
 const NODE_RADIUS = 5;
 
 const LEVELS = [
-  { count: 1, y: 80 },
-  { count: 3, y: 180 },
+  { count: 1, y: 60 },
+  { count: 3, y: 175 },
   { count: 5, y: 300 },
-  { count: 6, y: 420 },
-  { count: 5, y: 540 },
-  { count: 3, y: 650 },
+  { count: 6, y: 430 },
+  { count: 6, y: 560 },
+  { count: 5, y: 690 },
+  { count: 4, y: 810 },
+  { count: 3, y: 885 },
 ];
 
 function random(min, max) {
@@ -42,7 +44,7 @@ function generateNodes() {
 
         y:
           level.y +
-          random(-30, 30),
+          random(-25, 25),
 
         row,
       });
@@ -57,7 +59,8 @@ function connectNodes(nodes) {
 
   nodes.forEach((node) => {
     const below = nodes.filter(
-      (n) => n.row === node.row + 1
+      (otherNode) =>
+        otherNode.row === node.row + 1
     );
 
     below
@@ -85,15 +88,16 @@ function Node({ node, delay }) {
       cy={node.y}
       r={NODE_RADIUS}
       fill="#2563EB"
-      filter="url(#glow)"
+      filter="url(#graphGlow)"
       animate={{
-        opacity: [0.3, 1, 0.3],
+        opacity: [0.35, 1, 0.35],
         r: [5, 7, 5],
       }}
       transition={{
         duration: 3,
         repeat: Infinity,
         delay,
+        ease: "easeInOut",
       }}
     />
   );
@@ -111,17 +115,27 @@ function Edge({ edge, nodes }) {
       y2={to.y}
       stroke="#CBD5E1"
       strokeWidth="1.2"
-      initial={{ pathLength: 0 }}
-      animate={{ pathLength: 1 }}
+      initial={{
+        pathLength: 0,
+        opacity: 0,
+      }}
+      animate={{
+        pathLength: 1,
+        opacity: 1,
+      }}
       transition={{
         duration: 1.5,
+        ease: "easeOut",
       }}
     />
   );
 }
 
 export default function AnimatedKnowledgeGraph() {
-  const nodes = useMemo(() => generateNodes(), []);
+  const nodes = useMemo(
+    () => generateNodes(),
+    []
+  );
 
   const edges = useMemo(
     () => connectNodes(nodes),
@@ -129,20 +143,29 @@ export default function AnimatedKnowledgeGraph() {
   );
 
   return (
-    <div className="absolute inset-0 overflow-hidden pointer-events-none">
-
+    <div
+      className="
+        pointer-events-none
+        absolute
+        inset-0
+        z-0
+        overflow-hidden
+      "
+    >
       <svg
         viewBox={`0 0 ${WIDTH} ${HEIGHT}`}
-        className="h-full w-full"
         preserveAspectRatio="xMidYMid slice"
+        className="h-full w-full"
       >
         <defs>
+          {/* NODE GLOW */}
+
           <filter
-            id="glow"
-            x="-50%"
-            y="-50%"
-            width="200%"
-            height="200%"
+            id="graphGlow"
+            x="-60%"
+            y="-60%"
+            width="220%"
+            height="220%"
           >
             <feGaussianBlur
               stdDeviation="3"
@@ -155,127 +178,41 @@ export default function AnimatedKnowledgeGraph() {
             </feMerge>
           </filter>
 
-          <linearGradient
-            id="edgeGradient"
-            x1="0%"
-            x2="100%"
-          >
+          {/* BACKGROUND BLUE GLOW */}
+
+          <radialGradient id="graphBackgroundGlow">
             <stop
               offset="0%"
-              stopColor="#CBD5E1"
+              stopColor="#60A5FA"
+              stopOpacity="0.18"
+            />
+
+            <stop
+              offset="65%"
+              stopColor="#60A5FA"
+              stopOpacity="0.07"
             />
 
             <stop
               offset="100%"
-              stopColor="#E2E8F0"
+              stopColor="#60A5FA"
+              stopOpacity="0"
             />
-          </linearGradient>
-          <radialGradient id="backgroundGlow">
-  <stop
-    offset="0%"
-    stopColor="#60A5FA"
-    stopOpacity="0.18"
-  />
-  <stop
-    offset="100%"
-    stopColor="#60A5FA"
-    stopOpacity="0"
-  />
-</radialGradient>
+          </radialGradient>
         </defs>
-        <circle
-  cx={WIDTH / 2}
-  cy={HEIGHT / 2}
-  r="280"
-  fill="url(#backgroundGlow)"
-/>
-        <motion.g
-  animate={{
-    y: [-6, 6, -6],
-    x: [-3, 3, -3],
-  }}
-  transition={{
-    duration: 12,
-    repeat: Infinity,
-    ease: "easeInOut",
-  }}
->
-  {edges.map((edge, index) => (
-    <Edge
-      key={index}
-      edge={edge}
-      nodes={nodes}
-    />
-  ))}
 
-  {nodes.map((node, index) => (
-    <Node
-      key={node.id}
-      node={node}
-      delay={index * 0.12}
-    />
-  ))}
+        {/* ============================= */}
+        {/* BACKGROUND GLOW */}
+        {/* ============================= */}
 
-  {edges.map((edge, index) => {
-    const from = nodes[edge.from];
-    const to = nodes[edge.to];
-
-    return (
-      <motion.circle
-        key={`pulse-${index}`}
-        r="3"
-        fill="#60A5FA"
-        filter="url(#glow)"
-        animate={{
-          cx: [from.x, to.x],
-          cy: [from.y, to.y],
-          opacity: [0, 1, 1, 0],
-        }}
-        transition={{
-          duration: 2.8,
-          delay: index * 0.15,
-          repeat: Infinity,
-          ease: "linear",
-        }}
-      />
-    );
-  })}
-</motion.g>
-                {/* Animated travelling pulses */}
-        {edges.map((edge, index) => {
-          const from = nodes[edge.from];
-          const to = nodes[edge.to];
-
-          return (
-            <motion.circle
-              key={`pulse-${index}`}
-              r="3"
-              fill="#60A5FA"
-              filter="url(#glow)"
-              animate={{
-                cx: [from.x, to.x],
-                cy: [from.y, to.y],
-                opacity: [0, 1, 1, 0],
-              }}
-              transition={{
-                duration: 2.8,
-                delay: index * 0.15,
-                repeat: Infinity,
-                ease: "linear",
-              }}
-            />
-          );
-        })}
-
-        {/* Soft background glow */}
         <motion.circle
-          cx="500"
-          cy="350"
-          r="250"
-          fill="url(#backgroundGlow)"
+          cx={WIDTH / 2}
+          cy={HEIGHT / 2}
+          r="380"
+          fill="url(#graphBackgroundGlow)"
           animate={{
-            opacity: [0.08, 0.18, 0.08],
-            scale: [1, 1.05, 1],
+            opacity: [0.7, 1, 0.7],
+            scale: [1, 1.04, 1],
           }}
           transition={{
             duration: 10,
@@ -284,15 +221,84 @@ export default function AnimatedKnowledgeGraph() {
           }}
         />
 
-        <defs>
-          <radialGradient id="backgroundGlow">
-            <stop offset="0%" stopColor="#60A5FA" stopOpacity="0.25" />
-            <stop offset="100%" stopColor="#60A5FA" stopOpacity="0" />
-          </radialGradient>
-        </defs>
+        {/* ============================= */}
+        {/* ENTIRE GRAPH FLOAT */}
+        {/* ============================= */}
+
+        <motion.g
+          animate={{
+            x: [-3, 3, -3],
+            y: [-6, 6, -6],
+          }}
+          transition={{
+            duration: 12,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+        >
+          {/* EDGES */}
+
+          {edges.map((edge, index) => (
+            <Edge
+              key={`edge-${index}`}
+              edge={edge}
+              nodes={nodes}
+            />
+          ))}
+
+          {/* NODES */}
+
+          {nodes.map((node, index) => (
+            <Node
+              key={`node-${node.id}`}
+              node={node}
+              delay={index * 0.1}
+            />
+          ))}
+
+          {/* ============================= */}
+          {/* TRAVELLING LIGHTS */}
+          {/* ============================= */}
+
+          {edges.map((edge, index) => {
+            const from = nodes[edge.from];
+            const to = nodes[edge.to];
+
+            return (
+              <motion.circle
+                key={`pulse-${index}`}
+                r="3"
+                fill="#60A5FA"
+                filter="url(#graphGlow)"
+                animate={{
+                  cx: [
+                    from.x,
+                    to.x,
+                  ],
+
+                  cy: [
+                    from.y,
+                    to.y,
+                  ],
+
+                  opacity: [
+                    0,
+                    1,
+                    1,
+                    0,
+                  ],
+                }}
+                transition={{
+                  duration: 2.8,
+                  delay: index * 0.13,
+                  repeat: Infinity,
+                  ease: "linear",
+                }}
+              />
+            );
+          })}
+        </motion.g>
       </svg>
-
-
     </div>
   );
 }

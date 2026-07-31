@@ -4,6 +4,8 @@ import Hero from "../components/home/Hero";
 import QuickStats from "../components/home/QuickStats";
 
 import ResearchShowcase from "../components/researchShowcase/ResearchShowcase";
+import FeaturedProjects from "../components/home/FeaturedProjects";
+import ExperienceTimeline from "../components/home/ExperienceTimeline";
 
 function Home() {
   return (
@@ -11,6 +13,8 @@ function Home() {
       <Hero />
       <QuickStats />
       <ResearchShowcase />
+      <FeaturedProjects />
+      <ExperienceTimeline />
     </MainLayout>
   );
 }

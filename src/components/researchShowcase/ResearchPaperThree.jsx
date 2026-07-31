@@ -5,16 +5,17 @@ import {
   ArrowUpRight,
 } from "@phosphor-icons/react";
 
-const nearsy = "/papers/nearsy.pdf";
+const paperPdf = "/papers/geoai.pdf";
+const paperLink = "https://zenodo.org/records/18149564";
 
 const tags = [
-  "NLP",
-  "Embeddings",
-  "Semantic Geometry",
-  "Evaluation",
+  "Healthcare AI",
+  "Blood Allocation",
+  "Optimization",
+  "GeoAI",
 ];
 
-function ResearchPaperOne({ onBack, onNext }) {
+function ResearchPaperThree({ onBack, onNext }) {
   return (
     <motion.section
       initial={{ opacity: 0 }}
@@ -84,13 +85,13 @@ function ResearchPaperOne({ onBack, onNext }) {
       />
 
       {/* ================================================= */}
-      {/* BACK BUTTON */}
+      {/* LEFT BUTTON — BACK TO PAPER 2 */}
       {/* ================================================= */}
 
       <motion.button
         type="button"
         onClick={onBack}
-        aria-label="Back to research overview"
+        aria-label="Previous research paper"
         initial={{ opacity: 0, x: -30 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{
@@ -141,13 +142,13 @@ function ResearchPaperOne({ onBack, onNext }) {
       </motion.button>
 
       {/* ================================================= */}
-      {/* NEXT BUTTON */}
+      {/* RIGHT BUTTON — BACK TO RESEARCH OVERVIEW */}
       {/* ================================================= */}
 
       <motion.button
         type="button"
         onClick={onNext}
-        aria-label="Next research paper"
+        aria-label="Return to research overview"
         initial={{ opacity: 0, x: 30 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{
@@ -279,7 +280,7 @@ function ResearchPaperOne({ onBack, onNext }) {
                   text-blue-600
                 "
               >
-                Paper 01 / 03
+                Paper 03 / 03
               </span>
 
               <motion.div
@@ -319,7 +320,8 @@ function ResearchPaperOne({ onBack, onNext }) {
                 xl:text-[3.35rem]
               "
             >
-              Contextual Embedding Bias Predicts LLM Near-Synonym Confusion
+              Intelligent Blood Allocation
+              Using GeoAI
             </motion.h2>
 
             {/* SUBTITLE */}
@@ -348,8 +350,9 @@ function ResearchPaperOne({ onBack, onNext }) {
                 xl:leading-9
               "
             >
-              Where Isolated Geometry Fails: Evidence from Domain-Specific
-              Medical and Cultural Heritage Corpora
+              Exploring intelligent and location-aware approaches for
+              improving blood allocation and healthcare resource
+              distribution.
             </motion.p>
 
             {/* TAGS */}
@@ -408,358 +411,324 @@ function ResearchPaperOne({ onBack, onNext }) {
 
             {/* DIVIDER */}
 
-<motion.div
-  initial={{ scaleX: 0 }}
-  animate={{ scaleX: 1 }}
-  transition={{
-    duration: 0.8,
-    delay: 0.55,
-  }}
-  style={{
-    transformOrigin: "left",
-  }}
-  className="
-    mt-10
-    h-px
-    w-[88%]
-    bg-slate-200
-  "
-/>
+            <motion.div
+              initial={{ scaleX: 0 }}
+              animate={{ scaleX: 1 }}
+              transition={{
+                duration: 0.8,
+                delay: 0.55,
+              }}
+              style={{
+                transformOrigin: "left",
+              }}
+              className="
+                mt-10
+                h-px
+                w-[88%]
+                bg-slate-200
+              "
+            />
 
-{/* AUTHOR */}
+            {/* AUTHOR */}
 
-<motion.div
-  initial={{
-    opacity: 0,
-    y: 20,
-  }}
-  animate={{
-    opacity: 1,
-    y: 0,
-  }}
-  transition={{
-    duration: 0.55,
-    delay: 0.6,
-  }}
-  className="mt-16"
->
-  <p className="text-xl text-slate-900">
-    <span className="font-semibold text-slate-500">
-      Author:
-    </span>
+            <motion.div
+              initial={{
+                opacity: 0,
+                y: 20,
+              }}
+              animate={{
+                opacity: 1,
+                y: 0,
+              }}
+              transition={{
+                duration: 0.55,
+                delay: 0.6,
+              }}
+              className="mt-16"
+            >
+              <p className="text-xl text-slate-900">
+                <span className="font-semibold text-slate-500">
+                  Author:
+                </span>
 
-    <span className="ml-3 font-bold text-slate-950">
-      Priyanka Asthana
-    </span>
-  </p>
-</motion.div>
+                <span className="ml-3 font-bold text-slate-950">
+                  Priyanka Asthana
+                </span>
+              </p>
+            </motion.div>
 
-{/* VIEW PAPER */}
+            {/* VIEW PAPER */}
 
-<motion.a
-  href={nearsy}
-  target="_blank"
-  rel="noopener noreferrer"
-  initial={{
-    opacity: 0,
-    y: 15,
-  }}
-  animate={{
-    opacity: 1,
-    y: 0,
-  }}
-  transition={{
-    duration: 0.5,
-    delay: 0.7,
-  }}
-  whileHover={{
-    y: -4,
-    scale: 1.05,
-  }}
-  whileTap={{
-    scale: 0.97,
-  }}
-  className="
-    group
-    mt-8
-    inline-flex
-    min-w-[190px]
-    items-center
-    justify-center
-    gap-4
-    rounded-full
-    bg-blue-600
-    px-10
-    py-5
-    text-lg
-    font-bold
-    text-white
-    shadow-[0_12px_32px_rgba(37,99,235,0.30)]
-    transition-all
-    duration-300
+            <motion.a
+              href={paperLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              initial={{
+                opacity: 0,
+                y: 15,
+              }}
+              animate={{
+                opacity: 1,
+                y: 0,
+              }}
+              transition={{
+                duration: 0.5,
+                delay: 0.7,
+              }}
+              whileHover={{
+                y: -4,
+                scale: 1.05,
+              }}
+              whileTap={{
+                scale: 0.97,
+              }}
+              className="
+                group
+                mt-8
+                inline-flex
+                min-w-[190px]
+                items-center
+                justify-center
+                gap-4
+                rounded-full
+                bg-blue-600
+                px-10
+                py-5
+                text-lg
+                font-bold
+                text-white
+                shadow-[0_12px_32px_rgba(37,99,235,0.30)]
+                transition-all
+                duration-300
 
-    hover:bg-blue-700
-    hover:shadow-[0_18px_40px_rgba(37,99,235,0.38)]
-  "
->
-  View Paper
+                hover:bg-blue-700
+                hover:shadow-[0_18px_40px_rgba(37,99,235,0.38)]
+              "
+            >
+              View Paper
 
-  <ArrowUpRight
-    size={23}
-    weight="bold"
-    className="
-      transition-transform
-      duration-300
-      group-hover:translate-x-1
-      group-hover:-translate-y-1
-      group-hover:scale-110
-    "
-  />
-</motion.a>
+              <ArrowUpRight
+                size={23}
+                weight="bold"
+                className="
+                  transition-transform
+                  duration-300
+                  group-hover:translate-x-1
+                  group-hover:-translate-y-1
+                  group-hover:scale-110
+                "
+              />
+            </motion.a>
           </motion.div>
         </div>
 
-        {/* ================================= */}
+        {/* ================================================= */}
         {/* RIGHT SIDE — PAPER PREVIEW */}
-        {/* ================================= */}
+        {/* ================================================= */}
 
-<div className="flex justify-center lg:justify-start">
-  <motion.div
-    initial={{
-      opacity: 0,
-      x: 60,
-      scale: 0.96,
-    }}
-    animate={{
-      opacity: 1,
-      x: 0,
-      scale: 1,
-    }}
-    transition={{
-      duration: 0.75,
-      delay: 0.2,
-      ease: "easeOut",
-    }}
-    className="
-      relative
-      mx-auto
-      w-full
-      max-w-[430px]
-      min-w-0
-    "
-  >
-    {/* BACKGROUND GLOW */}
+        <div className="flex justify-center lg:justify-start">
+          <motion.div
+            initial={{
+              opacity: 0,
+              x: 60,
+              scale: 0.96,
+            }}
+            animate={{
+              opacity: 1,
+              x: 0,
+              scale: 1,
+            }}
+            transition={{
+              duration: 0.75,
+              delay: 0.2,
+              ease: "easeOut",
+            }}
+            className="
+              relative
+              mx-auto
+              w-full
+              max-w-[430px]
+              min-w-0
+            "
+          >
+            {/* BACKGROUND GLOW */}
 
-    <motion.div
-      animate={{
-        opacity: [0.2, 0.4, 0.2],
-        scale: [1, 1.04, 1],
-      }}
-      transition={{
-        duration: 6,
-        repeat: Infinity,
-        ease: "easeInOut",
-      }}
-      className="
-        pointer-events-none
-        absolute
-        inset-8
-        -z-10
-        rounded-[40px]
-        bg-blue-200/40
-        blur-[55px]
-      "
-    />
+            <motion.div
+              animate={{
+                opacity: [0.2, 0.4, 0.2],
+                scale: [1, 1.04, 1],
+              }}
+              transition={{
+                duration: 6,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
+              className="
+                pointer-events-none
+                absolute
+                inset-8
+                -z-10
+                rounded-[40px]
+                bg-blue-200/40
+                blur-[55px]
+              "
+            />
 
-    {/* ================================= */}
-    {/* OUTER WHITE CARD */}
-    {/* ================================= */}
+            {/* OUTER WHITE CARD */}
 
-    <motion.div
-      whileHover={{
-        y: -6,
-      }}
-      transition={{
-        duration: 0.3,
-      }}
-      className="
-        w-full
-        min-w-0
-        rounded-[12px]
-        border
-        border-slate-200
-        bg-white
-        p-5
-        shadow-[0_30px_80px_rgba(15,23,42,0.15)]
-      "
-    >
-      {/* ================================= */}
-{/* ACTUAL PAPER */}
-{/* ================================= */}
+            <motion.div
+              whileHover={{
+                y: -6,
+              }}
+              transition={{
+                duration: 0.3,
+              }}
+              className="
+                w-full
+                min-w-0
+                rounded-[12px]
+                border
+                border-slate-200
+                bg-white
+                p-5
+                shadow-[0_30px_80px_rgba(15,23,42,0.15)]
+              "
+            >
+              {/* ACTUAL PAPER */}
 
-<div
-  className="
-    group
-    relative
-    h-[500px]
-    w-full
-    min-w-0
-    overflow-hidden
-    border
-    border-slate-200
-    bg-slate-100
-  "
->
-  {/* PDF VIEWPORT */}
-  {/* The iframe is intentionally wider than this container.
-      This pushes Chrome/Edge's native PDF scrollbar outside
-      the visible clipped area. */}
+              <div
+                className="
+                  group
+                  relative
+                  h-[500px]
+                  w-full
+                  min-w-0
+                  overflow-hidden
+                  border
+                  border-slate-200
+                  bg-slate-100
+                "
+              >
+                {/* PDF VIEWPORT */}
 
-  <div
-    className="
-      absolute
-      inset-0
-      overflow-hidden
-    "
-  >
-    <iframe
-      src={`${nearsy}#page=1&toolbar=0&navpanes=0&scrollbar=0&view=FitH`}
-      title="Near-Synonym Bench paper preview"
-      scrolling="no"
-      tabIndex={-1}
-      className="
-        pointer-events-none
-        block
-        h-full
-        w-[calc(100%+24px)]
-        select-none
-        border-0
-      "
-    />
-  </div>
+                <div
+                  className="
+                    absolute
+                    inset-0
+                    overflow-hidden
+                  "
+                >
+                  <iframe
+                    src={`${paperPdf}#page=1&toolbar=0&navpanes=0&scrollbar=0&view=FitH`}
+                    title="Blood allocation research paper preview"
+                    scrolling="no"
+                    tabIndex={-1}
+                    className="
+                      pointer-events-none
+                      block
+                      h-full
+                      w-[calc(100%+24px)]
+                      select-none
+                      border-0
+                    "
+                  />
+                </div>
 
-  {/* ================================= */}
-  {/* HOVER DARKENING */}
-  {/* ================================= */}
+                {/* HOVER DARKENING */}
 
-  <div
-    className="
-      pointer-events-none
-      absolute
-      inset-0
-      z-10
-      bg-slate-950/0
-      transition-all
-      duration-300
-      group-hover:bg-slate-950/10
-    "
-  />
+                <div
+                  className="
+                    pointer-events-none
+                    absolute
+                    inset-0
+                    z-10
+                    bg-slate-950/0
+                    transition-all
+                    duration-300
+                    group-hover:bg-slate-950/10
+                  "
+                />
 
-  {/* ================================= */}
-  {/* CLICKABLE HOVER BUTTON */}
-  {/* ================================= */}
+                {/* HOVER VIEW PAPER BUTTON */}
 
-  <a
-    href={nearsy}
-    target="_blank"
-    rel="noopener noreferrer"
-    aria-label="Open full research paper"
-    className="
-      absolute
-      left-1/2
-      top-1/2
-      z-20
+                <a
+                  href={paperLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Open full research paper"
+                  className="
+                    absolute
+                    left-1/2
+                    top-1/2
+                    z-20
 
-      flex
-      -translate-x-1/2
-      -translate-y-[35%]
-      items-center
-      gap-3
+                    flex
+                    -translate-x-1/2
+                    -translate-y-[35%]
+                    items-center
+                    gap-3
 
-      whitespace-nowrap
-      rounded-full
-      border
-      border-white/80
-      bg-white/95
-      px-6
-      py-3.5
+                    whitespace-nowrap
+                    rounded-full
+                    border
+                    border-white/80
+                    bg-white/95
+                    px-6
+                    py-3.5
 
-      font-semibold
-      text-blue-600
+                    font-semibold
+                    text-blue-600
 
-      opacity-0
-      shadow-[0_12px_35px_rgba(15,23,42,0.20)]
-      backdrop-blur-md
+                    opacity-0
+                    shadow-[0_12px_35px_rgba(15,23,42,0.20)]
+                    backdrop-blur-md
 
-      transition-all
-      duration-300
+                    transition-all
+                    duration-300
 
-      group-hover:-translate-y-1/2
-      group-hover:opacity-100
+                    group-hover:-translate-y-1/2
+                    group-hover:opacity-100
 
-      hover:scale-105
-      hover:bg-blue-600
-      hover:text-white
-    "
-  >
-    View Paper
+                    hover:scale-105
+                    hover:bg-blue-600
+                    hover:text-white
+                  "
+                >
+                  View Paper
 
-    <ArrowUpRight
-      size={20}
-      weight="bold"
-      className="
-        transition-transform
-        duration-300
-        group-hover:translate-x-0.5
-      "
-    />
-  </a>
-</div>
-      {/* ================================= */}
-      {/* BOTTOM INFORMATION */}
-      {/* ================================= */}
+                  <ArrowUpRight
+                    size={20}
+                    weight="bold"
+                  />
+                </a>
+              </div>
 
-      <div
-        className="
-          w-full
-          min-w-0
-          px-2
-          pb-2
-          pt-5
-        "
-      >
-        <p
-          className="
-            break-words
-            text-base
-            font-bold
-            leading-6
-            text-slate-900
-          "
-        >
-          View full paper
-        </p>
+              {/* BOTTOM INFORMATION */}
 
-        <p
-          className="
-            mt-1
-            max-w-full
-            break-words
-            text-sm
-            leading-6
-            text-slate-500
-          "
-        >
-          Open the PDF
-        </p>
-      </div>
-    </motion.div>
-  </motion.div>
-</div>
+              <div
+                className="
+                  w-full
+                  min-w-0
+                  px-2
+                  pb-2
+                  pt-5
+                "
+              >
+                <p className="break-words text-base font-bold leading-6 text-slate-900">
+                  View full paper
+                </p>
+
+                <p className="mt-1 max-w-full break-words text-sm leading-6 text-slate-500">
+                  Open on Zenodo
+                </p>
+              </div>
+            </motion.div>
+          </motion.div>
         </div>
+      </div>
 
       {/* ================================================= */}
-      {/* PROGRESS DOTS */}
+      {/* PROGRESS DOTS — THIRD ACTIVE */}
       {/* ================================================= */}
 
       <motion.div
@@ -786,6 +755,24 @@ function ResearchPaperOne({ onBack, onNext }) {
           gap-4
         "
       >
+        <div
+          className="
+            h-2.5
+            w-2.5
+            rounded-full
+            bg-slate-300
+          "
+        />
+
+        <div
+          className="
+            h-2.5
+            w-2.5
+            rounded-full
+            bg-slate-300
+          "
+        />
+
         <motion.div
           layout
           className="
@@ -796,27 +783,9 @@ function ResearchPaperOne({ onBack, onNext }) {
             shadow-[0_0_12px_rgba(37,99,235,0.45)]
           "
         />
-
-        <div
-          className="
-            h-2.5
-            w-2.5
-            rounded-full
-            bg-slate-300
-          "
-        />
-
-        <div
-          className="
-            h-2.5
-            w-2.5
-            rounded-full
-            bg-slate-300
-          "
-        />
       </motion.div>
     </motion.section>
   );
 }
 
-export default ResearchPaperOne;
+export default ResearchPaperThree;

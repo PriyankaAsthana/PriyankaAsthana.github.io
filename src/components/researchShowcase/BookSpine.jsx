@@ -5,100 +5,71 @@ function BookSpine({ onClick }) {
   return (
     <motion.button
       onClick={onClick}
-
       initial={{
         opacity: 0,
-        y: 35,
+        y: 25,
       }}
-
       whileInView={{
         opacity: 1,
         y: 0,
       }}
-
       viewport={{
         once: true,
       }}
-
       whileHover={{
-        y: -6,
-        scale: 1.02,
+        y: -5,
+        scale: 1.025,
       }}
-
       whileTap={{
         scale: 0.97,
       }}
-
       transition={{
-        duration: 0.35,
+        duration: 0.3,
       }}
-
       className="
         group
-        absolute
-        bottom-0
-        left-1/2
-        z-50
+        relative
+        z-30
 
         flex
-        min-h-[72px]
-        min-w-[320px]
-
-        -translate-x-1/2
-
+        min-w-[365px]
         items-center
         justify-center
         gap-7
 
-        rounded-t-[32px]
+        rounded-t-[28px]
 
-        bg-gradient-to-r
-        from-blue-600
-        to-blue-500
+        bg-blue-600
 
-        px-16
-        py-7
+        px-12
+        py-6
 
         text-white
 
-        shadow-[0_-15px_45px_rgba(37,99,235,0.28)]
+        shadow-[0_-12px_45px_rgba(37,99,235,0.25)]
 
-        transition-all
+        transition-colors
         duration-300
 
-        hover:shadow-[0_-18px_55px_rgba(37,99,235,0.38)]
+        hover:bg-blue-700
       "
     >
-      {/* TEXT */}
-
       <span
         className="
           text-base
           font-bold
           uppercase
           tracking-[0.28em]
-          whitespace-nowrap
         "
       >
         View All Papers
       </span>
 
-      {/* ARROW CIRCLE */}
-
-      <motion.div
-        animate={{
-          y: [0, 6, 0],
-        }}
-        transition={{
-          duration: 1.5,
-          repeat: Infinity,
-          ease: "easeInOut",
-        }}
+      <div
         className="
           flex
           h-12
           w-12
-          shrink-0
           items-center
           justify-center
 
@@ -106,19 +77,23 @@ function BookSpine({ onClick }) {
 
           bg-white/15
 
-          shadow-inner
-
           transition-all
           duration-300
 
-          group-hover:bg-white/25
+          group-hover:bg-white
+          group-hover:text-blue-600
         "
       >
         <ArrowDown
-          size={24}
+          size={25}
           weight="bold"
+          className="
+            transition-transform
+            duration-300
+            group-hover:translate-y-1
+          "
         />
-      </motion.div>
+      </div>
     </motion.button>
   );
 }
