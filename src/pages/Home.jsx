@@ -6,6 +6,7 @@ import QuickStats from "../components/home/QuickStats";
 import ResearchShowcase from "../components/researchShowcase/ResearchShowcase";
 import FeaturedProjects from "../components/home/FeaturedProjects";
 import ExperienceTimeline from "../components/home/ExperienceTimeline";
+import CertificationArchive from "../components/certifications/CertificationArchive";
 
 function Home() {
   return (
@@ -15,6 +16,7 @@ function Home() {
       <ResearchShowcase />
       <FeaturedProjects />
       <ExperienceTimeline />
+      <CertificationArchive />
     </MainLayout>
   );
 }
