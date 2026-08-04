@@ -7,7 +7,7 @@ import ResearchShowcase from "../components/researchShowcase/ResearchShowcase";
 import FeaturedProjects from "../components/home/FeaturedProjects";
 import ExperienceTimeline from "../components/home/ExperienceTimeline";
 import CertificationArchive from "../components/certifications/CertificationArchive";
-
+import ContactSection from "../components/contact/ContactSection";
 function Home() {
   return (
     <MainLayout>
@@ -17,6 +17,7 @@ function Home() {
       <FeaturedProjects />
       <ExperienceTimeline />
       <CertificationArchive />
+      <ContactSection />
     </MainLayout>
   );
 }
