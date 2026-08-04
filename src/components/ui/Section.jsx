@@ -1,8 +1,12 @@
 import Container from "./Container";
 
-function Section({ children, className = "" }) {
+function Section({
+  children,
+  className = "",
+  id,
+}) {
   return (
-    <section className={className}>
+    <section id={id} className={className}>
       <Container>{children}</Container>
     </section>
   );

@@ -133,7 +133,7 @@ function Hero() {
               text-gray-600
             "
           >
-            Gold Medalist in Computer Science and AI
+            AI
             researcher focused on Natural Language
             Processing, trustworthy Healthcare AI,
             and intelligent software systems. I enjoy
@@ -178,7 +178,7 @@ function Hero() {
                 text-blue-700
               "
             >
-              🥇 Gold Medalist
+              🥇 I DIV Honours
             </span>
 
             <span
@@ -244,7 +244,7 @@ function Hero() {
             "
           >
             <Button
-              href="/resume"
+              href="../public/resume-Priyanka.pdf"
               variant="primary"
             >
               <FilePdf
@@ -256,7 +256,7 @@ function Hero() {
             </Button>
 
             <Button
-              href="https://github.com/YOUR_USERNAME"
+              href="https://github.com/PriyankaAsthana"
               variant="secondary"
             >
               <GithubLogo
@@ -268,7 +268,7 @@ function Hero() {
             </Button>
 
             <Button
-              href="/research"
+              href="https://scholar.google.com/citations?user=_cNMAsEc3DcC&hl=en"
               variant="ghost"
             >
               <Flask

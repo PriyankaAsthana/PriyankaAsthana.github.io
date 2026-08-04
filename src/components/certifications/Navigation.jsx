@@ -2,6 +2,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import {
   ArrowLeft,
   ArrowRight,
+  X
 } from "@phosphor-icons/react";
 
 export default function Navigation({
@@ -12,6 +13,7 @@ export default function Navigation({
   onPrevious,
   onNext,
   onFinish,
+  onClose,
 }) {
   return (
     <>
@@ -204,6 +206,79 @@ style={{
         )}
 
       </AnimatePresence>
+      {/* CLOSE */}
+
+<AnimatePresence>
+  {viewingCertificate && (
+    <motion.button
+      initial={{
+        opacity: 0,
+        y: 30,
+        scale: 0.8,
+      }}
+      animate={{
+        opacity: 1,
+        y: 0,
+        scale: 1,
+      }}
+      exit={{
+        opacity: 0,
+        y: 30,
+        scale: 0.8,
+      }}
+      transition={{
+        type: "spring",
+        stiffness: 260,
+        damping: 22,
+      }}
+      whileHover={{
+        scale: 1.08,
+        y: -3,
+      }}
+      whileTap={{
+        scale: 0.94,
+      }}
+      onClick={onClose}
+      className="
+        absolute
+        left-1/2
+        top-[610px]
+        z-[90]
+
+        -translate-x-1/2
+
+        flex
+        h-14
+        w-44
+
+        items-center
+        justify-center
+        gap-3
+
+        rounded-full
+
+        border
+        border-blue-200
+
+        bg-white/95
+
+        shadow-[0_20px_45px_rgba(37,99,235,.12)]
+
+        backdrop-blur-xl
+      "
+    >
+      <X
+        size={20}
+        weight="bold"
+        className="text-blue-600"
+      />
+
+      <span className="font-semibold text-slate-700">
+        Close
+      </span>
+    </motion.button>
+  )}
+</AnimatePresence>
 
       {/* LEFT GLOW */}
 

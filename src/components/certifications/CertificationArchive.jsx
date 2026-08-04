@@ -207,82 +207,98 @@ function restartArchive() {
       ====================================== */}
 
       <div
-        className="
-          relative
-          z-20
+  className="
+    relative
+    z-20
+    mx-auto
+    mt-24
 
-          mx-auto
-          mt-24
+    min-h-[680px]
+    max-w-[1650px]
 
-          min-h-[680px]
-          max-w-[1650px]
-        "
-      >
+    origin-top
+    scale-[0.72]
+
+    sm:scale-[0.82]
+    md:scale-[0.90]
+    lg:scale-100
+  "
+>
 
         {/* LEFT STACK */}
 
-        <div
-          className="
-            absolute
+<div
+  className="
+    absolute
 
-            left-10
-            top-8
+    left-1/2
+    -translate-x-[68%]
 
-            z-10
-          "
-        >
-          <ArchiveStack
-            remaining={
-  currentIndex === -1
-    ? certifications.length
-    : certifications.length - currentIndex - 1
-}
+    lg:left-10
+    lg:translate-x-0
 
-blurred={viewingCertificate}
-          />
-        </div>
-        <div
-className="
-absolute
-left-1/2
-top-[140px]
+    top-8
 
--z-30
+    z-10
+  "
+>
+  <ArchiveStack
+    remaining={
+      currentIndex === -1
+        ? certifications.length
+        : certifications.length - currentIndex - 1
+    }
+    blurred={viewingCertificate}
+  />
+</div>
+{/* PAPER */}
 
--translate-x-57
+<div
+  className="
+    absolute
 
-flex
-justify-center
+    left-1/2
+    top-[90px]
 
-w-[520px]
-"
+    z-30
+
+    flex
+    justify-center
+
+    w-[520px]
+
+    -translate-x-1/2
+
+    lg:-translate-x-[228px]
+  "
 >
   <div className="pointer-events-auto">
     <PaperEngine
       certificate={currentPaper}
+      onClose={restartArchive}
     />
   </div>
 </div>
-
         {/* RIGHT LIST */}
 
-        <div
-          className="
-            absolute
+<div
+  className="
+    hidden
+    lg:block
 
-            right-40
-            top-5
+    absolute
 
-            z-10
-          "
-        >
-          <ArchiveList
-            covered=
-              {viewingCertificate}
-            
-            active={currentPaper}
-          />
-        </div>
+    right-40
+    top-5
+
+    z-10
+  "
+>
+  <ArchiveList
+    covered={viewingCertificate}
+    active={currentPaper}
+  />
+</div>
 
         {/* NAVIGATION */}
 
@@ -294,6 +310,7 @@ w-[520px]
   onPrevious={handlePrevious}
   onNext={handleNext}
   onFinish={restartArchive}
+  onClose={restartArchive}
 />
 
       </div>

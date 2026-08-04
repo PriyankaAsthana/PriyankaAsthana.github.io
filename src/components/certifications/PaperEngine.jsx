@@ -4,9 +4,10 @@ import {
   CalendarBlank,
   ShieldCheck,
   Buildings,
+  X,
 } from "@phosphor-icons/react";
 
-export default function PaperEngine({ certificate }) {
+export default function PaperEngine({ certificate, onClose }) {
   return (
     <div
       className="
@@ -66,8 +67,50 @@ export default function PaperEngine({ certificate }) {
               bg-white
               shadow-[0_35px_90px_rgba(15,23,42,.14)]
             "
-          >
-                          {/* Glow */}
+            
+           >
+            {/* CLOSE BUTTON */}
+
+<motion.button
+  whileHover={{
+    scale: 1.08,
+    rotate: 90,
+  }}
+  whileTap={{
+    scale: 0.92,
+  }}
+  onClick={onClose}
+  className="
+    absolute
+    right-5
+    top-5
+    z-50
+
+    flex
+    h-11
+    w-11
+    items-center
+    justify-center
+
+    rounded-full
+
+    border
+    border-slate-200
+
+    bg-white/90
+
+    shadow-lg
+
+    backdrop-blur-xl
+  "
+>
+  <X
+    size={20}
+    weight="bold"
+    className="text-slate-700"
+  />
+</motion.button>
+            {/* Glow */}
 
               <div
                 className="

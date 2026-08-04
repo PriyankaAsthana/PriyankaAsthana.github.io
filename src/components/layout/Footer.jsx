@@ -11,9 +11,6 @@ function Footer() {
             © {new Date().getFullYear()} Priyanka Asthana.
           </p>
 
-          <p className="text-gray-500">
-            Built with React + Vite + Tailwind CSS
-          </p>
 
         </div>
 
