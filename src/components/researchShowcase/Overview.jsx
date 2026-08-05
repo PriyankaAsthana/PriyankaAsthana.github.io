@@ -179,7 +179,7 @@ function Overview() {
                 Selected Papers
               </motion.p>
 
-              <div className="space-y-5">
+              <div className="pt-12 space-y-5">
                 {papers.map((paper, index) => (
                   <motion.div
                     key={paper.number}

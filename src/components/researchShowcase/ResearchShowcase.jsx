@@ -54,6 +54,7 @@ function ResearchShowcase() {
             className="
               relative
               w-full
+              min-h-[780px]
               overflow-hidden
 
               bg-gradient-to-br

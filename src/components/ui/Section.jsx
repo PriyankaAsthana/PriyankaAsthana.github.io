@@ -3,11 +3,16 @@ import Container from "./Container";
 function Section({
   children,
   className = "",
-  id,
+  ...props
 }) {
   return (
-    <section id={id} className={className}>
-      <Container>{children}</Container>
+    <section
+      className={className}
+      {...props}
+    >
+      <Container>
+        {children}
+      </Container>
     </section>
   );
 }

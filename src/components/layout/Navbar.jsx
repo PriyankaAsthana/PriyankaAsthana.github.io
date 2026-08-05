@@ -7,13 +7,14 @@ import FloatingMenuButton from "./FloatingMenuButton";
 import FloatingMenu from "./FloatingMenu";
 
 const navLinks = [
-  { name: "Home", path: "/" },
-  { name: "Resume", path: "/resume" },
-  { name: "About", path: "/about" },
-  { name: "Research", path: "/research" },
-  { name: "Projects", path: "/projects" },
-  { name: "Experience", path: "/experience" },
-  { name: "Contact", path: "/contact" },
+  { name: "Home", id: "hero" },
+  { name: "Resume", pdf: "/resume-Priyanka.pdf" },
+  { name: "About", id: "stats" },
+  { name: "Research", id: "research" },
+  { name: "Projects", id: "projects" },
+  { name: "Experience", id: "experience" },
+  { name: "Certifications", id: "certifications" },
+  { name: "Contact", id: "contact" },
 ];
 
 export default function Navbar() {
@@ -109,21 +110,35 @@ export default function Navbar() {
           </NavLink>
 
           <nav className="hidden items-center gap-8 lg:flex">
-            {navLinks.map((item) => (
-              <NavLink
-                key={item.name}
-                to={item.path}
-                className={({ isActive }) =>
-                  isActive
-                    ? "font-semibold text-blue-400"
-                    : "text-gray-300 transition hover:text-blue-400"
-                }
-              >
-                {item.name}
-              </NavLink>
-            ))}
-
-          </nav>
+  {navLinks.map((item) =>
+    item.pdf ? (
+      <a
+        key={item.name}
+        href={item.pdf}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-gray-300 transition hover:text-blue-400"
+      >
+        {item.name}
+      </a>
+    ) : (
+      <button
+        key={item.name}
+        onClick={() =>
+          document
+            .getElementById(item.id)
+            ?.scrollIntoView({
+              behavior: "smooth",
+              block: "start",
+            })
+        }
+        className="text-gray-300 transition hover:text-blue-400"
+      >
+        {item.name}
+      </button>
+    )
+  )}
+</nav>
 
           <button
             onClick={() =>
@@ -141,24 +156,37 @@ export default function Navbar() {
 
         {mobileOpen && (
           <div className="bg-slate-800 lg:hidden">
-            {navLinks.map((item) => (
-              <NavLink
-                key={item.name}
-                to={item.path}
-                onClick={() =>
-                  setMobileOpen(false)
-                }
-                className={({ isActive }) =>
-                  `block px-6 py-4 ${
-                    isActive
-                      ? "bg-blue-600 text-white"
-                      : "text-gray-300 hover:bg-slate-700"
-                  }`
-                }
-              >
-                {item.name}
-              </NavLink>
-            ))}
+            {navLinks.map((item) =>
+  item.pdf ? (
+    <a
+      key={item.name}
+      href={item.pdf}
+      target="_blank"
+      rel="noopener noreferrer"
+      onClick={() => setMobileOpen(false)}
+      className="block px-6 py-4 text-gray-300 hover:bg-slate-700"
+    >
+      {item.name}
+    </a>
+  ) : (
+    <button
+      key={item.name}
+      onClick={() => {
+        document
+          .getElementById(item.id)
+          ?.scrollIntoView({
+            behavior: "smooth",
+            block: "start",
+          });
+
+        setMobileOpen(false);
+      }}
+      className="block w-full px-6 py-4 text-left text-gray-300 hover:bg-slate-700"
+    >
+      {item.name}
+    </button>
+  )
+)}
           </div>
         )}
       </motion.header>

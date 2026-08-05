@@ -37,7 +37,7 @@ function BookSpine({ onClick }) {
         justify-center
         gap-7
 
-        rounded-t-[28px]
+        rounded-full
 
         bg-blue-600
 

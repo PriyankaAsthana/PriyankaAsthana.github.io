@@ -1,5 +1,5 @@
 import { motion, AnimatePresence } from "framer-motion";
-import { NavLink } from "react-router-dom";
+
 import {
   House,
   FileText,
@@ -14,42 +14,14 @@ import {
 } from "@phosphor-icons/react";
 
 const navLinks = [
-  {
-    name: "Home",
-    path: "/",
-    icon: House,
-  },
-  {
-    name: "Resume",
-    path: "/resume",
-    icon: FileText,
-  },
-  {
-    name: "About",
-    path: "/about",
-    icon: User,
-  },
-  {
-    name: "Research",
-    path: "/research",
-    icon: Flask,
-  },
-  {
-    name: "Projects",
-    path: "/projects",
-    icon: Folder,
-  },
-  {
-    name: "Experience",
-    path: "/experience",
-    icon: Briefcase,
-  },
-
-  {
-    name: "Contact",
-    path: "/contact",
-    icon: EnvelopeSimple,
-  },
+  { name: "Home", id: "hero", icon: House },
+  {name: "Resume",path: "/resume-Priyanka.pdf",icon: FileText},
+  { name: "About", id: "stats", icon: User },
+  { name: "Research", id: "research", icon: Flask },
+  { name: "Projects", id: "projects", icon: Folder },
+  { name: "Experience", id: "experience", icon: Briefcase },
+  { name: "Certifications", id: "certifications", icon: GraduationCap },
+  { name: "Contact", id: "contact", icon: EnvelopeSimple },
 ];
 
 export default function FloatingMenu({
@@ -174,61 +146,95 @@ export default function FloatingMenu({
               "
             >
               {navLinks.map((item, index) => {
-                const Icon = item.icon;
+  const Icon = item.icon;
 
-                return (
-                  <motion.div
-                    key={item.name}
-                    initial={{
-                      opacity: 0,
-                      x: -20,
-                    }}
-                    animate={{
-                      opacity: 1,
-                      x: 0,
-                    }}
-                    transition={{
-                      delay:
-                        index * 0.05,
-                    }}
-                  >
-                    <NavLink
-                      to={item.path}
-                      onClick={onClose}
-                      className={({
-                        isActive,
-                      }) =>
-                        `
-                        flex
-                        items-center
-                        gap-4
+  return (
+    <motion.div
+      key={item.name}
+      initial={{
+        opacity: 0,
+        x: -20,
+      }}
+      animate={{
+        opacity: 1,
+        x: 0,
+      }}
+      transition={{
+        delay: index * 0.05,
+      }}
+    >
+      {item.id ? (
+        <button
+          onClick={() => {
+            document
+              .getElementById(item.id)
+              ?.scrollIntoView({
+                behavior: "smooth",
+                block: "start",
+              });
 
-                        rounded-2xl
+            onClose();
+          }}
+          className="
+            flex
+            w-full
+            items-center
+            gap-4
 
-                        px-5
-                        py-4
+            rounded-2xl
 
-                        transition-all
+            px-5
+            py-4
 
-                        ${
-                          isActive
-                            ? "bg-blue-600 text-white shadow-lg"
-                            : "text-slate-700 hover:bg-white/50 hover:translate-x-2"
-                        }
-                      `
-                      }
-                    >
-                      <Icon
-                        size={20}
-                      />
+            text-left
+            text-slate-700
 
-                      <span className="font-medium">
-                        {item.name}
-                      </span>
-                    </NavLink>
-                  </motion.div>
-                );
-              })}
+            transition-all
+
+            hover:bg-white/50
+            hover:translate-x-2
+          "
+        >
+          <Icon size={20} />
+          <span className="font-medium">
+            {item.name}
+          </span>
+        </button>
+      ) : (
+          <a
+  href={item.path}
+  target="_blank"
+  rel="noopener noreferrer"
+  onClick={onClose}
+  className="
+    flex
+    w-full
+    items-center
+    gap-4
+
+    rounded-2xl
+
+    px-5
+    py-4
+
+    text-slate-700
+
+    transition-all
+
+    hover:bg-white/50
+    hover:translate-x-2
+  "
+>
+  <Icon size={20} />
+
+  <span className="font-medium">
+    {item.name}
+  </span>
+</a>
+      )}
+    </motion.div>
+  );
+})}
             </div>
 
             {/* Divider */}
@@ -255,7 +261,7 @@ export default function FloatingMenu({
               "
             >
               <a
-                href="https://github.com/YOUR_USERNAME"
+                href="https://github.com/PriyankaAsthana"
                 target="_blank"
                 rel="noreferrer"
                 className="
@@ -275,7 +281,7 @@ export default function FloatingMenu({
               </a>
 
               <a
-                href="https://linkedin.com/in/YOUR_PROFILE"
+                href="https://www.linkedin.com/in/priyanka-asthana-1b9a74250/"
                 target="_blank"
                 rel="noreferrer"
                 className="
@@ -295,7 +301,7 @@ export default function FloatingMenu({
               </a>
 
               <a
-                href="https://scholar.google.com/"
+                href="https://scholar.google.com/citations?user=_cNMAsEc3DcC&hl=en"
                 target="_blank"
                 rel="noreferrer"
                 className="
@@ -318,7 +324,9 @@ export default function FloatingMenu({
               </a>
 
               <a
-                href="mailto:asthanapriyanka829@gmail.com"
+                href="https://mail.google.com/mail/?view=cm&fs=1&to=asthanapriyanka829@gmail.com"
+          target="_blank"
+          rel="noopener noreferrer"
                 className="
                   rounded-xl
 

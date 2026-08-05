@@ -1,11 +1,11 @@
 import { motion } from "framer-motion";
-import Section from "../ui/Section";
 import StatCard from "./StatCard";
 import { stats } from "../../data/stats";
 
 function QuickStats() {
   return (
-    <Section
+    <section
+      id="stats"
       className="
         min-h-screen
         bg-gradient-to-b
@@ -27,11 +27,11 @@ function QuickStats() {
           className="text-center"
         >
           <span className="inline-flex rounded-full bg-blue-100 px-5 py-2 text-sm font-semibold uppercase tracking-[0.3em] text-blue-700">
-            Highlights
+            About Me
           </span>
 
           <h2 className="mt-6 text-5xl font-bold tracking-tight text-slate-900 lg:text-6xl">
-            Research at a Glance
+            Journey at a Glance
           </h2>
 
           <p
@@ -76,7 +76,7 @@ function QuickStats() {
         </div>
 
       </div>
-    </Section>
+    </section>
   );
 }
 
