@@ -21,14 +21,17 @@ function Hero() {
       id="hero"
       className="
         relative
-
         overflow-hidden
-
-        min-h-[calc(100vh-80px)]
 
         flex
         items-center
         justify-center
+
+        py-12
+        sm:py-16
+
+        lg:min-h-[calc(100vh-80px)]
+        lg:py-0
       "
     >
       {/* ===============================
@@ -49,7 +52,6 @@ function Hero() {
           mx-auto
 
           grid
-
           w-full
           max-w-9xl
 
@@ -57,9 +59,12 @@ function Hero() {
 
           items-center
 
-          gap-24
+          gap-12
+          sm:gap-16
+          md:gap-20
 
           lg:grid-cols-[0.9fr_1.1fr]
+          lg:gap-24
         "
       >
         {/* ===============================
@@ -67,7 +72,14 @@ function Hero() {
         =============================== */}
 
         <motion.div
-          className="lg:pl-8"
+          className="
+            w-full
+            px-2
+            sm:px-4
+
+            lg:pl-8
+            lg:px-0
+          "
           initial={{
             opacity: 0,
             x: -40,
@@ -80,6 +92,8 @@ function Hero() {
             duration: 0.8,
           }}
         >
+          {/* ROLE */}
+
           <span
             className="
               inline-block
@@ -88,10 +102,14 @@ function Hero() {
 
               bg-blue-100
 
-              px-4
-              py-2
+              px-3
+              py-1.5
 
-              text-sm
+              text-xs
+              sm:px-4
+              sm:py-2
+              sm:text-sm
+
               font-semibold
 
               text-blue-700
@@ -100,11 +118,15 @@ function Hero() {
             AI Researcher • Software Engineer
           </span>
 
+          {/* NAME */}
+
           <h1
             className="
-              mt-6
+              mt-5
+              sm:mt-6
 
-              text-5xl
+              text-4xl
+              sm:text-5xl
 
               font-bold
 
@@ -120,21 +142,25 @@ function Hero() {
             </span>
           </h1>
 
+          {/* DESCRIPTION */}
+
           <p
             className="
-              mt-8
+              mt-6
+              sm:mt-8
 
               max-w-3xl
 
-              text-lg
+              text-base
+              sm:text-lg
 
-              leading-8
+              leading-7
+              sm:leading-8
 
               text-gray-600
             "
           >
-            AI
-            researcher focused on Natural Language
+            AI researcher focused on Natural Language
             Processing, trustworthy Healthcare AI,
             and intelligent software systems. I enjoy
             building research-driven applications
@@ -148,15 +174,16 @@ function Hero() {
 
           <div
             className="
-              mt-8
+              mt-6
+              sm:mt-8
 
               flex
-
               flex-wrap
 
               items-center
 
-              gap-4
+              gap-2
+              sm:gap-4
             "
           >
             <span
@@ -168,10 +195,13 @@ function Hero() {
 
                 bg-blue-50
 
-                px-4
-                py-1.5
+                px-3
+                py-1
+                sm:px-4
+                sm:py-1.5
 
-                text-sm
+                text-xs
+                sm:text-sm
 
                 font-semibold
 
@@ -190,10 +220,13 @@ function Hero() {
 
                 bg-green-50
 
-                px-4
-                py-1.5
+                px-3
+                py-1
+                sm:px-4
+                sm:py-1.5
 
-                text-sm
+                text-xs
+                sm:text-sm
 
                 font-semibold
 
@@ -212,10 +245,13 @@ function Hero() {
 
                 bg-purple-50
 
-                px-4
-                py-1.5
+                px-3
+                py-1
+                sm:px-4
+                sm:py-1.5
 
-                text-sm
+                text-xs
+                sm:text-sm
 
                 font-semibold
 
@@ -226,21 +262,22 @@ function Hero() {
             </span>
           </div>
 
-          <div className="h-4" />
-
           {/* ===============================
                 BUTTONS
           =============================== */}
 
           <div
             className="
-              flex
+              mt-5
+              sm:mt-6
 
+              flex
               flex-wrap
 
               items-center
 
-              gap-5
+              gap-3
+              sm:gap-5
             "
           >
             <Button
@@ -295,10 +332,16 @@ function Hero() {
             relative
 
             flex
-
             items-center
-
             justify-center
+
+            w-full
+
+            pt-4
+            sm:pt-6
+            md:pt-8
+
+            lg:pt-0
           "
           initial={{
             opacity: 0,
@@ -315,7 +358,29 @@ function Hero() {
             once: true,
           }}
         >
-          <HeroBlob />
+          {/* ===============================
+                RESPONSIVE BLOB
+          =============================== */}
+
+          <div
+            className="
+              pointer-events-none
+              absolute
+              inset-0
+
+              flex
+              items-center
+              justify-center
+
+              scale-[0.58]
+              sm:scale-[0.68]
+              md:scale-[0.82]
+
+              lg:scale-100
+            "
+          >
+            <HeroBlob />
+          </div>
 
           {/* =====================================
                 PROFILE IMAGE
@@ -332,8 +397,17 @@ function Hero() {
             className="
               relative
 
-              h-[500px]
-              w-[460px]
+              h-[285px]
+              w-[265px]
+
+              sm:h-[350px]
+              sm:w-[325px]
+
+              md:h-[420px]
+              md:w-[385px]
+
+              lg:h-[500px]
+              lg:w-[460px]
 
               overflow-hidden
 

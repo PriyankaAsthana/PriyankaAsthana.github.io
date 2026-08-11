@@ -11,7 +11,11 @@ export default function ContactButton() {
         flex
         flex-col
         items-center
-        gap-4
+
+        w-full
+
+        pt-6
+        pb-14
       "
     >
       {/* ==========================
@@ -21,7 +25,8 @@ export default function ContactButton() {
       <div className="text-center">
         <h2
           className="
-          -mt-15
+            -mt-15
+
             font-serif
             text-2xl
             font-bold
@@ -52,12 +57,19 @@ export default function ContactButton() {
 
       <div
         className="
+          mt-5
+
           flex
           items-center
           justify-center
+
           gap-6
           flex-wrap
-          
+
+          w-full
+
+          pt-6
+          pb-10
         "
       >
         {/* ==========================
@@ -78,21 +90,29 @@ export default function ContactButton() {
           className="
             group
             relative
+
             inline-flex
             items-center
             justify-center
+
             gap-5
+
             overflow-hidden
+
             rounded-[8px]
+
             bg-gradient-to-r
             from-blue-600
             via-blue-500
             to-cyan-500
+
             px-10
             py-5
+
             text-lg
             font-semibold
             text-white
+
             shadow-[0_20px_60px_rgba(37,99,235,.35)]
           "
         >
@@ -111,8 +131,11 @@ export default function ContactButton() {
               absolute
               inset-y-0
               w-24
+
               rotate-12
+
               bg-white/20
+
               blur-xl
             "
           />
@@ -152,21 +175,32 @@ export default function ContactButton() {
             inline-flex
             items-center
             justify-center
+
             gap-4
+
             rounded-xl
+
             border
             border-blue-200
+
             bg-white/90
+
             px-10
             py-5
+
             text-lg
             font-semibold
             text-slate-700
+
             backdrop-blur-xl
+
             shadow-[0_15px_40px_rgba(15,23,42,.08)]
+
             transition-all
+
             hover:border-blue-500
             hover:text-blue-600
+
             hover:shadow-[0_20px_50px_rgba(37,99,235,.15)]
           "
         >
@@ -175,7 +209,9 @@ export default function ContactButton() {
             weight="bold"
           />
 
-          <span>Download Resume</span>
+          <span>
+            Download Resume
+          </span>
         </motion.a>
       </div>
     </div>

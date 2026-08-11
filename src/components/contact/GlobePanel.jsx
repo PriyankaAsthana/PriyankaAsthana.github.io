@@ -29,19 +29,22 @@ export default function GlobePanel() {
       =============================== */}
 
       <div
-        className="
-          relative
+  className="
+    relative
 
-          flex
-          items-center
-          justify-center
+    flex
+    items-center
+    justify-center
 
-          h-[500px]
-          w-[500px]
+    h-[360px]
+    w-[360px]
 
-          overflow-visible
-        "
-      >
+    lg:h-[500px]
+    lg:w-[500px]
+
+    overflow-visible
+  "
+>
         <Earth />
       </div>
     </motion.div>

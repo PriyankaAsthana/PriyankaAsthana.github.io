@@ -105,31 +105,26 @@ const projects = [
   },
 ];
 
+
 /* =========================================================
    SVG DISC GEOMETRY
-
-   This is the important fix.
-
-   We are NOT using CSS clip-path triangles anymore.
-
-   Each sector is an actual SVG pie sector with:
-   - curved outer edge
-   - straight radial boundaries
-   - exact 120 degree division
 ========================================================= */
 
 const CX = 300;
 const CY = 300;
 const R = 285;
 
+
 function polarToCartesian(cx, cy, radius, angle) {
-  const radians = ((angle - 90) * Math.PI) / 180;
+  const radians =
+    ((angle - 90) * Math.PI) / 180;
 
   return {
     x: cx + radius * Math.cos(radians),
     y: cy + radius * Math.sin(radians),
   };
 }
+
 
 function createSectorPath(startAngle, endAngle) {
   const start = polarToCartesian(
@@ -157,50 +152,37 @@ function createSectorPath(startAngle, endAngle) {
   ].join(" ");
 }
 
-/*
-   Sector positions:
 
-            KASHIVANI
-               01
-
-        RAKT        DIAGNOSEAI
-         03             02
-*/
+/* =========================================================
+   SECTOR POSITIONS
+========================================================= */
 
 const sectors = [
   {
     projectIndex: 0,
-
-    // top sector
     start: -60,
     end: 60,
-
     textX: 300,
     textY: 165,
   },
 
   {
     projectIndex: 1,
-
-    // bottom-right
     start: 60,
     end: 180,
-
     textX: 425,
     textY: 390,
   },
 
   {
     projectIndex: 2,
-
-    // bottom-left
     start: 180,
     end: 300,
-
     textX: 175,
     textY: 390,
   },
 ];
+
 
 /* =========================================================
    PROJECT DISC
@@ -217,8 +199,26 @@ function ProjectDisc({
         flex
         items-center
         justify-center
+
+        /* IMPORTANT:
+           Gives the mobile disc enough room
+           without affecting desktop.
+        */
+
+        h-[330px]
+        w-[330px]
+
+        sm:h-[400px]
+        sm:w-[400px]
+
+        md:h-[500px]
+        md:w-[500px]
+
+        lg:h-[590px]
+        lg:w-[590px]
       "
     >
+
       {/* =================================================
           OUTER AMBIENT GLOW
       ================================================= */}
@@ -227,13 +227,28 @@ function ProjectDisc({
         className="
           pointer-events-none
           absolute
-          h-[650px]
-          w-[650px]
+
+          h-[350px]
+          w-[350px]
+
+          sm:h-[430px]
+          sm:w-[430px]
+
+          md:h-[540px]
+          md:w-[540px]
+
+          lg:h-[650px]
+          lg:w-[650px]
+
           rounded-full
           bg-blue-100/30
-          blur-[55px]
+
+          blur-[40px]
+          sm:blur-[45px]
+          lg:blur-[55px]
         "
       />
+
 
       {/* =================================================
           OUTER ORBIT 1
@@ -251,23 +266,45 @@ function ProjectDisc({
         className="
           pointer-events-none
           absolute
-          h-[690px]
-          w-[690px]
+
+          h-[380px]
+          w-[380px]
+
+          sm:h-[460px]
+          sm:w-[460px]
+
+          md:h-[570px]
+          md:w-[570px]
+
+          lg:h-[690px]
+          lg:w-[690px]
+
           rounded-full
           border
           border-blue-100
         "
       >
+
         <div
           className="
             absolute
             left-1/2
-            top-[-7px]
-            h-[14px]
-            w-[14px]
+            top-[-5px]
+
+            h-[10px]
+            w-[10px]
+
+            sm:h-[12px]
+            sm:w-[12px]
+
+            lg:h-[14px]
+            lg:w-[14px]
+
             -translate-x-1/2
             rounded-full
+
             bg-blue-600
+
             shadow-[0_0_18px_rgba(37,99,235,0.65)]
           "
         />
@@ -275,15 +312,28 @@ function ProjectDisc({
         <div
           className="
             absolute
-            bottom-[70px]
-            left-[75px]
-            h-[10px]
-            w-[10px]
+
+            bottom-[40px]
+            left-[40px]
+
+            h-[7px]
+            w-[7px]
+
+            sm:bottom-[55px]
+            sm:left-[55px]
+
+            md:bottom-[65px]
+            md:left-[65px]
+
+            lg:bottom-[70px]
+            lg:left-[75px]
+
             rounded-full
             bg-blue-500
           "
         />
       </motion.div>
+
 
       {/* =================================================
           OUTER ORBIT 2
@@ -301,21 +351,46 @@ function ProjectDisc({
         className="
           pointer-events-none
           absolute
-          h-[730px]
-          w-[730px]
+
+          h-[400px]
+          w-[400px]
+
+          sm:h-[490px]
+          sm:w-[490px]
+
+          md:h-[610px]
+          md:w-[610px]
+
+          lg:h-[730px]
+          lg:w-[730px]
+
           rounded-full
+
           border
           border-dashed
           border-blue-100/80
         "
       >
+
         <div
           className="
             absolute
-            right-[55px]
-            top-[125px]
-            h-[7px]
-            w-[7px]
+
+            right-[30px]
+            top-[70px]
+
+            h-[5px]
+            w-[5px]
+
+            sm:right-[40px]
+            sm:top-[90px]
+
+            md:right-[50px]
+            md:top-[110px]
+
+            lg:right-[55px]
+            lg:top-[125px]
+
             rounded-full
             bg-blue-400
           "
@@ -324,15 +399,29 @@ function ProjectDisc({
         <div
           className="
             absolute
-            bottom-[100px]
-            right-[20px]
-            h-[6px]
-            w-[6px]
+
+            bottom-[55px]
+            right-[12px]
+
+            h-[5px]
+            w-[5px]
+
+            sm:bottom-[70px]
+            sm:right-[15px]
+
+            md:bottom-[90px]
+            md:right-[18px]
+
+            lg:bottom-[100px]
+            lg:right-[20px]
+
             rounded-full
             bg-blue-300
           "
         />
+
       </motion.div>
+
 
       {/* =================================================
           MAIN DISC
@@ -357,13 +446,26 @@ function ProjectDisc({
         className="
           relative
           z-10
-          h-[590px]
-          w-[590px]
+
+          h-[300px]
+          w-[300px]
+
+          sm:h-[370px]
+          sm:w-[370px]
+
+          md:h-[470px]
+          md:w-[470px]
+
+          lg:h-[590px]
+          lg:w-[590px]
+
           overflow-visible
           rounded-full
+
           shadow-[0_30px_80px_rgba(37,99,235,0.13)]
         "
       >
+
         <svg
           viewBox="0 0 600 600"
           className="
@@ -374,7 +476,9 @@ function ProjectDisc({
             overflow-visible
           "
         >
+
           <defs>
+
             <filter
               id="activeGlow"
               x="-30%"
@@ -390,6 +494,7 @@ function ProjectDisc({
                 floodOpacity="0.22"
               />
             </filter>
+
 
             <linearGradient
               id="activeGradient"
@@ -408,9 +513,11 @@ function ProjectDisc({
                 stopColor="#1d5df0"
               />
             </linearGradient>
+
           </defs>
 
-          {/* base circle */}
+
+          {/* BASE CIRCLE */}
 
           <circle
             cx={CX}
@@ -421,51 +528,66 @@ function ProjectDisc({
             strokeWidth="2"
           />
 
-          {/* =============================================
+
+          {/* =================================================
               REAL CIRCULAR SECTORS
-          ============================================= */}
+          ================================================= */}
 
           {sectors.map((sector) => {
+
             const project =
               projects[sector.projectIndex];
 
             const isActive =
-              activeProject === sector.projectIndex;
+              activeProject ===
+              sector.projectIndex;
 
             return (
               <motion.path
                 key={project.id}
+
                 d={createSectorPath(
                   sector.start,
                   sector.end
                 )}
+
                 initial={false}
+
                 animate={{
                   fill: isActive
                     ? "url(#activeGradient)"
                     : "#ffffff",
 
-                  scale: isActive ? 1.025 : 1,
+                  scale:
+                    isActive ? 1.025 : 1,
                 }}
+
                 transition={{
                   duration: 0.28,
                   ease: [0.22, 1, 0.36, 1],
                 }}
+
                 style={{
-                  transformOrigin: `${CX}px ${CY}px`,
+                  transformOrigin:
+                    `${CX}px ${CY}px`,
+
                   cursor: "pointer",
                 }}
+
                 stroke={
                   isActive
                     ? "#2563eb"
                     : "#dbeafe"
                 }
+
                 strokeWidth="2"
+
                 filter={
                   isActive
                     ? "url(#activeGlow)"
                     : undefined
                 }
+
                 onMouseEnter={() =>
                   setActiveProject(
                     sector.projectIndex
@@ -475,84 +597,107 @@ function ProjectDisc({
             );
           })}
 
-          {/* =============================================
+
+          {/* =================================================
               SECTOR TEXT
-          ============================================= */}
+          ================================================= */}
 
           {sectors.map((sector) => {
+
             const project =
               projects[sector.projectIndex];
 
             const isActive =
-              activeProject === sector.projectIndex;
+              activeProject ===
+              sector.projectIndex;
 
             return (
               <g
                 key={`text-${project.id}`}
                 pointerEvents="none"
               >
+
                 <motion.text
                   x={sector.textX}
                   y={sector.textY - 36}
+
                   textAnchor="middle"
+
                   initial={false}
+
                   animate={{
                     fill: isActive
                       ? "#ffffff"
                       : "#2563eb",
                   }}
+
                   transition={{
                     duration: 0.2,
                   }}
+
                   fontSize="21"
                   fontWeight="800"
                 >
                   {project.number}
                 </motion.text>
 
+
                 <motion.text
                   x={sector.textX}
                   y={sector.textY}
+
                   textAnchor="middle"
+
                   initial={false}
+
                   animate={{
                     fill: isActive
                       ? "#ffffff"
                       : "#0f172a",
                   }}
+
                   transition={{
                     duration: 0.2,
                   }}
+
                   fontSize="24"
                   fontWeight="800"
                 >
                   {project.name}
                 </motion.text>
 
+
                 <motion.text
                   x={sector.textX}
                   y={sector.textY + 31}
+
                   textAnchor="middle"
+
                   initial={false}
+
                   animate={{
                     fill: isActive
                       ? "#dbeafe"
                       : "#64748b",
                   }}
+
                   transition={{
                     duration: 0.2,
                   }}
+
                   fontSize="10"
                   fontWeight="700"
                   letterSpacing="2"
                 >
                   {project.short}
                 </motion.text>
+
               </g>
             );
           })}
 
-          {/* center button */}
+
+          {/* CENTER BUTTON */}
 
           <circle
             cx={CX}
@@ -567,19 +712,25 @@ function ProjectDisc({
             r="10"
             fill="#ffffff"
           />
+
         </svg>
+
       </motion.div>
+
     </div>
   );
 }
+
 
 /* =========================================================
    PROJECT CARD
 ========================================================= */
 
 function ProjectCard({ project }) {
+
   return (
     <AnimatePresence mode="wait">
+
       <motion.div
         key={project.id}
 
@@ -607,28 +758,40 @@ function ProjectCard({ project }) {
         }}
 
         className="
-           relative
-  flex
-  min-h-0
-  w-full
-  max-w-[430px]
-  flex-col
-  overflow-hidden
+          relative
+          flex
+          min-h-0
+          w-full
 
-  rounded-[18px]
+          max-w-[360px]
+          sm:max-w-[400px]
+          lg:max-w-[430px]
 
-  border
-  border-blue-100
-  bg-white
+          flex-col
+          overflow-hidden
 
-  px-7
-  pt-7
-  pb-7
+          rounded-[18px]
 
-  shadow-[0_18px_50px_rgba(15,23,42,0.10)]
+          border
+          border-blue-100
+
+          bg-white
+
+          px-5
+          py-6
+
+          sm:px-6
+          sm:py-7
+
+          lg:px-7
+          lg:pt-7
+          lg:pb-7
+
+          shadow-[0_18px_50px_rgba(15,23,42,0.10)]
         "
       >
-        {/* subtle top glow */}
+
+        {/* SUBTLE TOP GLOW */}
 
         <div
           className="
@@ -636,219 +799,317 @@ function ProjectCard({ project }) {
             absolute
             -right-20
             -top-24
-            h-[250px]
-            w-[250px]
+
+            h-[200px]
+            w-[200px]
+
+            sm:h-[220px]
+            sm:w-[220px]
+
+            lg:h-[250px]
+            lg:w-[250px]
+
             rounded-full
             bg-blue-100/45
             blur-[70px]
           "
         />
 
-        {/* =================================================
-            NUMBER
-        ================================================= */}
+
+        {/* NUMBER */}
 
         <div className="relative z-10">
+
           <span
             className="
               inline-flex
-              min-w-[46px]
+
+              min-w-[42px]
+              sm:min-w-[46px]
+
               items-center
               justify-center
+
               rounded-full
               bg-blue-600
+
               px-3
               py-1.5
+
               text-xs
               font-bold
+
               tracking-[0.12em]
+
               text-white
             "
           >
             {project.number}
           </span>
+
         </div>
 
-        {/* =================================================
-            TITLE
-        ================================================= */}
 
-        <div className="relative z-10 mt-5">
-          <h3
-            className="
-              font-serif
-              text-[2rem]
-              font-black
-              leading-[0.95]
-              tracking-tight
-              text-slate-950
-            "
-          >
-            {project.name}
-
-            <ArrowUpRight
-              size={22}
-              weight="bold"
-              className="
-                ml-2
-                inline
-                text-blue-600
-              "
-            />
-          </h3>
-
-          <p
-            className="
-              mt-2
-              max-w-[360px]
-              text-[15px]
-              font-semibold
-              leading-1.3
-              text-blue-600
-            "
-          >
-            {project.title}
-          </p>
-        </div>
-
-        {/* =================================================
-            DATE
-        ================================================= */}
-
-        <span
-  className="
-    mt-1
-    inline-flex
-    rounded-full
-    bg-blue-50
-    px-3
-    py-1
-    text-[13px]
-    font-semibold
-    text-blue-600
-  "
->
-  {project.date}
-</span>
-
-        {/* =================================================
-            TAGS
-        ================================================= */}
+        {/* TITLE */}
 
         <div
           className="
             relative
             z-10
+
             mt-4
-            flex
-            flex-wrap
-            gap-2
+            sm:mt-5
           "
         >
+
+          <h3
+            className="
+              font-serif
+              text-[1.7rem]
+              sm:text-[1.9rem]
+              lg:text-[2rem]
+
+              font-black
+              leading-[0.95]
+
+              tracking-tight
+
+              text-slate-950
+            "
+          >
+
+            {project.name}
+
+            <ArrowUpRight
+              size={20}
+              weight="bold"
+              className="
+                ml-1
+                inline
+                text-blue-600
+              "
+            />
+
+          </h3>
+
+
+          <p
+            className="
+              mt-2
+
+              max-w-[360px]
+
+              text-[14px]
+              sm:text-[15px]
+
+              font-semibold
+
+              leading-6
+
+              text-blue-600
+            "
+          >
+            {project.title}
+          </p>
+
+        </div>
+
+
+        {/* DATE */}
+
+        <span
+          className="
+            mt-2
+
+            inline-flex
+            w-fit
+
+            rounded-full
+
+            bg-blue-50
+
+            px-3
+            py-1
+
+            text-[12px]
+            sm:text-[13px]
+
+            font-semibold
+
+            text-blue-600
+          "
+        >
+          {project.date}
+        </span>
+
+
+        {/* TAGS */}
+
+        <div
+          className="
+            relative
+            z-10
+
+            mt-4
+
+            flex
+            flex-wrap
+
+            gap-1.5
+            sm:gap-2
+          "
+        >
+
           {project.tags.map((tag) => (
+
             <span
               key={tag}
+
               className="
                 rounded-full
+
                 bg-blue-100
-                px-3
-                py-1.5
-                text-[13px]
+
+                px-2.5
+                py-1
+                sm:px-3
+                sm:py-1.5
+
+                text-[11px]
+                sm:text-[13px]
+
                 font-semibold
+
                 text-blue-600
               "
             >
               {tag}
             </span>
+
           ))}
+
         </div>
 
-        {/* =================================================
-            DESCRIPTION
-        ================================================= */}
+
+        {/* DESCRIPTION */}
 
         <p
           className="
             mt-4
-            text-[15px]
+
+            text-[14px]
+            sm:text-[15px]
+
             leading-6
+
             text-slate-600
           "
         >
           {project.description}
         </p>
 
-        {/* =================================================
-            IMPACT
-        ================================================= */}
+
+        {/* IMPACT */}
 
         <div
           className="
             relative
             z-10
-            mt-6
+
+            mt-5
+            sm:mt-6
+
             flex
             items-center
-            gap-4
+
+            gap-3
+            sm:gap-4
+
             rounded-2xl
+
             border
             border-blue-100
+
             bg-blue-50/50
-            px-4
-            py-4
+
+            px-3
+            py-3
+
+            sm:px-4
+            sm:py-4
           "
         >
+
           <div
             className="
               flex
-              h-11
-              w-11
+
+              h-10
+              w-10
+
+              sm:h-11
+              sm:w-11
+
               shrink-0
+
               items-center
               justify-center
+
               rounded-xl
+
               bg-white
+
               text-blue-600
+
               shadow-sm
             "
           >
             <TrendUp
-              size={23}
+              size={21}
               weight="bold"
             />
           </div>
 
+
           <p
             className="
-              text-[15px]
+              text-[13px]
+              sm:text-[15px]
+
               font-bold
+
               leading-5
+
               text-blue-600
             "
           >
             {project.impact}
           </p>
+
         </div>
 
-        {/* pushes buttons towards bottom */}
 
-        
-
-        {/* =================================================
-            BUTTONS
-        ================================================= */}
+        {/* BUTTONS */}
 
         <div
           className="
             relative
             z-10
-            mt-17
+
+            mt-6
+            sm:mt-8
+            lg:mt-17
+
             grid
             grid-cols-2
-            gap-3
+
+            gap-2
+            sm:gap-3
           "
         >
+
           {project.live ? (
+
             <motion.a
               href={project.live}
               target="_blank"
@@ -864,38 +1125,62 @@ function ProjectCard({ project }) {
 
               className="
                 group
+
                 flex
-                h-[38px]
+                h-[36px]
+                sm:h-[38px]
+
                 items-center
                 justify-center
-                gap-2
+
+                gap-1.5
+                sm:gap-2
+
                 rounded-2xl
+
                 bg-blue-600
-                px-5
-                text-sm
+
+                px-2
+                sm:px-5
+
+                text-xs
+                sm:text-sm
+
                 font-bold
+
                 text-white
+
                 shadow-[0_12px_30px_rgba(37,99,235,0.25)]
+
                 transition-colors
+
                 hover:bg-blue-700
               "
             >
+
               Live Project
 
               <ArrowUpRight
-                size={18}
+                size={16}
                 weight="bold"
+
                 className="
                   transition-transform
                   duration-300
+
                   group-hover:translate-x-1
                   group-hover:-translate-y-1
                 "
               />
+
             </motion.a>
+
           ) : (
+
             <div />
+
           )}
+
 
           <motion.a
             href={project.github}
@@ -912,128 +1197,196 @@ function ProjectCard({ project }) {
 
             className="
               group
+
               flex
-              h-[38px]
+              h-[36px]
+              sm:h-[38px]
+
               items-center
               justify-center
-              gap-2
+
+              gap-1.5
+              sm:gap-2
+
               rounded-2xl
+
               border
               border-blue-200
+
               bg-white
-              px-5
-              text-sm
+
+              px-2
+              sm:px-5
+
+              text-xs
+              sm:text-sm
+
               font-bold
+
               text-blue-600
+
               transition-all
+
               hover:border-blue-600
               hover:bg-blue-50
             "
           >
+
             <GithubLogo
-              size={20}
+              size={18}
               weight="bold"
             />
 
             GitHub
 
             <ArrowUpRight
-              size={17}
+              size={15}
               weight="bold"
+
               className="
                 transition-transform
                 duration-300
+
                 group-hover:translate-x-1
                 group-hover:-translate-y-1
               "
             />
+
           </motion.a>
+
         </div>
+
       </motion.div>
+
     </AnimatePresence>
   );
 }
+
 
 /* =========================================================
    LEFT CONTENT
 ========================================================= */
 
 function ProjectsIntro() {
+
   return (
+
     <motion.div
       initial={{
         opacity: 0,
         x: -50,
       }}
+
       whileInView={{
         opacity: 1,
         x: 0,
       }}
+
       viewport={{
         once: true,
       }}
+
       transition={{
         duration: 0.7,
       }}
-      className="
-  relative
-  z-20
-  flex
-  flex-col
-  justify-center
 
-  translate-x-[20px]
-  xl:translate-x-[40px]
-"
+      className="
+        relative
+        z-20
+
+        flex
+        flex-col
+        justify-center
+
+        translate-x-0
+
+        lg:translate-x-[20px]
+        xl:translate-x-[40px]
+      "
     >
+
       <div
         className="
           mb-5
+
           inline-flex
           w-fit
+
           rounded-full
+
           bg-blue-100
+
           px-4
           py-1.5
+
           shadow-sm
         "
       >
+
         <span
           className="
             text-xs
             font-bold
+
             uppercase
+
             tracking-[0.35em]
+
             text-blue-700
           "
         >
           Projects
         </span>
+
       </div>
+
 
       <h2
         className="
           font-serif
-          text-[4.8rem]
-          font-black
-          leading-[0.82]
-          tracking-[-0.045em]
-          text-slate-950
+
+          text-[3.5rem]
+
+          sm:text-[4rem]
+
+          lg:text-[4.8rem]
+
           xl:text-[5.5rem]
+
+          font-black
+
+          leading-[0.82]
+
+          tracking-[-0.045em]
+
+          text-slate-950
         "
       >
+
         Featured
         <br />
+
         Projects
-        <span className="text-blue-600">.</span>
+
+        <span className="text-blue-600">
+          .
+        </span>
+
       </h2>
+
 
       <p
         className="
           mt-5
+
           max-w-[360px]
-          text-[18px]
-          leading-9
+
+          text-[16px]
+          sm:text-[18px]
+
+          leading-8
+          sm:leading-9
+
           text-slate-600
         "
       >
@@ -1043,82 +1396,115 @@ function ProjectsIntro() {
         allocation.
       </p>
 
-      {/* mini stat */}
+
+      {/* MINI STAT */}
 
       <div
         className="
           mt-7
+
           flex
           w-fit
+
           items-center
+
           overflow-hidden
+
           rounded-xl
+
           border
           border-slate-200
+
           bg-white
+
           shadow-sm
         "
       >
+
         <div
           className="
             flex
-            h-62px
+
+            h-[62px]
+
             items-center
+
             border-r
             border-slate-200
-            px-10
-            pl-5
+
+            px-5
           "
         >
+
           <span
             className="
               text-3xl
+
               font-black
+
               text-blue-600
             "
           >
             03
           </span>
+
         </div>
 
+
         <div className="px-4">
+
           <p
             className="
               text-sm
+
               font-bold
+
               text-slate-900
             "
           >
             Featured systems
           </p>
+
         </div>
+
       </div>
+
     </motion.div>
   );
 }
+
 
 /* =========================================================
    MAIN FEATURED PROJECTS SECTION
 ========================================================= */
 
 export default function FeaturedProjects() {
+
   const [activeProject, setActiveProject] =
     useState(0);
 
+
   return (
+
     <section
       id="projects"
+
       className="
         relative
+
         min-h-screen
+
         w-full
+
         overflow-hidden
+
         bg-gradient-to-br
         from-white
         via-slate-50/40
         to-blue-50/30
       "
     >
+
       {/* =================================================
           BACKGROUND DECORATION
       ================================================= */}
@@ -1126,46 +1512,66 @@ export default function FeaturedProjects() {
       <div
         className="
           pointer-events-none
+
           absolute
+
           -left-[280px]
           bottom-[-260px]
+
           h-[700px]
           w-[700px]
+
           rounded-full
+
           border
           border-blue-100
         "
       />
 
+
       <div
         className="
           pointer-events-none
+
           absolute
+
           -right-[230px]
           -top-[330px]
+
           h-[700px]
           w-[700px]
+
           rounded-full
+
           border
           border-blue-100
         "
       />
 
+
       <div
         className="
           pointer-events-none
+
           absolute
+
           left-1/2
           top-1/2
+
           h-[800px]
           w-[800px]
+
           -translate-x-1/2
           -translate-y-1/2
+
           rounded-full
+
           bg-blue-100/20
+
           blur-[120px]
         "
       />
+
 
       {/* =================================================
           MAIN GRID
@@ -1175,90 +1581,165 @@ export default function FeaturedProjects() {
         className="
           relative
           z-10
+
           mx-auto
+
           grid
+
           min-h-screen
+
           w-full
+
           max-w-[1750px]
+
           grid-cols-1
+
           items-center
-          gap-10
-          px-6
-          py-16
+
+          gap-8
+
+          px-4
+
+          py-10
+
+          sm:px-6
+          sm:py-12
+
           md:px-10
+          md:py-16
 
           lg:grid-cols-[0.82fr_1.22fr_0.96fr]
+
+          lg:gap-10
           lg:px-8
 
           xl:grid-cols-[0.80fr_1.18fr_0.95fr]
+
           xl:gap-12
         "
       >
+
         {/* LEFT */}
 
         <ProjectsIntro />
+
 
         {/* CENTER */}
 
         <div
           className="
             relative
+
             flex
             flex-col
+
             items-center
             justify-center
+
+            /* Mobile:
+               keep the disc compact.
+            */
+
+            -mt-2
+
+            sm:-mt-4
+
+            md:mt-0
           "
         >
+
           <ProjectDisc
             activeProject={activeProject}
             setActiveProject={setActiveProject}
           />
 
+
           <motion.div
             animate={{
               opacity: [0.55, 1, 0.55],
             }}
+
             transition={{
               duration: 2.5,
               repeat: Infinity,
             }}
+
             className="
-              mt-16
+              mt-3
+
+              sm:mt-5
+
+              md:mt-8
+
+              lg:mt-16
+
               flex
+
               items-center
-              gap-3
-              text-xs
+
+              gap-2
+              sm:gap-3
+
+              text-[9px]
+              sm:text-[10px]
+              md:text-xs
+
               font-bold
+
               uppercase
-              tracking-[0.32em]
+
+              tracking-[0.2em]
+              sm:tracking-[0.28em]
+              lg:tracking-[0.32em]
+
               text-slate-400
             "
           >
+
             <span className="text-blue-600">
               ✦
             </span>
 
             Hover to explore
+
           </motion.div>
+
         </div>
+
 
         {/* RIGHT CARD */}
 
-        <div
-          className="
-            relative
-            z-20
-            flex
-            items-center
-            justify-center
-            lg:justify-start
-          "
-        >
-          <ProjectCard
-            project={projects[activeProject]}
-          />
-        </div>
+<div
+  className="
+    relative
+    z-20
+
+    flex
+    items-center
+    justify-center
+
+    lg:justify-start
+
+    /* MOBILE:
+       pull card upward */
+    -translate-y-5
+
+    sm:-translate-y-12
+
+    md:-translate-y-8
+
+    /* DESKTOP:
+       absolutely preserve existing layout */
+    lg:translate-y-0
+  "
+>
+  <ProjectCard
+    project={projects[activeProject]}
+  />
+</div>
+
       </div>
+
     </section>
   );
 }

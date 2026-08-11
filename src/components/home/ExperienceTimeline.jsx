@@ -245,13 +245,6 @@ function ExperienceCard({ experience, side }) {
         duration: 0.45,
         ease: [0.22, 1, 0.36, 1],
       }}
-
-      /*
-       * IMPORTANT:
-       * No Y movement.
-       * Therefore BHU will NOT move upward
-       * into the Experience Timeline heading.
-       */
       whileHover={{
         scale: 1.012,
       }}
@@ -259,20 +252,32 @@ function ExperienceCard({ experience, side }) {
         group
         relative
         z-10
+
         w-full
+
         max-w-[470px]
+
         overflow-hidden
         rounded-[16px]
         border
         border-blue-100
         bg-white/95
+
         p-4
+
         shadow-[0_15px_40px_rgba(15,23,42,0.07)]
+
         backdrop-blur-xl
+
         transition-shadow
         duration-300
+
         hover:z-30
         hover:shadow-[0_20px_50px_rgba(37,99,235,0.13)]
+
+        /* MOBILE ONLY */
+        sm:max-w-[500px]
+        sm:p-4
       "
     >
       {/* HOVER GLOW */}
@@ -283,234 +288,222 @@ function ExperienceCard({ experience, side }) {
           absolute
           -right-16
           -top-16
-
           h-32
           w-32
-
           rounded-full
-
           bg-blue-400/0
           blur-3xl
-
           transition-all
           duration-500
-
           group-hover:bg-blue-400/10
         "
       />
 
       {/* CARD CONTENT */}
 
-<div className="relative z-10 flex h-full gap-4">
+      <div className="relative z-10 flex h-full gap-4">
 
-  {/* LOGO */}
+        {/* LOGO */}
 
-  <motion.div
-    whileHover={{
-      scale: 1.04,
-      rotate: -2,
-    }}
-    transition={{
-      type: "spring",
-      stiffness: 280,
-      damping: 18,
-    }}
-    className="
-      flex
-      h-[64px]
-      w-[64px]
-      shrink-0
-      items-center
-      justify-center
-      overflow-hidden
-      rounded-xl
-      border
-      border-blue-100
-      bg-gradient-to-br
-      from-blue-50
-      to-slate-50
-      p-2
-      shadow-sm
-    "
-  >
-    <img
-      src={experience.logo}
-      alt={`${experience.company} logo`}
-      className="h-full w-full object-contain"
-    />
-  </motion.div>
-
-
-  {/* RIGHT CONTENT */}
-
-  <div className="flex min-w-0 flex-1 flex-col">
-
-    {/* ID */}
-
-    <span
-      className="
-        mb-1
-        inline-flex
-        w-fit
-        rounded-full
-        bg-blue-600
-        px-2.5
-        py-[2px]
-        text-[10px]
-        font-bold
-        tracking-wider
-        text-white
-      "
-    >
-      {experience.id}
-    </span>
-
-
-    {/* COMPANY */}
-
-    <h3
-      className="
-        max-w-[380px]
-        text-[17px]
-        font-bold
-        leading-[1.1]
-        tracking-[-0.02em]
-        text-slate-950
-      "
-    >
-      {experience.company}
-    </h3>
-
-
-    {/* ROLE */}
-
-    <p
-      className="
-        mt-1
-        text-[14px]
-        font-semibold
-        leading-tight
-        text-blue-600
-      "
-    >
-      {experience.role}
-    </p>
-
-
-    {/* DATE */}
-
-    <div
-      className="
-        mt-2
-        flex
-        flex-wrap
-        items-center
-        gap-x-2.5
-        gap-y-1
-        text-[11.5px]
-        text-slate-600
-      "
-    >
-      <span className="flex items-center gap-1">
-        <CalendarBlank size={14} />
-        {experience.date}
-      </span>
-
-      <span className="h-1 w-1 rounded-full bg-slate-400" />
-
-      <span className="flex items-center gap-1">
-        <Clock size={14} />
-        {experience.duration}
-      </span>
-    </div>
-
-
-    {/* LOCATION */}
-
-    {(experience.location || experience.mode) && (
-      <div
-        className="
-          mt-1
-          flex
-          flex-wrap
-          items-center
-          gap-x-2.5
-          gap-y-1
-          text-[11.5px]
-          text-slate-600
-        "
-      >
-        {experience.location && (
-          <span className="flex items-center gap-1">
-            <MapPin size={14} />
-            {experience.location}
-          </span>
-        )}
-
-        {experience.location && experience.mode && (
-          <span className="h-1 w-1 rounded-full bg-slate-400" />
-        )}
-
-        {experience.mode && (
-          <span className="flex items-center gap-1">
-            <Buildings size={14} />
-            {experience.mode}
-          </span>
-        )}
-      </div>
-    )}
-
-
-    {/* DIVIDER */}
-
-    <div
-      className="
-        my-2
-        h-px
-        w-full
-        bg-gradient-to-r
-        from-blue-100
-        via-slate-200
-        to-transparent
-      "
-    />
-
-
-    {/* DESCRIPTION */}
-
-    <p
-      className="
-        text-[12.5px]
-        leading-[1.45]
-        text-slate-700
-      "
-    >
-      {experience.description}
-    </p>
-
-
-    {/* METRICS */}
-
-    <div className="mt-auto pt-3">
-      <div className="flex gap-2.5">
-        {experience.metrics.map((metric, index) => (
-          <MetricBox
-            key={metric.label}
-            metric={metric}
-            index={index}
+        <motion.div
+          whileHover={{
+            scale: 1.04,
+            rotate: -2,
+          }}
+          transition={{
+            type: "spring",
+            stiffness: 280,
+            damping: 18,
+          }}
+          className="
+            flex
+            h-[64px]
+            w-[64px]
+            shrink-0
+            items-center
+            justify-center
+            overflow-hidden
+            rounded-xl
+            border
+            border-blue-100
+            bg-gradient-to-br
+            from-blue-50
+            to-slate-50
+            p-2
+            shadow-sm
+          "
+        >
+          <img
+            src={experience.logo}
+            alt={`${experience.company} logo`}
+            className="h-full w-full object-contain"
           />
-        ))}
-      </div>
-    </div>
+        </motion.div>
 
-  </div>
-</div>
+        {/* RIGHT CONTENT */}
+
+        <div className="flex min-w-0 flex-1 flex-col">
+
+          {/* ID */}
+
+          <span
+            className="
+              mb-1
+              inline-flex
+              w-fit
+              rounded-full
+              bg-blue-600
+              px-2.5
+              py-[2px]
+              text-[10px]
+              font-bold
+              tracking-wider
+              text-white
+            "
+          >
+            {experience.id}
+          </span>
+
+          {/* COMPANY */}
+
+          <h3
+            className="
+              max-w-[380px]
+              text-[17px]
+              font-bold
+              leading-[1.1]
+              tracking-[-0.02em]
+              text-slate-950
+            "
+          >
+            {experience.company}
+          </h3>
+
+          {/* ROLE */}
+
+          <p
+            className="
+              mt-1
+              text-[14px]
+              font-semibold
+              leading-tight
+              text-blue-600
+            "
+          >
+            {experience.role}
+          </p>
+
+          {/* DATE */}
+
+          <div
+            className="
+              mt-2
+              flex
+              flex-wrap
+              items-center
+              gap-x-2.5
+              gap-y-1
+              text-[11.5px]
+              text-slate-600
+            "
+          >
+            <span className="flex items-center gap-1">
+              <CalendarBlank size={14} />
+              {experience.date}
+            </span>
+
+            <span className="h-1 w-1 rounded-full bg-slate-400" />
+
+            <span className="flex items-center gap-1">
+              <Clock size={14} />
+              {experience.duration}
+            </span>
+          </div>
+
+          {/* LOCATION */}
+
+          {(experience.location || experience.mode) && (
+            <div
+              className="
+                mt-1
+                flex
+                flex-wrap
+                items-center
+                gap-x-2.5
+                gap-y-1
+                text-[11.5px]
+                text-slate-600
+              "
+            >
+              {experience.location && (
+                <span className="flex items-center gap-1">
+                  <MapPin size={14} />
+                  {experience.location}
+                </span>
+              )}
+
+              {experience.location && experience.mode && (
+                <span className="h-1 w-1 rounded-full bg-slate-400" />
+              )}
+
+              {experience.mode && (
+                <span className="flex items-center gap-1">
+                  <Buildings size={14} />
+                  {experience.mode}
+                </span>
+              )}
+            </div>
+          )}
+
+          {/* DIVIDER */}
+
+          <div
+            className="
+              my-2
+              h-px
+              w-full
+              bg-gradient-to-r
+              from-blue-100
+              via-slate-200
+              to-transparent
+            "
+          />
+
+          {/* DESCRIPTION */}
+
+          <p
+            className="
+              text-[12.5px]
+              leading-[1.45]
+              text-slate-700
+            "
+          >
+            {experience.description}
+          </p>
+
+          {/* METRICS */}
+
+          <div className="mt-auto pt-3">
+            <div className="flex gap-2.5">
+              {experience.metrics.map((metric, index) => (
+                <MetricBox
+                  key={metric.label}
+                  metric={metric}
+                  index={index}
+                />
+              ))}
+            </div>
+          </div>
+
+        </div>
+      </div>
     </motion.article>
   );
 }
 
 /* =========================================================
    TIMELINE NODE
+   DESKTOP ONLY — UNCHANGED
 ========================================================= */
 
 function TimelineNode({ index }) {
@@ -544,12 +537,9 @@ function TimelineNode({ index }) {
         className="
           absolute
           -inset-3
-
           rounded-full
-
           border
           border-blue-400
-
           bg-blue-400/10
         "
       />
@@ -560,9 +550,7 @@ function TimelineNode({ index }) {
         className="
           absolute
           -inset-4
-
           rounded-full
-
           bg-blue-500/15
           blur-xl
         "
@@ -590,20 +578,15 @@ function TimelineNode({ index }) {
         }}
         className="
           relative
-
           flex
           h-8
           w-8
           items-center
           justify-center
-
           rounded-full
-
           border-[3px]
           border-blue-300
-
           bg-blue-600
-
           shadow-[0_0_20px_rgba(37,99,235,0.55)]
         "
       >
@@ -621,7 +604,8 @@ function TimelineNode({ index }) {
 }
 
 /* =========================================================
-   CONNECTOR
+   DESKTOP CONNECTOR
+   UNCHANGED
 ========================================================= */
 
 function Connector({ side }) {
@@ -668,6 +652,13 @@ function Connector({ side }) {
 }
 
 /* =========================================================
+   MOBILE CONNECTOR
+   NEW — ONLY BELOW lg
+========================================================= */
+
+
+
+/* =========================================================
    MAIN EXPERIENCE TIMELINE
 ========================================================= */
 
@@ -698,14 +689,29 @@ export default function ExperienceTimeline() {
         via-slate-50
         to-blue-50/50
 
-        px-6
-        py-8
+        /* MOBILE */
+        px-4
+        pt-10
+        pb-14
+
+        /* TABLET */
+        sm:px-6
+        sm:pt-12
+        sm:pb-16
 
         md:px-10
+        md:pt-14
+        md:pb-20
+
+        /* DESKTOP — KEEPING ORIGINAL */
         lg:px-16
+        lg:pt-8
+        lg:pb-8
+
         xl:px-20
       "
     >
+
       {/* ===================================================
           BACKGROUND
       =================================================== */}
@@ -796,9 +802,7 @@ export default function ExperienceTimeline() {
             className="
               h-[2px]
               w-[2px]
-
               rounded-full
-
               bg-blue-500
             "
           />
@@ -818,6 +822,11 @@ export default function ExperienceTimeline() {
 
           max-w-[1120px]
 
+          /* MOBILE */
+          mb-7
+
+          /* DESKTOP ORIGINAL */
+          lg:mb-0
           lg:translate-x-[90px]
           xl:translate-x-[120px]
         "
@@ -844,20 +853,27 @@ export default function ExperienceTimeline() {
             items-center
             justify-center
 
-            gap-[12px]
+            gap-[8px]
 
-            translate-x-[100px]
+            /* IMPORTANT:
+               no giant horizontal translation on mobile
+            */
+            translate-x-0
 
             font-serif
 
-            text-4xl
+            text-[2.45rem]
             font-bold
             leading-none
             tracking-[-0.045em]
 
             text-slate-950
 
+            sm:text-5xl
             md:text-5xl
+
+            /* ORIGINAL DESKTOP */
+            lg:translate-x-[100px]
           "
         >
           <span>Experience</span>
@@ -872,24 +888,40 @@ export default function ExperienceTimeline() {
           TIMELINE
       =================================================== */}
 
+      
       <div
-        className="
-          relative
-          z-10
+  className="
+    relative
+    z-10
 
-          mx-auto
+    mx-auto
 
-          mt-5
+    /* GAP: Experience Timeline heading → first card */
+    mt-20
+    sm:mt-24
+    md:mt-28
 
-          max-w-[1120px]
+    w-full
+    max-w-[1120px]
 
-          pb-3
+    px-2
 
-          lg:translate-x-[300px]
-          xl:translate-x-[200px]
-        "
-      >
-        {/* STATIC CENTER LINE */}
+    pb-16
+
+    /* EXTRA HEIGHT FOR MOBILE/TABLET */
+    min-h-[1000px]
+
+    /* DESKTOP — COMPLETELY UNCHANGED */
+    lg:mt-5
+    lg:min-h-0
+    lg:px-0
+    lg:pb-3
+
+    lg:translate-x-[300px]
+    xl:translate-x-[200px]
+  "
+>
+        {/* STATIC CENTER LINE — DESKTOP ONLY */}
 
         <div
           className="
@@ -910,7 +942,7 @@ export default function ExperienceTimeline() {
           "
         />
 
-        {/* SCROLL PROGRESS LINE */}
+        {/* SCROLL PROGRESS LINE — DESKTOP ONLY */}
 
         <motion.div
           style={{
@@ -942,110 +974,264 @@ export default function ExperienceTimeline() {
         />
 
         {/* =================================================
-            EXPERIENCE ROWS
-        ================================================= */}
+    EXPERIENCE ROWS
+================================================= */}
+
+<div
+  className="
+    /* MOBILE / TABLET */
+    flex
+    flex-col
+    gap-14
+    px-4
+
+    /* DESKTOP — UNCHANGED */
+    lg:space-y-3
+    lg:gap-0
+    lg:px-0
+  "
+>
+  {experiences.map((experience, index) => {
+    const side =
+      index % 2 === 0
+        ? "left"
+        : "right";
+
+    return (
+      <div
+        key={experience.id}
+        className="
+          relative
+
+          /* MOBILE / TABLET */
+          flex
+          w-full
+          justify-center
+
+          /* DESKTOP — ORIGINAL STRUCTURE */
+          lg:grid
+          lg:grid-cols-[1fr_76px_1fr]
+          lg:items-start
+        "
+      >
+
+        {/* =========================================
+            MOBILE CONNECTOR AREA
+        ========================================= */}
+
+        {index < experiences.length - 1 && (
+          <motion.div
+            initial={{
+              scaleY: 0,
+              opacity: 0,
+            }}
+            whileInView={{
+              scaleY: 1,
+              opacity: 1,
+            }}
+            viewport={{
+              once: true,
+              amount: 0.4,
+            }}
+            transition={{
+              duration: 0.6,
+              delay: 0.15,
+              ease: [0.22, 1, 0.36, 1],
+            }}
+            className="
+              pointer-events-none
+
+              absolute
+              left-1/2
+              top-full
+
+              z-20
+
+              h-14
+              w-[2px]
+
+              -translate-x-1/2
+              origin-top
+
+              bg-gradient-to-b
+              from-blue-600
+              via-blue-400
+              to-blue-200
+
+              shadow-[0_0_12px_rgba(37,99,235,0.45)]
+
+              lg:hidden
+            "
+          />
+        )}
+
+        {/* =========================================
+            MOBILE TIMELINE NODE
+        ========================================= */}
+
+        {index < experiences.length - 1 && (
+          <motion.div
+            initial={{
+              scale: 0,
+              opacity: 0,
+            }}
+            whileInView={{
+              scale: 1,
+              opacity: 1,
+            }}
+            viewport={{
+              once: true,
+              amount: 0.5,
+            }}
+            transition={{
+              type: "spring",
+              stiffness: 260,
+              damping: 16,
+              delay: 0.2,
+            }}
+            className="
+              pointer-events-none
+
+              absolute
+              left-1/2
+              top-full
+
+              z-30
+
+              mt-[22px]
+
+              flex
+              h-8
+              w-8
+
+              -translate-x-1/2
+
+              items-center
+              justify-center
+
+              rounded-full
+
+              border-[3px]
+              border-blue-300
+
+              bg-blue-600
+
+              shadow-[0_0_20px_rgba(37,99,235,0.55)]
+
+              lg:hidden
+            "
+          >
+            <div
+              className="
+                h-2.5
+                w-2.5
+                rounded-full
+                bg-white
+              "
+            />
+          </motion.div>
+        )}
+
+        {/* =========================================
+            LEFT CARD
+        ========================================= */}
+
+        {side === "left" ? (
+          <div
+            className="
+              /* MOBILE / TABLET */
+              flex
+              w-full
+              justify-center
+
+              /* DESKTOP — ORIGINAL */
+              lg:justify-end
+              lg:pr-6
+            "
+          >
+            <div
+              className="
+                /* MOBILE / TABLET */
+                w-full
+                max-w-[500px]
+
+                /* DESKTOP — ORIGINAL */
+                lg:max-w-[440px]
+              "
+            >
+              <ExperienceCard
+                experience={experience}
+                side="left"
+              />
+            </div>
+          </div>
+        ) : (
+          <div className="hidden lg:block" />
+        )}
+
+        {/* =========================================
+            CENTER — DESKTOP ONLY
+        ========================================= */}
 
         <div
           className="
-            space-y-5
-            lg:space-y-3
+            relative
+            hidden
+            h-full
+            lg:block
           "
         >
-          {experiences.map((experience, index) => {
-            const side =
-              index % 2 === 0
-                ? "left"
-                : "right";
-
-            return (
-              <div
-                key={experience.id}
-                className="
-                  relative
-
-                  grid
-                  grid-cols-1
-
-                  items-start
-
-                  lg:grid-cols-[1fr_76px_1fr]
-                "
-              >
-                {/* LEFT CARD */}
-
-                {side === "left" ? (
-                  <div
-                    className="
-                      flex
-                      justify-end
-                      pr-6
-                    "
-                  >
-                    <div
-                      className="
-                        w-full
-                        max-w-[440px]
-                      "
-                    >
-                      <ExperienceCard
-                        experience={experience}
-                        side="left"
-                      />
-                    </div>
-                  </div>
-                ) : (
-                  <div />
-                )}
-
-                {/* CENTER */}
-
-                <div
-                  className="
-                    relative
-                    hidden
-                    h-full
-                    lg:block
-                  "
-                >
-                  <TimelineNode index={index} />
-                </div>
-
-                {/* RIGHT CARD */}
-
-                {side === "right" ? (
-                  <div
-                    className="
-                      flex
-                      justify-start
-                      pl-6
-                    "
-                  >
-                    <div
-                      className="
-                        w-full
-                        max-w-[440px]
-                      "
-                    >
-                      <ExperienceCard
-                        experience={experience}
-                        side="right"
-                      />
-                    </div>
-                  </div>
-                ) : (
-                  <div />
-                )}
-
-                {/* CONNECTOR */}
-
-                <Connector side={side} />
-              </div>
-            );
-          })}
+          <TimelineNode index={index} />
         </div>
 
+        {/* =========================================
+            RIGHT CARD
+        ========================================= */}
+
+        {side === "right" ? (
+          <div
+            className="
+              /* MOBILE / TABLET */
+              flex
+              w-full
+              justify-center
+
+              /* DESKTOP — ORIGINAL */
+              lg:justify-start
+              lg:pl-6
+            "
+          >
+            <div
+              className="
+                /* MOBILE / TABLET */
+                w-full
+                max-w-[500px]
+
+                /* DESKTOP — ORIGINAL */
+                lg:max-w-[440px]
+              "
+            >
+              <ExperienceCard
+                experience={experience}
+                side="right"
+              />
+            </div>
+          </div>
+        ) : (
+          <div className="hidden lg:block" />
+        )}
+
+        {/* =========================================
+            DESKTOP CONNECTOR — ORIGINAL
+        ========================================= */}
+
+        <Connector side={side} />
+      </div>
+    );
+  })}
+</div>
         {/* =================================================
-            END NODE
+            END NODE — DESKTOP ONLY
         ================================================= */}
 
         <motion.div
@@ -1086,6 +1272,7 @@ export default function ExperienceTimeline() {
             lg:block
           "
         />
+
       </div>
     </section>
   );

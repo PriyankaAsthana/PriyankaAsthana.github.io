@@ -45,7 +45,8 @@ export default function StatusCard() {
       }}
       className="
         relative
-
+        w-full
+        max-w-[390px]
         overflow-hidden
 
         rounded-[10px]

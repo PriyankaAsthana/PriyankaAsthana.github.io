@@ -206,21 +206,38 @@ function restartArchive() {
             MAIN LAYOUT
       ====================================== */}
 
-      <div
+      {/* ======================================
+    MAIN LAYOUT
+====================================== */}
+
+<div
   className="
     relative
     z-20
     mx-auto
-    mt-24
 
-    min-h-[680px]
+    mt-16
+
+    w-full
     max-w-[1650px]
 
     origin-top
+
+    /* MOBILE */
+    min-h-[550px]
     scale-[0.72]
 
+    /* SMALL TABLET */
+    sm:min-h-[540px]
     sm:scale-[0.82]
+
+    /* TABLET */
+    md:min-h-[600px]
     md:scale-[0.90]
+
+    /* DESKTOP — KEEP EXACTLY AS BEFORE */
+    lg:mt-24
+    lg:min-h-[680px]
     lg:scale-100
   "
 >
@@ -256,8 +273,7 @@ function restartArchive() {
 <div
   className="
     absolute
-
-    left-1/2
+    left-[calc(53%+18px)]
     top-[90px]
 
     z-30
@@ -269,6 +285,8 @@ function restartArchive() {
 
     -translate-x-1/2
 
+    /* DESKTOP — KEEP EXACTLY AS BEFORE */
+    lg:left-1/2
     lg:-translate-x-[228px]
   "
 >

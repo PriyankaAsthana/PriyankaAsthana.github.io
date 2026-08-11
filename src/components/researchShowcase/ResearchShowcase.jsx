@@ -54,7 +54,12 @@ function ResearchShowcase() {
             className="
               relative
               w-full
-              min-h-[780px]
+
+              min-h-[1050px]
+              sm:min-h-[980px]
+              md:min-h-[900px]
+              lg:min-h-[780px]
+
               overflow-hidden
 
               bg-gradient-to-br
@@ -63,9 +68,9 @@ function ResearchShowcase() {
               to-blue-50/30
             "
           >
+
             {/* ================================= */}
             {/* GRAPH */}
-            {/* NOW BEHIND THE ENTIRE COVER */}
             {/* ================================= */}
 
             <AnimatedKnowledgeGraph />
@@ -74,7 +79,19 @@ function ResearchShowcase() {
             {/* RESEARCH CONTENT */}
             {/* ================================= */}
 
-            <div className="relative z-10">
+            <div
+              className="
+                relative
+                z-10
+
+                w-full
+
+                px-4
+                sm:px-6
+                md:px-8
+                lg:px-0
+              "
+            >
               <Overview />
             </div>
 
@@ -88,11 +105,20 @@ function ResearchShowcase() {
                 z-20
 
                 flex
-                h-[220px]
                 w-full
+
+                h-[180px]
+                sm:h-[190px]
+                md:h-[205px]
+                lg:h-[220px]
 
                 items-end
                 justify-center
+
+                pb-6
+                sm:pb-7
+                md:pb-8
+                lg:pb-0
               "
             >
               <BookSpine
@@ -130,6 +156,7 @@ function ResearchShowcase() {
             className="
               min-h-screen
               w-full
+              overflow-hidden
             "
           >
             <ResearchPaperOne
@@ -169,6 +196,7 @@ function ResearchShowcase() {
             className="
               min-h-screen
               w-full
+              overflow-hidden
             "
           >
             <ResearchPaperTwo
@@ -208,6 +236,7 @@ function ResearchShowcase() {
             className="
               min-h-screen
               w-full
+              overflow-hidden
             "
           >
             <ResearchPaperThree

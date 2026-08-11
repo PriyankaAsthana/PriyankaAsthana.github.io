@@ -2,7 +2,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import {
   ArrowLeft,
   ArrowRight,
-  X
+  X,
 } from "@phosphor-icons/react";
 
 export default function Navigation({
@@ -17,174 +17,185 @@ export default function Navigation({
 }) {
   return (
     <>
-      {/* PREVIOUS */}
+      {/* =====================================================
+          PREVIOUS
+          MOBILE:
+          Sits immediately beside the LEFT edge of certificate
+
+          DESKTOP:
+          EXACT SAME POSITION AS BEFORE
+      ===================================================== */}
 
       <AnimatePresence>
-
         {showPrevious && (
-
           <motion.button
-
             initial={{
               opacity: 0,
               x: -30,
               scale: 0.8,
             }}
-
             animate={{
               opacity: 1,
               x: 0,
               scale: 1,
             }}
-
             exit={{
               opacity: 0,
               x: -30,
               scale: 0.8,
             }}
-
             transition={{
               type: "spring",
               stiffness: 260,
               damping: 22,
             }}
-
             whileHover={{
               scale: 1.08,
               y: -3,
             }}
-
             whileTap={{
               scale: 0.94,
             }}
-
             onClick={onPrevious}
-
             className="
               absolute
-              left-[calc(50%-340px)]
-              top-1/2
               z-[90]
 
-              -translate-x-full
+              /* =========================
+                 MOBILE / TABLET
+              ========================= */
+
+              left-[calc(50%-285px)]
+              top-[340px]
+
+              -translate-x-1/2
               -translate-y-1/2
 
               flex
-              h-16
-              w-16
+              h-14
+              w-14
               items-center
               justify-center
 
               rounded-full
-
               border
               border-blue-200
 
-              bg-white/90
-
+              bg-white/95
               backdrop-blur-xl
 
               shadow-[0_18px_45px_rgba(37,99,235,.14)]
+
+              /* =========================
+                 DESKTOP — UNCHANGED
+              ========================= */
+
+              lg:left-[calc(50%-340px)]
+              lg:top-1/2
+
+              lg:h-16
+              lg:w-16
             "
           >
-            <motion.div
-              whileHover={{ x: -2 }}
-            >
+            <motion.div whileHover={{ x: -2 }}>
               <ArrowLeft
                 size={26}
                 weight="bold"
                 className="text-blue-600"
               />
             </motion.div>
-
           </motion.button>
-
         )}
-
       </AnimatePresence>
 
-      {/* NEXT */}
+
+      {/* =====================================================
+          NEXT
+          MOBILE:
+          Sits immediately beside the RIGHT edge of certificate
+
+          DESKTOP:
+          ORIGINAL POSITIONING IS PRESERVED
+      ===================================================== */}
 
       <AnimatePresence>
-
         {showNext && (
-
           <motion.button
-
             initial={{
               opacity: 0,
               x: 30,
               scale: 0.8,
             }}
-
             animate={{
               opacity: 1,
               x: 0,
               scale: 1,
             }}
-
             exit={{
               opacity: 0,
               x: 30,
               scale: 0.8,
             }}
-
             transition={{
               type: "spring",
               stiffness: 260,
               damping: 22,
             }}
-
             whileHover={{
               scale: 1.08,
               y: -3,
             }}
-
             whileTap={{
               scale: 0.94,
             }}
-
             onClick={() => {
+              if (isLastCertificate) {
+                onFinish();
+                return;
+              }
 
-  if (isLastCertificate) {
-    onFinish();
-    return;
-  }
-
-  onNext();
-
-}}
-
-
+              onNext();
+            }}
             className="
-  absolute
-  top-1/2
-  z-[90]
+              absolute
+              z-[90]
 
-  -translate-y-1/2
+              /* =========================
+                 MOBILE / TABLET
+              ========================= */
 
-  flex
-  h-16
-  w-16
+              left-[calc(50%+285px)]
+              top-[340px]
 
-  items-center
-  justify-center
+              -translate-x-1/2
+              -translate-y-1/2
 
-  rounded-full
+              flex
+              h-14
+              w-14
+              items-center
+              justify-center
 
-  bg-gradient-to-br
-  from-blue-600
-  to-blue-500
+              rounded-full
 
-  text-white
+              bg-gradient-to-br
+              from-blue-600
+              to-blue-500
 
-  shadow-[0_22px_60px_rgba(37,99,235,.32)]
-"
-style={{
-  left: viewingCertificate
-    ? "calc(50% + 340px)"
-    : "calc(100% - 110px)",
-}}
+              text-white
+
+              shadow-[0_22px_60px_rgba(37,99,235,.32)]
+
+              /* =========================
+                 DESKTOP — POSITION UNCHANGED
+              ========================= */
+
+              lg:top-1/2
+              lg:left-[calc(50%+340px)]
+
+              lg:h-16
+              lg:w-16
+            "
           >
             <motion.div
               animate={{
@@ -200,87 +211,96 @@ style={{
                 weight="bold"
               />
             </motion.div>
-
           </motion.button>
-
         )}
-
       </AnimatePresence>
-      {/* CLOSE */}
 
-<AnimatePresence>
-  {viewingCertificate && (
-    <motion.button
-      initial={{
-        opacity: 0,
-        y: 30,
-        scale: 0.8,
-      }}
-      animate={{
-        opacity: 1,
-        y: 0,
-        scale: 1,
-      }}
-      exit={{
-        opacity: 0,
-        y: 30,
-        scale: 0.8,
-      }}
-      transition={{
-        type: "spring",
-        stiffness: 260,
-        damping: 22,
-      }}
-      whileHover={{
-        scale: 1.08,
-        y: -3,
-      }}
-      whileTap={{
-        scale: 0.94,
-      }}
-      onClick={onClose}
-      className="
-        absolute
-        left-1/2
-        top-[610px]
-        z-[90]
 
-        -translate-x-1/2
+      {/* =====================================================
+          CLOSE
+          KEEPING YOUR EXISTING DESIGN
+      ===================================================== */}
 
-        flex
-        h-14
-        w-44
+      <AnimatePresence>
+        {viewingCertificate && (
+          <motion.button
+            initial={{
+              opacity: 0,
+              y: 30,
+              scale: 0.8,
+            }}
+            animate={{
+              opacity: 1,
+              y: 0,
+              scale: 1,
+            }}
+            exit={{
+              opacity: 0,
+              y: 30,
+              scale: 0.8,
+            }}
+            transition={{
+              type: "spring",
+              stiffness: 260,
+              damping: 22,
+            }}
+            whileHover={{
+              scale: 1.08,
+              y: -3,
+            }}
+            whileTap={{
+              scale: 0.94,
+            }}
+            onClick={onClose}
+            className="
+              absolute
 
-        items-center
-        justify-center
-        gap-3
+              left-1/2
 
-        rounded-full
+              top-[610px]
 
-        border
-        border-blue-200
+              z-[90]
 
-        bg-white/95
+              -translate-x-1/2
 
-        shadow-[0_20px_45px_rgba(37,99,235,.12)]
+              flex
+              h-14
+              w-44
 
-        backdrop-blur-xl
-      "
-    >
-      <X
-        size={20}
-        weight="bold"
-        className="text-blue-600"
-      />
+              items-center
+              justify-center
+              gap-3
 
-      <span className="font-semibold text-slate-700">
-        Close
-      </span>
-    </motion.button>
-  )}
-</AnimatePresence>
+              rounded-full
 
-      {/* LEFT GLOW */}
+              border
+              border-blue-200
+
+              bg-white/95
+
+              shadow-[0_20px_45px_rgba(37,99,235,.12)]
+
+              backdrop-blur-xl
+            "
+          >
+            <X
+              size={20}
+              weight="bold"
+              className="text-blue-600"
+            />
+
+            <span className="font-semibold text-slate-700">
+              Close
+            </span>
+          </motion.button>
+        )}
+      </AnimatePresence>
+
+
+      {/* =====================================================
+          LEFT GLOW
+          UNCHANGED
+      ===================================================== */}
 
       <div
         className="
@@ -303,7 +323,11 @@ style={{
         "
       />
 
-      {/* RIGHT GLOW */}
+
+      {/* =====================================================
+          RIGHT GLOW
+          UNCHANGED
+      ===================================================== */}
 
       <div
         className="
@@ -325,7 +349,6 @@ style={{
           blur-[70px]
         "
       />
-
     </>
   );
 }

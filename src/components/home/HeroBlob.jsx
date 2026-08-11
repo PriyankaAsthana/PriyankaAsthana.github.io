@@ -20,8 +20,17 @@ export default function HeroBlob() {
         className="
           absolute
 
-          h-[540px]
-          w-[520px]
+          h-[340px]
+w-[330px]
+
+sm:h-[430px]
+sm:w-[420px]
+
+md:h-[500px]
+md:w-[480px]
+
+lg:h-[540px]
+lg:w-[520px]
 
           rounded-full
 
@@ -29,8 +38,14 @@ export default function HeroBlob() {
 
           blur-[110px]
 
-          translate-x-10
-          translate-y-8
+          translate-x-3
+translate-y-3
+
+sm:translate-x-6
+sm:translate-y-5
+
+lg:translate-x-10
+lg:translate-y-8
 
           -z-30
         "
@@ -52,8 +67,17 @@ export default function HeroBlob() {
         className="
           absolute
 
-          h-[600px]
-          w-[600px]
+          h-[320px]
+w-[320px]
+
+sm:h-[400px]
+sm:w-[400px]
+
+md:h-[470px]
+md:w-[470px]
+
+lg:h-[520px]
+lg:w-[520px]
 
           rounded-full
 
@@ -81,8 +105,17 @@ export default function HeroBlob() {
         className="
           absolute
 
-          h-[520px]
-          w-[520px]
+          h-[320px]
+w-[335px]
+
+sm:h-[390px]
+sm:w-[405px]
+
+md:h-[460px]
+md:w-[475px]
+
+lg:h-[500px]
+lg:w-[520px]
 
           rounded-full
 
@@ -159,8 +192,17 @@ export default function HeroBlob() {
         className="
           absolute
 
-          h-[500px]
-          w-[520px]
+          h-[320px]
+w-[335px]
+
+sm:h-[390px]
+sm:w-[405px]
+
+md:h-[460px]
+md:w-[475px]
+
+lg:h-[500px]
+lg:w-[520px]
 
           bg-gradient-to-br
           from-blue-700
@@ -193,7 +235,13 @@ export default function HeroBlob() {
         className="
           absolute
 
-          h-[520px]
+          h-[330px]
+
+sm:h-[400px]
+
+md:h-[470px]
+
+lg:h-[520px]
           w-24
 
           rotate-12

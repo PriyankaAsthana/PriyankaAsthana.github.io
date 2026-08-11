@@ -15,7 +15,8 @@ export default function ContactSection() {
       className="
         relative
         overflow-hidden
-
+        min-h-[900px]
+    lg:min-h-screen
         bg-gradient-to-br
         from-white
         via-slate-50
@@ -77,25 +78,30 @@ export default function ContactSection() {
       =============================== */}
 
       <div
-        className="
-relative
-z-20
+  className="
+    relative
+    z-20
 
-mx-auto
-mt-24
+    mx-auto
+    mt-12
+    lg:mt-24
 
-max-w-[1600px]
+    w-full
+    max-w-[1600px]
 
-px-20
+    px-4
+    lg:px-20
 
-grid
-grid-cols-[390px_1fr_390px]
+    grid
+    grid-cols-1
+    lg:grid-cols-[390px_1fr_390px]
 
-items-center
+    items-center
 
-gap-10
-"
-      >
+    gap-[-5px]
+    lg:gap-10
+  "
+>
         {/* ===============================
               TERMINAL
         =============================== */}
@@ -105,7 +111,14 @@ gap-10
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
-          className="flex justify-end pr-8"
+          className="
+  flex
+  justify-center
+  pr-0
+
+  lg:justify-end
+  lg:pr-8
+"
         >
           <ContactTerminal />
         </motion.div>
@@ -143,7 +156,14 @@ gap-10
             delay: 0.25,
             duration: 0.7,
           }}
-          className="flex justify-start pl-8"
+          className="
+  flex
+  justify-center
+  pl-0
+
+  lg:justify-start
+  lg:pl-8
+"
         >
           <StatusCard />
         </motion.div>
@@ -162,14 +182,17 @@ gap-10
           duration: 0.7,
         }}
         className="
-          relative
-          z-20
+  relative
+  z-20
 
-          mt-24
+  mt-24
 
-          flex
-          justify-center
-        "
+  flex
+  justify-center
+
+  pb-16
+  lg:pb-16
+"
       >
         <ContactButton />
       </motion.div>
