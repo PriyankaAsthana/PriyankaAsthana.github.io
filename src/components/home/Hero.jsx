@@ -18,22 +18,26 @@ import HeroNetwork from "./HeroNetwork";
 function Hero() {
   return (
     <Section
-      id="hero"
-      className="
-        relative
-        overflow-hidden
+  id="hero"
+  className="
+    relative
+    overflow-hidden
 
-        flex
-        items-center
-        justify-center
+    flex
+    items-center
+    justify-center
 
-        py-12
-        sm:py-16
+    min-h-[700px]
 
-        lg:min-h-[calc(100vh-80px)]
-        lg:py-0
-      "
-    >
+    py-12
+    sm:py-16
+
+    md:min-h-[900px]
+
+    lg:min-h-[calc(100vh-80px)]
+    lg:py-0
+  "
+>
       {/* ===============================
             AI NETWORK BACKGROUND
       =============================== */}
@@ -50,11 +54,15 @@ function Hero() {
           z-20
 
           mx-auto
-
-          grid
           w-full
+
+          px-5
+          sm:px-8
+          md:px-10
+
           max-w-9xl
 
+          grid
           grid-cols-1
 
           items-center
@@ -62,6 +70,8 @@ function Hero() {
           gap-12
           sm:gap-16
           md:gap-20
+
+          lg:px-0
 
           lg:grid-cols-[0.9fr_1.1fr]
           lg:gap-24
@@ -74,8 +84,6 @@ function Hero() {
         <motion.div
           className="
             w-full
-            px-2
-            sm:px-4
 
             lg:pl-8
             lg:px-0
@@ -372,11 +380,10 @@ function Hero() {
               items-center
               justify-center
 
-              scale-[0.58]
-              sm:scale-[0.68]
-              md:scale-[0.82]
-
-              lg:scale-100
+              scale-[0.85]
+sm:scale-[0.90]
+md:scale-[0.95]
+lg:scale-100
             "
           >
             <HeroBlob />

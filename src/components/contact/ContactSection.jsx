@@ -13,15 +13,18 @@ export default function ContactSection() {
     <section
       id="contact"
       className="
-        relative
-        overflow-hidden
-        min-h-[900px]
-    lg:min-h-screen
-        bg-gradient-to-br
-        from-white
-        via-slate-50
-        to-blue-50
-      "
+  relative
+  overflow-hidden
+  
+  min-h-[1200px]
+  
+  lg:min-h-screen
+
+  bg-gradient-to-br
+  from-white
+  via-slate-50
+  to-blue-50
+"
     >
       {/* ===============================
             BACKGROUND
