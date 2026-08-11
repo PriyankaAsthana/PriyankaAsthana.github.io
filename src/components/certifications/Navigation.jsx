@@ -18,12 +18,7 @@ export default function Navigation({
   return (
     <>
       {/* =====================================================
-          PREVIOUS
-          MOBILE:
-          Sits immediately beside the LEFT edge of certificate
-
-          DESKTOP:
-          EXACT SAME POSITION AS BEFORE
+          PREVIOUS BUTTON
       ===================================================== */}
 
       <AnimatePresence>
@@ -61,9 +56,9 @@ export default function Navigation({
               absolute
               z-[90]
 
-              /* =========================
+              /* =================================
                  MOBILE / TABLET
-              ========================= */
+              ================================= */
 
               left-[calc(50%-285px)]
               top-[340px]
@@ -78,6 +73,7 @@ export default function Navigation({
               justify-center
 
               rounded-full
+
               border
               border-blue-200
 
@@ -86,9 +82,9 @@ export default function Navigation({
 
               shadow-[0_18px_45px_rgba(37,99,235,.14)]
 
-              /* =========================
-                 DESKTOP — UNCHANGED
-              ========================= */
+              /* =================================
+                 DESKTOP
+              ================================= */
 
               lg:left-[calc(50%-340px)]
               lg:top-1/2
@@ -108,14 +104,8 @@ export default function Navigation({
         )}
       </AnimatePresence>
 
-
       {/* =====================================================
-          NEXT
-          MOBILE:
-          Sits immediately beside the RIGHT edge of certificate
-
-          DESKTOP:
-          ORIGINAL POSITIONING IS PRESERVED
+          NEXT BUTTON
       ===================================================== */}
 
       <AnimatePresence>
@@ -160,9 +150,10 @@ export default function Navigation({
               absolute
               z-[90]
 
-              /* =========================
+              /* =================================
                  MOBILE / TABLET
-              ========================= */
+                 KEEP YOUR CURRENT POSITION
+              ================================= */
 
               left-[calc(50%+285px)]
               top-[340px]
@@ -186,12 +177,13 @@ export default function Navigation({
 
               shadow-[0_22px_60px_rgba(37,99,235,.32)]
 
-              /* =========================
-                 DESKTOP — POSITION UNCHANGED
-              ========================= */
+              /* =================================
+                 DESKTOP
+                 MOVED FARTHER RIGHT
+              ================================= */
 
+              lg:left-[calc(50%+635px)]
               lg:top-1/2
-              lg:left-[calc(50%+340px)]
 
               lg:h-16
               lg:w-16
@@ -215,10 +207,8 @@ export default function Navigation({
         )}
       </AnimatePresence>
 
-
       {/* =====================================================
-          CLOSE
-          KEEPING YOUR EXISTING DESIGN
+          CLOSE BUTTON
       ===================================================== */}
 
       <AnimatePresence>
@@ -256,7 +246,6 @@ export default function Navigation({
               absolute
 
               left-1/2
-
               top-[610px]
 
               z-[90]
@@ -296,10 +285,8 @@ export default function Navigation({
         )}
       </AnimatePresence>
 
-
       {/* =====================================================
           LEFT GLOW
-          UNCHANGED
       ===================================================== */}
 
       <div
@@ -307,6 +294,7 @@ export default function Navigation({
           pointer-events-none
 
           absolute
+
           left-[calc(50%-380px)]
           top-1/2
 
@@ -323,10 +311,8 @@ export default function Navigation({
         "
       />
 
-
       {/* =====================================================
           RIGHT GLOW
-          UNCHANGED
       ===================================================== */}
 
       <div
@@ -334,7 +320,8 @@ export default function Navigation({
           pointer-events-none
 
           absolute
-          left-[calc(50%+300px)]
+
+          left-[calc(50%+500px)]
           top-1/2
 
           h-28
