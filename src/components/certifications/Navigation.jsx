@@ -146,48 +146,51 @@ export default function Navigation({
 
               onNext();
             }}
-            className="
-              absolute
-              z-[90]
+            
+             className="
+  absolute
+  z-[90]
 
-              /* =================================
-                 MOBILE / TABLET
-                 KEEP YOUR CURRENT POSITION
-              ================================= */
+  /* =================================
+     MOBILE / TABLET
+     BELOW THE CERTIFICATE
+  ================================= */
 
-              left-[calc(50%+285px)]
-              top-[340px]
+  left-[53%]
+  top-[540px]
 
-              -translate-x-1/2
-              -translate-y-1/2
+  -translate-x-1/2
 
-              flex
-              h-14
-              w-14
-              items-center
-              justify-center
+  flex
+  h-14
+  w-14
+  items-center
+  justify-center
 
-              rounded-full
+  rounded-full
 
-              bg-gradient-to-br
-              from-blue-600
-              to-blue-500
+  bg-gradient-to-br
+  from-blue-600
+  to-blue-500
 
-              text-white
+  text-white
 
-              shadow-[0_22px_60px_rgba(37,99,235,.32)]
+  shadow-[0_22px_60px_rgba(37,99,235,.32)]
 
-              /* =================================
-                 DESKTOP
-                 MOVED FARTHER RIGHT
-              ================================= */
+  /* =================================
+     LAPTOP / DESKTOP
+     EXACTLY AS YOU HAVE IT NOW
+  ================================= */
 
-              lg:left-[calc(50%+635px)]
-              lg:top-1/2
+  lg:left-[calc(50%+635px)]
+  lg:top-1/2
 
-              lg:h-16
-              lg:w-16
-            "
+  lg:-translate-x-1/2
+  lg:-translate-y-1/2
+
+  lg:h-16
+  lg:w-16
+"
           >
             <motion.div
               animate={{
