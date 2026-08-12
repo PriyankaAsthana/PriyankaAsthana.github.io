@@ -289,7 +289,7 @@ function Hero() {
             "
           >
             <Button
-              href="../public/resume-Priyanka.pdf"
+              href="/resume-Priyanka.pdf"
               variant="primary"
             >
               <FilePdf
