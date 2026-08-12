@@ -4,6 +4,7 @@ import HeroBlob from "./HeroBlob";
 import {
   FilePdf,
   GithubLogo,
+  LinkedinLogo,
   Flask,
   ArrowRight,
 } from "@phosphor-icons/react";
@@ -253,6 +254,64 @@ function Hero() {
               />
             </Button>
 
+
+            {/* =====================================
+                  LINKEDIN — DESKTOP ONLY
+                  BESIDE RESEARCH BUTTON
+            ===================================== */}
+
+            <motion.a
+              href="https://www.linkedin.com/in/priyanka-asthana-1b9a74250/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn Profile"
+
+              whileHover={{
+                scale: 1.08,
+                y: -2,
+              }}
+
+              whileTap={{
+                scale: 0.94,
+              }}
+
+              transition={{
+                duration: 0.25,
+              }}
+
+              className="
+                hidden
+                lg:flex
+
+                h-14
+                w-14
+
+                items-center
+                justify-center
+
+                rounded-full
+
+                border-4
+                border-white
+
+                bg-[#0A66C2]
+
+                text-white
+
+                shadow-[0_10px_30px_rgba(10,102,194,0.30)]
+
+                transition-shadow
+                duration-300
+
+                hover:shadow-[0_14px_35px_rgba(10,102,194,0.40)]
+              "
+            >
+              <LinkedinLogo
+                size={24}
+                weight="fill"
+              />
+            </motion.a>
+
           </div>
 
         </motion.div>
@@ -346,7 +405,7 @@ function Hero() {
               lg:h-[500px]
               lg:w-[460px]
 
-              overflow-hidden
+              overflow-visible
 
               border-[5px]
               border-white
@@ -360,6 +419,86 @@ function Hero() {
                 "40% 60% 58% 42% / 45% 35% 65% 55%",
             }}
           >
+
+            {/* =====================================
+                  LINKEDIN FLOATING BUTTON
+                  SMALL + MEDIUM ONLY
+            ===================================== */}
+
+            <motion.a
+              href="https://www.linkedin.com/in/priyanka-asthana-1b9a74250/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn Profile"
+
+              whileHover={{
+                scale: 1.08,
+                y: -2,
+              }}
+
+              whileTap={{
+                scale: 0.94,
+              }}
+
+              transition={{
+                duration: 0.25,
+              }}
+
+              className="
+                flex
+                lg:hidden
+
+                absolute
+                z-30
+
+                -left-3
+                -top-3
+
+                sm:-left-3
+                sm:-top-3
+
+                md:-left-4
+                md:-top-4
+
+                h-11
+                w-11
+
+                sm:h-12
+                sm:w-12
+
+                md:h-13
+                md:w-13
+
+                items-center
+                justify-center
+
+                rounded-full
+
+                border-4
+                border-white
+
+                bg-[#0A66C2]
+
+                text-white
+
+                shadow-[0_10px_30px_rgba(10,102,194,0.30)]
+
+                transition-shadow
+                duration-300
+
+                hover:shadow-[0_14px_35px_rgba(10,102,194,0.40)]
+              "
+            >
+              <LinkedinLogo
+                size={22}
+                weight="fill"
+              />
+            </motion.a>
+
+
+            {/* =====================================
+                  PROFILE IMAGE
+            ===================================== */}
 
             <motion.img
               src={profileImage}
@@ -378,7 +517,14 @@ function Hero() {
                 w-full
 
                 object-cover
+
+                overflow-hidden
               "
+
+              style={{
+                borderRadius:
+                  "40% 60% 58% 42% / 45% 35% 65% 55%",
+              }}
             />
 
           </motion.div>

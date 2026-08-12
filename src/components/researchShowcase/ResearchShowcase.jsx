@@ -18,6 +18,27 @@ function ResearchShowcase() {
   const [currentPage, setCurrentPage] = useState("cover");
 
 
+  // ==========================================
+  // CHANGE RESEARCH PAGE
+  // Keeps viewport at the Research section
+  // ==========================================
+
+  const goToResearchPage = (page) => {
+    setCurrentPage(page);
+
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        document
+          .getElementById("research")
+          ?.scrollIntoView({
+            behavior: "smooth",
+            block: "start",
+          });
+      });
+    });
+  };
+
+
   return (
     <section
       id="research"
@@ -157,7 +178,7 @@ function ResearchShowcase() {
 
               <BookSpine
                 onClick={() =>
-                  setCurrentPage("paper1")
+                  goToResearchPage("paper1")
                 }
               />
 
@@ -205,11 +226,11 @@ function ResearchShowcase() {
 
             <ResearchPaperOne
               onBack={() =>
-                setCurrentPage("cover")
+                goToResearchPage("cover")
               }
 
               onNext={() =>
-                setCurrentPage("paper2")
+                goToResearchPage("paper2")
               }
             />
 
@@ -254,11 +275,11 @@ function ResearchShowcase() {
 
             <ResearchPaperTwo
               onBack={() =>
-                setCurrentPage("paper1")
+                goToResearchPage("paper1")
               }
 
               onNext={() =>
-                setCurrentPage("paper3")
+                goToResearchPage("paper3")
               }
             />
 
@@ -303,11 +324,11 @@ function ResearchShowcase() {
 
             <ResearchPaperThree
               onBack={() =>
-                setCurrentPage("paper2")
+                goToResearchPage("paper2")
               }
 
               onNext={() =>
-                setCurrentPage("cover")
+                goToResearchPage("cover")
               }
             />
 
