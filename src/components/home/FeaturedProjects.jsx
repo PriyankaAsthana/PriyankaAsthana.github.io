@@ -200,11 +200,6 @@ function ProjectDisc({
         items-center
         justify-center
 
-        /* IMPORTANT:
-           Gives the mobile disc enough room
-           without affecting desktop.
-        */
-
         h-[330px]
         w-[330px]
 
@@ -767,6 +762,13 @@ function ProjectCard({ project }) {
           sm:max-w-[400px]
           lg:max-w-[430px]
 
+          /* =========================================
+             VERY SMALL PHONES ONLY
+             Does NOT affect sm/md/lg/desktop
+          ========================================= */
+
+          max-[380px]:max-w-[300px]
+
           flex-col
           overflow-hidden
 
@@ -779,6 +781,9 @@ function ProjectCard({ project }) {
 
           px-5
           py-6
+
+          max-[380px]:px-4
+          max-[380px]:py-5
 
           sm:px-6
           sm:py-7
@@ -865,7 +870,10 @@ function ProjectCard({ project }) {
           <h3
             className="
               font-serif
+
               text-[1.7rem]
+              max-[380px]:text-[1.45rem]
+
               sm:text-[1.9rem]
               lg:text-[2rem]
 
@@ -900,11 +908,14 @@ function ProjectCard({ project }) {
               max-w-[360px]
 
               text-[14px]
+              max-[380px]:text-[12px]
+
               sm:text-[15px]
 
               font-semibold
 
               leading-6
+              max-[380px]:leading-5
 
               text-blue-600
             "
@@ -996,11 +1007,15 @@ function ProjectCard({ project }) {
         <p
           className="
             mt-4
+            max-[380px]:mt-3
 
             text-[14px]
+            max-[380px]:text-[12px]
+
             sm:text-[15px]
 
             leading-6
+            max-[380px]:leading-5
 
             text-slate-600
           "
@@ -1017,12 +1032,16 @@ function ProjectCard({ project }) {
             z-10
 
             mt-5
+            max-[380px]:mt-4
+
             sm:mt-6
 
             flex
             items-center
 
             gap-3
+            max-[380px]:gap-2
+
             sm:gap-4
 
             rounded-2xl
@@ -1035,6 +1054,9 @@ function ProjectCard({ project }) {
             px-3
             py-3
 
+            max-[380px]:px-2.5
+            max-[380px]:py-2.5
+
             sm:px-4
             sm:py-4
           "
@@ -1046,6 +1068,9 @@ function ProjectCard({ project }) {
 
               h-10
               w-10
+
+              max-[380px]:h-8
+              max-[380px]:w-8
 
               sm:h-11
               sm:w-11
@@ -1074,6 +1099,8 @@ function ProjectCard({ project }) {
           <p
             className="
               text-[13px]
+              max-[380px]:text-[11px]
+
               sm:text-[15px]
 
               font-bold
@@ -1097,6 +1124,8 @@ function ProjectCard({ project }) {
             z-10
 
             mt-6
+            max-[380px]:mt-4
+
             sm:mt-8
             lg:mt-17
 
@@ -1128,6 +1157,9 @@ function ProjectCard({ project }) {
 
                 flex
                 h-[36px]
+
+                max-[380px]:h-[32px]
+
                 sm:h-[38px]
 
                 items-center
@@ -1200,6 +1232,9 @@ function ProjectCard({ project }) {
 
               flex
               h-[36px]
+
+              max-[380px]:h-[32px]
+
               sm:h-[38px]
 
               items-center
@@ -1293,8 +1328,6 @@ function ProjectsIntro() {
       className="
         relative
         z-20
-        translate-x-[4%]
-            sm:translate-x-0
         flex
         flex-col
         justify-center
@@ -1643,10 +1676,6 @@ export default function FeaturedProjects() {
             items-center
             justify-center
 
-            /* Mobile:
-               keep the disc compact.
-            */
-
             -mt-2
 
             sm:-mt-4
@@ -1716,34 +1745,30 @@ export default function FeaturedProjects() {
 
         {/* RIGHT CARD */}
 
-<div
-  className="
-    relative
-    z-20
+        <div
+          className="
+            relative
+            z-20
 
-    flex
-    items-center
-    justify-center
+            flex
+            items-center
+            justify-center
 
-    lg:justify-start
+            lg:justify-start
 
-    /* MOBILE:
-       pull card upward */
-    -translate-y-5
+            -translate-y-5
 
-    sm:-translate-y-12
+            sm:-translate-y-12
 
-    md:-translate-y-8
+            md:-translate-y-8
 
-    /* DESKTOP:
-       absolutely preserve existing layout */
-    lg:translate-y-0
-  "
->
-  <ProjectCard
-    project={projects[activeProject]}
-  />
-</div>
+            lg:translate-y-0
+          "
+        >
+          <ProjectCard
+            project={projects[activeProject]}
+          />
+        </div>
 
       </div>
 

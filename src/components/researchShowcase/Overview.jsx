@@ -138,6 +138,7 @@ function Overview() {
                 font-black
                 leading-[0.9]
                 tracking-[-0.045em]
+                
                 text-slate-950
 
                 lg:text-7xl
