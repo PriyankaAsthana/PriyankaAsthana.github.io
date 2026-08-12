@@ -1293,7 +1293,8 @@ function ProjectsIntro() {
       className="
         relative
         z-20
-
+        translate-x-[4%]
+            sm:translate-x-0
         flex
         flex-col
         justify-center
@@ -1345,6 +1346,10 @@ function ProjectsIntro() {
         className="
           font-serif
 
+          translate-x-[10%]
+
+          sm:translate-x-0
+
           text-[3.5rem]
 
           sm:text-[4rem]
@@ -1378,7 +1383,8 @@ function ProjectsIntro() {
       <p
         className="
           mt-5
-
+          translate-x-[15%]
+          sm:translate-x-0
           max-w-[360px]
 
           text-[16px]
@@ -1405,7 +1411,8 @@ function ProjectsIntro() {
 
           flex
           w-fit
-
+          translate-x-[30%]
+          sm:translate-x-1
           items-center
 
           overflow-hidden
