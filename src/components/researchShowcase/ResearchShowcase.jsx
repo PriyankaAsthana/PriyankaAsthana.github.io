@@ -12,9 +12,10 @@ import ResearchPaperOne from "./ResearchPaperOne";
 import ResearchPaperTwo from "./ResearchPaperTwo";
 import ResearchPaperThree from "./ResearchPaperThree";
 
+
 function ResearchShowcase() {
-  const [currentPage, setCurrentPage] =
-    useState("cover");
+  const [currentPage, setCurrentPage] = useState("cover");
+
 
   return (
     <section
@@ -26,6 +27,7 @@ function ResearchShowcase() {
         bg-white
       "
     >
+
       <AnimatePresence mode="sync">
 
         {/* ================================= */}
@@ -35,27 +37,32 @@ function ResearchShowcase() {
         {currentPage === "cover" && (
           <motion.div
             key="cover"
+
             initial={{
               opacity: 0,
               y: 20,
             }}
+
             animate={{
               opacity: 1,
               y: 0,
             }}
+
             exit={{
               opacity: 0,
               y: -60,
             }}
+
             transition={{
               duration: 0.28,
               ease: [0.22, 1, 0.36, 1],
             }}
+
             className="
               relative
               w-full
 
-              min-h-[1050px]
+              min-h-[860px]
               sm:min-h-[980px]
               md:min-h-[900px]
               lg:min-h-[780px]
@@ -75,6 +82,7 @@ function ResearchShowcase() {
 
             <AnimatedKnowledgeGraph />
 
+
             {/* ================================= */}
             {/* RESEARCH CONTENT */}
             {/* ================================= */}
@@ -92,8 +100,26 @@ function ResearchShowcase() {
                 lg:px-0
               "
             >
-              <Overview />
+
+              {/* =================================
+                  SMALL PHONE ONLY
+                  SHRINK OVERVIEW CONTENT
+              ================================= */}
+
+              <div
+                className="
+                  origin-top
+
+                  scale-[0.82]
+
+                  sm:scale-100
+                "
+              >
+                <Overview />
+              </div>
+
             </div>
+
 
             {/* ================================= */}
             {/* VIEW ALL PAPERS AREA */}
@@ -107,7 +133,7 @@ function ResearchShowcase() {
                 flex
                 w-full
 
-                h-[180px]
+                h-[0px]
                 sm:h-[190px]
                 md:h-[205px]
                 lg:h-[220px]
@@ -121,14 +147,18 @@ function ResearchShowcase() {
                 lg:pb-0
               "
             >
+
               <BookSpine
                 onClick={() =>
                   setCurrentPage("paper1")
                 }
               />
+
             </div>
+
           </motion.div>
         )}
+
 
         {/* ================================= */}
         {/* PAPER ONE */}
@@ -137,38 +167,47 @@ function ResearchShowcase() {
         {currentPage === "paper1" && (
           <motion.div
             key="paper1"
+
             initial={{
               opacity: 0,
               y: 45,
             }}
+
             animate={{
               opacity: 1,
               y: 0,
             }}
+
             exit={{
               opacity: 0,
               x: -45,
             }}
+
             transition={{
               duration: 0.28,
               ease: [0.22, 1, 0.36, 1],
             }}
+
             className="
               min-h-screen
               w-full
               overflow-hidden
             "
           >
+
             <ResearchPaperOne
               onBack={() =>
                 setCurrentPage("cover")
               }
+
               onNext={() =>
                 setCurrentPage("paper2")
               }
             />
+
           </motion.div>
         )}
+
 
         {/* ================================= */}
         {/* PAPER TWO */}
@@ -177,38 +216,47 @@ function ResearchShowcase() {
         {currentPage === "paper2" && (
           <motion.div
             key="paper2"
+
             initial={{
               opacity: 0,
               x: 45,
             }}
+
             animate={{
               opacity: 1,
               x: 0,
             }}
+
             exit={{
               opacity: 0,
               x: -45,
             }}
+
             transition={{
               duration: 0.28,
               ease: [0.22, 1, 0.36, 1],
             }}
+
             className="
               min-h-screen
               w-full
               overflow-hidden
             "
           >
+
             <ResearchPaperTwo
               onBack={() =>
                 setCurrentPage("paper1")
               }
+
               onNext={() =>
                 setCurrentPage("paper3")
               }
             />
+
           </motion.div>
         )}
+
 
         {/* ================================= */}
         {/* PAPER THREE */}
@@ -217,42 +265,52 @@ function ResearchShowcase() {
         {currentPage === "paper3" && (
           <motion.div
             key="paper3"
+
             initial={{
               opacity: 0,
               x: 45,
             }}
+
             animate={{
               opacity: 1,
               x: 0,
             }}
+
             exit={{
               opacity: 0,
               y: 45,
             }}
+
             transition={{
               duration: 0.28,
               ease: [0.22, 1, 0.36, 1],
             }}
+
             className="
               min-h-screen
               w-full
               overflow-hidden
             "
           >
+
             <ResearchPaperThree
               onBack={() =>
                 setCurrentPage("paper2")
               }
+
               onNext={() =>
                 setCurrentPage("cover")
               }
             />
+
           </motion.div>
         )}
 
       </AnimatePresence>
+
     </section>
   );
 }
+
 
 export default ResearchShowcase;

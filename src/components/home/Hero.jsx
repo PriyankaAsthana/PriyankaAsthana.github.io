@@ -84,7 +84,8 @@ function Hero() {
         <motion.div
           className="
             w-full
-
+            translate-x-[4%]
+            sm:translate-x-0
             lg:pl-8
             lg:px-0
           "
@@ -170,105 +171,12 @@ function Hero() {
           >
             AI researcher focused on Natural Language
             Processing, trustworthy Healthcare AI,
-            and intelligent software systems. I enjoy
+            and intelligent software systems.I enjoy
             building research-driven applications
             that combine machine learning with
             real-world impact.
           </p>
 
-          {/* ===============================
-                BADGES
-          =============================== */}
-
-          <div
-            className="
-              mt-6
-              sm:mt-8
-
-              flex
-              flex-wrap
-
-              items-center
-
-              gap-2
-              sm:gap-4
-            "
-          >
-            <span
-              className="
-                rounded-full
-
-                border
-                border-blue-200
-
-                bg-blue-50
-
-                px-3
-                py-1
-                sm:px-4
-                sm:py-1.5
-
-                text-xs
-                sm:text-sm
-
-                font-semibold
-
-                text-blue-700
-              "
-            >
-              🥇 I DIV Honours
-            </span>
-
-            <span
-              className="
-                rounded-full
-
-                border
-                border-green-200
-
-                bg-green-50
-
-                px-3
-                py-1
-                sm:px-4
-                sm:py-1.5
-
-                text-xs
-                sm:text-sm
-
-                font-semibold
-
-                text-green-700
-              "
-            >
-              💡 Patent Holder
-            </span>
-
-            <span
-              className="
-                rounded-full
-
-                border
-                border-purple-200
-
-                bg-purple-50
-
-                px-3
-                py-1
-                sm:px-4
-                sm:py-1.5
-
-                text-xs
-                sm:text-sm
-
-                font-semibold
-
-                text-purple-700
-              "
-            >
-              🤖 AI Researcher
-            </span>
-          </div>
 
           {/* ===============================
                 BUTTONS
