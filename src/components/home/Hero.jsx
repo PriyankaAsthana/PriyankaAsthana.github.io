@@ -28,7 +28,7 @@ function Hero() {
         justify-center
 
         /* VERY SMALL PHONE ONLY */
-        min-h-[750px]
+        min-h-[760px]
 
         py-12
 
