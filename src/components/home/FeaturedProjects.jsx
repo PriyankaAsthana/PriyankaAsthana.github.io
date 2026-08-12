@@ -1363,6 +1363,10 @@ function ProjectsIntro() {
             font-bold
 
             uppercase
+            
+          translate-x-[6%]
+
+          sm:translate-x-0
 
             tracking-[0.35em]
 
@@ -1379,7 +1383,7 @@ function ProjectsIntro() {
         className="
           font-serif
 
-          translate-x-[10%]
+          translate-x-[6%]
 
           sm:translate-x-0
 
@@ -1416,7 +1420,7 @@ function ProjectsIntro() {
       <p
         className="
           mt-5
-          translate-x-[15%]
+          translate-x-[9%]
           sm:translate-x-0
           max-w-[360px]
 
@@ -1444,7 +1448,7 @@ function ProjectsIntro() {
 
           flex
           w-fit
-          translate-x-[30%]
+          translate-x-[20%]
           sm:translate-x-1
           items-center
 
