@@ -1383,7 +1383,7 @@ function ProjectsIntro() {
         className="
           font-serif
 
-          translate-x-[6%]
+          translate-x-[3%]
 
           sm:translate-x-0
 
@@ -1420,7 +1420,7 @@ function ProjectsIntro() {
       <p
         className="
           mt-5
-          translate-x-[9%]
+          translate-x-[5%]
           sm:translate-x-0
           max-w-[360px]
 

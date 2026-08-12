@@ -249,7 +249,9 @@ function restartArchive() {
     absolute
 
     left-1/2
-    -translate-x-[68%]
+    -translate-x-[62%]
+
+    sm:-translate-x-[68%]
 
     lg:left-10
     lg:translate-x-0

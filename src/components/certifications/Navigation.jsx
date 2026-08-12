@@ -211,7 +211,7 @@ export default function Navigation({
                     /* All certificates:
                        Next at bottom */
 
-                    left-[53%]
+                    left-[62%]
                     top-[540px]
 
                     -translate-x-1/2
