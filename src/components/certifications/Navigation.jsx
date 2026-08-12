@@ -52,19 +52,9 @@ export default function Navigation({
               scale: 0.94,
             }}
             onClick={onPrevious}
-            className="
+            className={`
               absolute
               z-[90]
-
-              /* =================================
-                 MOBILE / TABLET
-              ================================= */
-
-              left-[calc(50%-285px)]
-              top-[340px]
-
-              -translate-x-1/2
-              -translate-y-1/2
 
               flex
               h-14
@@ -82,16 +72,51 @@ export default function Navigation({
 
               shadow-[0_18px_45px_rgba(37,99,235,.14)]
 
-              /* =================================
+              /* =================================================
+                 SMALL PHONE
+                 Previous sits beside Close button
+              ================================================= */
+
+              ${
+                viewingCertificate
+                  ? `
+                    left-[calc(50%-145px)]
+                    top-[610px]
+
+                    -translate-x-1/2
+                    -translate-y-1/2
+                  `
+                  : `
+                    left-[calc(50%-285px)]
+                    top-[340px]
+
+                    -translate-x-1/2
+                    -translate-y-1/2
+                  `
+              }
+
+              /* =================================================
+                 MEDIUM SCREEN
+                 KEEP CURRENT POSITION EXACTLY
+              ================================================= */
+
+              md:left-[calc(50%-285px)]
+              md:top-[340px]
+
+              md:-translate-x-1/2
+              md:-translate-y-1/2
+
+              /* =================================================
                  DESKTOP
-              ================================= */
+                 KEEP CURRENT POSITION EXACTLY
+              ================================================= */
 
               lg:left-[calc(50%-340px)]
               lg:top-1/2
 
               lg:h-16
               lg:w-16
-            "
+            `}
           >
             <motion.div whileHover={{ x: -2 }}>
               <ArrowLeft
@@ -104,137 +129,148 @@ export default function Navigation({
         )}
       </AnimatePresence>
 
-    {/* =====================================================
-    NEXT BUTTON
-===================================================== */}
+      {/* =====================================================
+          NEXT BUTTON
+      ===================================================== */}
 
-<AnimatePresence>
-  {showNext && (
-    <motion.button
-      initial={{
-        opacity: 0,
-        x: 30,
-        scale: 0.8,
-      }}
-      animate={{
-        opacity: 1,
-        x: 0,
-        scale: 1,
-      }}
-      exit={{
-        opacity: 0,
-        x: 30,
-        scale: 0.8,
-      }}
-      transition={{
-        type: "spring",
-        stiffness: 260,
-        damping: 22,
-      }}
-      whileHover={{
-        scale: 1.08,
-        y: -3,
-      }}
-      whileTap={{
-        scale: 0.94,
-      }}
-      onClick={() => {
-        if (isLastCertificate) {
-          onFinish();
-          return;
-        }
+      <AnimatePresence>
+        {showNext && (
+          <motion.button
+            initial={{
+              opacity: 0,
+              x: 30,
+              scale: 0.8,
+            }}
+            animate={{
+              opacity: 1,
+              x: 0,
+              scale: 1,
+            }}
+            exit={{
+              opacity: 0,
+              x: 30,
+              scale: 0.8,
+            }}
+            transition={{
+              type: "spring",
+              stiffness: 260,
+              damping: 22,
+            }}
+            whileHover={{
+              scale: 1.08,
+              y: -3,
+            }}
+            whileTap={{
+              scale: 0.94,
+            }}
+            onClick={() => {
+              if (isLastCertificate) {
+                onFinish();
+                return;
+              }
 
-        onNext();
-      }}
-      className={`
-        absolute
-        z-[90]
+              onNext();
+            }}
+            className={`
+              absolute
+              z-[90]
 
-        flex
-        h-14
-        w-14
-        items-center
-        justify-center
+              flex
+              h-14
+              w-14
+              items-center
+              justify-center
 
-        rounded-full
+              rounded-full
 
-        bg-gradient-to-br
-        from-blue-600
-        to-blue-500
+              bg-gradient-to-br
+              from-blue-600
+              to-blue-500
 
-        text-white
+              text-white
 
-        shadow-[0_22px_60px_rgba(37,99,235,.32)]
+              shadow-[0_22px_60px_rgba(37,99,235,.32)]
 
-        /* =================================================
-           SMALL / MEDIUM SCREEN
-        ================================================= */
+              /* =================================================
+                 SMALL PHONE
+              ================================================= */
 
-        ${
-          viewingCertificate
-            ? `
-              /* INDIVIDUAL CERTIFICATE:
-                 NEXT BUTTON ON RIGHT SIDE */
+              ${
+                viewingCertificate
+                  ? `
+                    /* Individual certificate:
+                       Next beside Close */
 
-              left-[calc(50%+285px)]
-              top-[340px]
+                    left-[calc(50%+145px)]
+                    top-[610px]
 
-              -translate-x-1/2
-              -translate-y-1/2
-            `
-            : `
-              /* ALL CERTIFICATES:
-                 NEXT BUTTON AT BOTTOM */
+                    -translate-x-1/2
+                    -translate-y-1/2
+                  `
+                  : `
+                    /* All certificates:
+                       Next at bottom */
 
-              left-[53%]
-              top-[540px]
+                    left-[53%]
+                    top-[540px]
 
-              -translate-x-1/2
-              -translate-y-1/2
-            `
-        }
+                    -translate-x-1/2
+                    -translate-y-1/2
+                  `
+              }
 
-        /* =================================================
-           LAPTOP / DESKTOP
-           KEEP YOUR CURRENT POSITION EXACTLY
-        ================================================= */
+              /* =================================================
+                 MEDIUM SCREEN
+                 KEEP CURRENT POSITION EXACTLY
+              ================================================= */
 
-        ${
-  viewingCertificate
-    ? `
-      lg:left-[calc(50%+330px)]
-      lg:top-1/2
-    `
-    : `
-      lg:left-[calc(50%+635px)]
-      lg:top-1/2
-    `
-}
+              md:left-[calc(50%+285px)]
+              md:top-[340px]
 
-lg:-translate-x-1/2
-lg:-translate-y-1/2
+              md:-translate-x-1/2
+              md:-translate-y-1/2
 
-lg:h-16
-lg:w-16
-      `}
-    >
-      <motion.div
-        animate={{
-          x: [0, 3, 0],
-        }}
-        transition={{
-          duration: 1.4,
-          repeat: Infinity,
-        }}
-      >
-        <ArrowRight
-          size={26}
-          weight="bold"
-        />
-      </motion.div>
-    </motion.button>
-  )}
-</AnimatePresence>
+              /* =================================================
+                 LAPTOP / DESKTOP
+                 KEEP CURRENT POSITION EXACTLY
+              ================================================= */
+
+              ${
+                viewingCertificate
+                  ? `
+                    lg:left-[calc(50%+330px)]
+                    lg:top-1/2
+                  `
+                  : `
+                    lg:left-[calc(50%+635px)]
+                    lg:top-1/2
+                  `
+              }
+
+              lg:-translate-x-1/2
+              lg:-translate-y-1/2
+
+              lg:h-16
+              lg:w-16
+            `}
+          >
+            <motion.div
+              animate={{
+                x: [0, 3, 0],
+              }}
+              transition={{
+                duration: 1.4,
+                repeat: Infinity,
+              }}
+            >
+              <ArrowRight
+                size={26}
+                weight="bold"
+              />
+            </motion.div>
+          </motion.button>
+        )}
+      </AnimatePresence>
 
       {/* =====================================================
           CLOSE BUTTON
