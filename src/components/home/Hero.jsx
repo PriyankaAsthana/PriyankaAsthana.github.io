@@ -33,7 +33,7 @@ function Hero() {
         py-12
 
         /* EXISTING SIZES — UNCHANGED */
-        sm:min-h-[700px]
+        sm:min-h-[800px]
         sm:py-16
 
         md:min-h-[900px]
