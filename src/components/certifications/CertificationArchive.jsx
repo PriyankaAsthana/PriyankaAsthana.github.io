@@ -225,7 +225,7 @@ function restartArchive() {
 
     /* MOBILE */
     min-h-[550px]
-    scale-[0.72]
+    scale-[0.50]
 
     /* SMALL TABLET */
     sm:min-h-[540px]
