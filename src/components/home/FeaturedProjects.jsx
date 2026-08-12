@@ -1448,7 +1448,7 @@ function ProjectsIntro() {
 
           flex
           w-fit
-          translate-x-[20%]
+          translate-x-[10%]
           sm:translate-x-1
           items-center
 
