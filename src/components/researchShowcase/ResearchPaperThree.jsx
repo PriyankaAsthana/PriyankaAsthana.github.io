@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+
 import {
   ArrowLeft,
   ArrowRight,
@@ -27,6 +28,7 @@ function ResearchPaperThree({ onBack, onNext }) {
         min-h-screen
         w-full
         overflow-hidden
+
         bg-gradient-to-br
         from-white
         via-slate-50
@@ -52,12 +54,24 @@ function ResearchPaperThree({ onBack, onNext }) {
           absolute
           left-[20%]
           top-[48%]
-          h-[520px]
-          w-[520px]
+
+          h-[360px]
+          w-[360px]
+
+          md:h-[450px]
+          md:w-[450px]
+
+          lg:h-[520px]
+          lg:w-[520px]
+
           -translate-y-1/2
+
           rounded-full
           bg-blue-100/50
-          blur-[150px]
+
+          blur-[120px]
+          md:blur-[135px]
+          lg:blur-[150px]
         "
       />
 
@@ -76,11 +90,22 @@ function ResearchPaperThree({ onBack, onNext }) {
           absolute
           right-[12%]
           top-[42%]
-          h-[420px]
-          w-[420px]
+
+          h-[300px]
+          w-[300px]
+
+          md:h-[360px]
+          md:w-[360px]
+
+          lg:h-[420px]
+          lg:w-[420px]
+
           rounded-full
           bg-sky-100/50
-          blur-[140px]
+
+          blur-[110px]
+          md:blur-[125px]
+          lg:blur-[140px]
         "
       />
 
@@ -92,31 +117,59 @@ function ResearchPaperThree({ onBack, onNext }) {
         type="button"
         onClick={onBack}
         aria-label="Previous research paper"
-        initial={{ opacity: 0, x: -30 }}
-        animate={{ opacity: 1, x: 0 }}
+        initial={{
+          opacity: 0,
+          x: -30,
+        }}
+        animate={{
+          opacity: 1,
+          x: 0,
+        }}
         transition={{
           duration: 0.6,
           delay: 0.55,
         }}
-        whileTap={{ scale: 0.9 }}
+        whileTap={{
+          scale: 0.9,
+        }}
         className="
           group
           absolute
-          left-6
+
+          left-3
+          md:left-5
+
           top-1/2
+
           z-40
+
           flex
-          h-[68px]
-          w-[68px]
+
+          h-12
+          w-12
+
+          md:h-14
+          md:w-14
+
+          lg:h-[68px]
+          lg:w-[68px]
+
           -translate-y-1/2
+
           items-center
           justify-center
+
           rounded-full
+
           border-2
           border-blue-600
+
           bg-blue-600
+
           text-white
+
           shadow-[0_12px_35px_rgba(37,99,235,0.22)]
+
           transition-all
           duration-300
 
@@ -130,11 +183,15 @@ function ResearchPaperThree({ onBack, onNext }) {
         "
       >
         <ArrowLeft
-          size={29}
+          size={23}
           weight="bold"
           className="
+            md:size-[26px]
+            lg:size-[29px]
+
             transition-transform
             duration-300
+
             group-hover:-translate-x-1
             group-hover:scale-125
           "
@@ -149,31 +206,59 @@ function ResearchPaperThree({ onBack, onNext }) {
         type="button"
         onClick={onNext}
         aria-label="Return to research overview"
-        initial={{ opacity: 0, x: 30 }}
-        animate={{ opacity: 1, x: 0 }}
+        initial={{
+          opacity: 0,
+          x: 30,
+        }}
+        animate={{
+          opacity: 1,
+          x: 0,
+        }}
         transition={{
           duration: 0.6,
           delay: 0.55,
         }}
-        whileTap={{ scale: 0.9 }}
+        whileTap={{
+          scale: 0.9,
+        }}
         className="
           group
           absolute
-          right-6
+
+          right-3
+          md:right-5
+
           top-1/2
+
           z-40
+
           flex
-          h-[68px]
-          w-[68px]
+
+          h-12
+          w-12
+
+          md:h-14
+          md:w-14
+
+          lg:h-[68px]
+          lg:w-[68px]
+
           -translate-y-1/2
+
           items-center
           justify-center
+
           rounded-full
+
           border-2
           border-blue-600
+
           bg-blue-600
+
           text-white
+
           shadow-[0_12px_35px_rgba(37,99,235,0.22)]
+
           transition-all
           duration-300
 
@@ -187,11 +272,15 @@ function ResearchPaperThree({ onBack, onNext }) {
         "
       >
         <ArrowRight
-          size={29}
+          size={23}
           weight="bold"
           className="
+            md:size-[26px]
+            lg:size-[29px]
+
             transition-transform
             duration-300
+
             group-hover:translate-x-1
             group-hover:scale-125
           "
@@ -206,21 +295,37 @@ function ResearchPaperThree({ onBack, onNext }) {
         className="
           relative
           z-10
+
           mx-auto
+
           grid
+
           min-h-screen
           w-full
-          max-w-[1420px]
-          grid-cols-1
-          items-center
-          gap-16
 
-          px-28
-          pb-28
-          pt-16
+          max-w-[1420px]
+
+          grid-cols-1
+
+          items-center
+
+          gap-10
+          md:gap-12
+
+          px-16
+          sm:px-20
+          md:px-24
+
+          pb-24
+          md:pb-28
+
+          pt-12
+          md:pt-16
 
           lg:grid-cols-[1.05fr_0.78fr]
           lg:gap-24
+
+          lg:px-28
 
           xl:px-36
         "
@@ -245,7 +350,12 @@ function ResearchPaperThree({ onBack, onNext }) {
             }}
             className="
               w-full
-              max-w-[620px]
+
+              max-w-[500px]
+              md:max-w-[560px]
+
+              lg:max-w-[620px]
+
               lg:pr-4
             "
           >
@@ -265,18 +375,31 @@ function ResearchPaperThree({ onBack, onNext }) {
                 delay: 0.1,
               }}
               className="
-                mb-8
+                mb-5
+                md:mb-6
+                lg:mb-8
+
                 flex
                 items-center
-                gap-5
+
+                gap-3
+                md:gap-4
+                lg:gap-5
               "
             >
               <span
                 className="
-                  text-sm
+                  text-[10px]
+                  md:text-xs
+                  lg:text-sm
+
                   font-bold
                   uppercase
-                  tracking-[0.4em]
+
+                  tracking-[0.3em]
+                  md:tracking-[0.35em]
+                  lg:tracking-[0.4em]
+
                   text-blue-600
                 "
               >
@@ -284,13 +407,20 @@ function ResearchPaperThree({ onBack, onNext }) {
               </span>
 
               <motion.div
-                initial={{ width: 0 }}
-                animate={{ width: 85 }}
+                initial={{
+                  width: 0,
+                }}
+                animate={{
+                  width: 85,
+                }}
                 transition={{
                   duration: 0.8,
                   delay: 0.35,
                 }}
-                className="h-px bg-blue-400"
+                className="
+                  h-px
+                  bg-blue-400
+                "
               />
             </motion.div>
 
@@ -310,11 +440,23 @@ function ResearchPaperThree({ onBack, onNext }) {
                 delay: 0.15,
               }}
               className="
-                max-w-[620px]
-                text-[2.8rem]
+                max-w-[500px]
+                md:max-w-[560px]
+
+                lg:max-w-[620px]
+
+                text-[2rem]
+                sm:text-[2.2rem]
+                md:text-[2.45rem]
+
+                lg:text-[2.8rem]
+
                 font-black
-                leading-[1.07]
-                tracking-[-0.035em]
+
+                leading-[1.08]
+
+                tracking-[-0.03em]
+
                 text-slate-950
 
                 xl:text-[3.35rem]
@@ -340,10 +482,25 @@ function ResearchPaperThree({ onBack, onNext }) {
                 delay: 0.3,
               }}
               className="
-                mt-7
-                max-w-[580px]
-                text-lg
-                leading-8
+                mt-5
+                md:mt-6
+                lg:mt-7
+
+                max-w-[500px]
+                md:max-w-[550px]
+
+                lg:max-w-[580px]
+
+                text-sm
+                sm:text-base
+                md:text-lg
+
+                lg:text-lg
+
+                leading-6
+                sm:leading-7
+                md:leading-8
+
                 text-slate-600
 
                 xl:text-xl
@@ -358,17 +515,26 @@ function ResearchPaperThree({ onBack, onNext }) {
             {/* TAGS */}
 
             <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
+              initial={{
+                opacity: 0,
+              }}
+              animate={{
+                opacity: 1,
+              }}
               transition={{
                 duration: 0.5,
                 delay: 0.4,
               }}
               className="
-                mt-7
+                mt-5
+                md:mt-6
+                lg:mt-7
+
                 flex
                 flex-wrap
-                gap-3
+
+                gap-2
+                md:gap-3
               "
             >
               {tags.map((tag, index) => (
@@ -391,16 +557,29 @@ function ResearchPaperThree({ onBack, onNext }) {
                   }}
                   className="
                     cursor-default
+
                     rounded-full
+
                     border
                     border-blue-100
+
                     bg-blue-50/80
-                    px-4
-                    py-2
-                    text-sm
+
+                    px-3
+                    py-1.5
+
+                    md:px-4
+                    md:py-2
+
+                    text-[11px]
+                    md:text-sm
+
                     font-medium
+
                     text-blue-700
+
                     shadow-sm
+
                     backdrop-blur
                   "
                 >
@@ -412,8 +591,12 @@ function ResearchPaperThree({ onBack, onNext }) {
             {/* DIVIDER */}
 
             <motion.div
-              initial={{ scaleX: 0 }}
-              animate={{ scaleX: 1 }}
+              initial={{
+                scaleX: 0,
+              }}
+              animate={{
+                scaleX: 1,
+              }}
               transition={{
                 duration: 0.8,
                 delay: 0.55,
@@ -422,9 +605,16 @@ function ResearchPaperThree({ onBack, onNext }) {
                 transformOrigin: "left",
               }}
               className="
-                mt-10
+                mt-7
+                md:mt-8
+                lg:mt-10
+
                 h-px
-                w-[88%]
+
+                w-full
+                md:w-[90%]
+                lg:w-[88%]
+
                 bg-slate-200
               "
             />
@@ -444,14 +634,34 @@ function ResearchPaperThree({ onBack, onNext }) {
                 duration: 0.55,
                 delay: 0.6,
               }}
-              className="mt-16"
+              className="
+                mt-8
+                md:mt-10
+                lg:mt-16
+              "
             >
-              <p className="text-xl text-slate-900">
+              <p
+                className="
+                  text-base
+                  md:text-lg
+                  lg:text-xl
+
+                  text-slate-900
+                "
+              >
                 <span className="font-semibold text-slate-500">
                   Author:
                 </span>
 
-                <span className="ml-3 font-bold text-slate-950">
+                <span
+                  className="
+                    ml-2
+                    md:ml-3
+
+                    font-bold
+                    text-slate-950
+                  "
+                >
                   Priyanka Asthana
                 </span>
               </p>
@@ -484,20 +694,48 @@ function ResearchPaperThree({ onBack, onNext }) {
               }}
               className="
                 group
-                mt-8
+
+                mt-6
+                md:mt-7
+                lg:mt-8
+
                 inline-flex
-                min-w-[190px]
+
+                min-w-[150px]
+                md:min-w-[170px]
+
+                lg:min-w-[190px]
+
                 items-center
                 justify-center
-                gap-4
+
+                gap-2
+                md:gap-3
+                lg:gap-4
+
                 rounded-full
+
                 bg-blue-600
-                px-10
-                py-5
-                text-lg
+
+                px-6
+                py-3
+
+                md:px-8
+                md:py-4
+
+                lg:px-10
+                lg:py-5
+
+                text-sm
+                md:text-base
+                lg:text-lg
+
                 font-bold
+
                 text-white
+
                 shadow-[0_12px_32px_rgba(37,99,235,0.30)]
+
                 transition-all
                 duration-300
 
@@ -508,11 +746,15 @@ function ResearchPaperThree({ onBack, onNext }) {
               View Paper
 
               <ArrowUpRight
-                size={23}
+                size={18}
                 weight="bold"
                 className="
+                  md:size-[21px]
+                  lg:size-[23px]
+
                   transition-transform
                   duration-300
+
                   group-hover:translate-x-1
                   group-hover:-translate-y-1
                   group-hover:scale-110
@@ -545,9 +787,17 @@ function ResearchPaperThree({ onBack, onNext }) {
             }}
             className="
               relative
+
               mx-auto
+
               w-full
-              max-w-[430px]
+
+              max-w-[300px]
+              sm:max-w-[330px]
+              md:max-w-[360px]
+
+              lg:max-w-[430px]
+
               min-w-0
             "
           >
@@ -565,12 +815,23 @@ function ResearchPaperThree({ onBack, onNext }) {
               }}
               className="
                 pointer-events-none
+
                 absolute
-                inset-8
+
+                inset-5
+                md:inset-7
+                lg:inset-8
+
                 -z-10
-                rounded-[40px]
+
+                rounded-[30px]
+                lg:rounded-[40px]
+
                 bg-blue-200/40
-                blur-[55px]
+
+                blur-[40px]
+                md:blur-[48px]
+                lg:blur-[55px]
               "
             />
 
@@ -586,11 +847,19 @@ function ResearchPaperThree({ onBack, onNext }) {
               className="
                 w-full
                 min-w-0
-                rounded-[12px]
+
+                rounded-[10px]
+                lg:rounded-[12px]
+
                 border
                 border-slate-200
+
                 bg-white
-                p-5
+
+                p-3
+                md:p-4
+                lg:p-5
+
                 shadow-[0_30px_80px_rgba(15,23,42,0.15)]
               "
             >
@@ -599,13 +868,23 @@ function ResearchPaperThree({ onBack, onNext }) {
               <div
                 className="
                   group
+
                   relative
-                  h-[500px]
+
+                  h-[330px]
+                  sm:h-[360px]
+                  md:h-[420px]
+
+                  lg:h-[500px]
+
                   w-full
                   min-w-0
+
                   overflow-hidden
+
                   border
                   border-slate-200
+
                   bg-slate-100
                 "
               >
@@ -615,6 +894,7 @@ function ResearchPaperThree({ onBack, onNext }) {
                   className="
                     absolute
                     inset-0
+
                     overflow-hidden
                   "
                 >
@@ -625,10 +905,17 @@ function ResearchPaperThree({ onBack, onNext }) {
                     tabIndex={-1}
                     className="
                       pointer-events-none
+
                       block
+
                       h-full
-                      w-[calc(100%+24px)]
+
+                      w-[calc(100%+18px)]
+                      md:w-[calc(100%+20px)]
+                      lg:w-[calc(100%+24px)]
+
                       select-none
+
                       border-0
                     "
                   />
@@ -639,12 +926,17 @@ function ResearchPaperThree({ onBack, onNext }) {
                 <div
                   className="
                     pointer-events-none
+
                     absolute
                     inset-0
+
                     z-10
+
                     bg-slate-950/0
+
                     transition-all
                     duration-300
+
                     group-hover:bg-slate-950/10
                   "
                 />
@@ -658,29 +950,52 @@ function ResearchPaperThree({ onBack, onNext }) {
                   aria-label="Open full research paper"
                   className="
                     absolute
+
                     left-1/2
                     top-1/2
+
                     z-20
 
                     flex
+
                     -translate-x-1/2
                     -translate-y-[35%]
+
                     items-center
-                    gap-3
+
+                    gap-2
+                    md:gap-3
 
                     whitespace-nowrap
+
                     rounded-full
+
                     border
                     border-white/80
+
                     bg-white/95
-                    px-6
-                    py-3.5
+
+                    px-4
+                    py-2.5
+
+                    md:px-5
+                    md:py-3
+
+                    lg:px-6
+                    lg:py-3.5
+
+                    text-xs
+                    md:text-sm
+                    lg:text-base
 
                     font-semibold
+
                     text-blue-600
 
                     opacity-0
+
                     shadow-[0_12px_35px_rgba(15,23,42,0.20)]
+
                     backdrop-blur-md
 
                     transition-all
@@ -697,8 +1012,12 @@ function ResearchPaperThree({ onBack, onNext }) {
                   View Paper
 
                   <ArrowUpRight
-                    size={20}
+                    size={17}
                     weight="bold"
+                    className="
+                      md:size-[19px]
+                      lg:size-[20px]
+                    "
                   />
                 </a>
               </div>
@@ -709,16 +1028,53 @@ function ResearchPaperThree({ onBack, onNext }) {
                 className="
                   w-full
                   min-w-0
-                  px-2
-                  pb-2
-                  pt-5
+
+                  px-1
+                  md:px-2
+
+                  pb-1
+                  md:pb-2
+
+                  pt-3
+                  md:pt-4
+                  lg:pt-5
                 "
               >
-                <p className="break-words text-base font-bold leading-6 text-slate-900">
+                <p
+                  className="
+                    break-words
+
+                    text-sm
+                    md:text-base
+
+                    font-bold
+
+                    leading-5
+                    md:leading-6
+
+                    text-slate-900
+                  "
+                >
                   View full paper
                 </p>
 
-                <p className="mt-1 max-w-full break-words text-sm leading-6 text-slate-500">
+                <p
+                  className="
+                    mt-1
+
+                    max-w-full
+
+                    break-words
+
+                    text-xs
+                    md:text-sm
+
+                    leading-5
+                    md:leading-6
+
+                    text-slate-500
+                  "
+                >
                   Open on Zenodo
                 </p>
               </div>
@@ -746,40 +1102,72 @@ function ResearchPaperThree({ onBack, onNext }) {
         }}
         className="
           absolute
-          bottom-8
+
+          bottom-5
+          md:bottom-7
+          lg:bottom-8
+
           left-1/2
+
           z-30
+
           flex
+
           -translate-x-1/2
+
           items-center
-          gap-4
+
+          gap-3
+          md:gap-4
         "
       >
+        {/* PAPER 01 */}
+
         <div
           className="
-            h-2.5
-            w-2.5
+            h-2
+            w-2
+
+            md:h-2.5
+            md:w-2.5
+
             rounded-full
+
             bg-slate-300
           "
         />
 
+        {/* PAPER 02 */}
+
         <div
           className="
-            h-2.5
-            w-2.5
+            h-2
+            w-2
+
+            md:h-2.5
+            md:w-2.5
+
             rounded-full
+
             bg-slate-300
           "
         />
+
+        {/* PAPER 03 ACTIVE */}
 
         <motion.div
           layout
           className="
-            h-2.5
-            w-11
+            h-2
+            w-9
+
+            md:h-2.5
+            md:w-11
+
             rounded-full
+
             bg-blue-600
+
             shadow-[0_0_12px_rgba(37,99,235,0.45)]
           "
         />

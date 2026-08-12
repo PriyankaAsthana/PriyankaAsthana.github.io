@@ -5,17 +5,17 @@ import {
   ArrowUpRight,
 } from "@phosphor-icons/react";
 
-const paperPdf = "/papers/model_sel.pdf";
-const paperLink = "https://zenodo.org/records/20399130";
+const paperPdf = "/papers/geoai.pdf";
+const paperLink = "https://zenodo.org/records/18149564";
 
 const tags = [
-  "RAG",
-  "LLMs",
-  "Cultural Corpora",
-  "Retrieval",
+  "Healthcare AI",
+  "Blood Allocation",
+  "Optimization",
+  "GeoAI",
 ];
 
-function ResearchPaperTwo({ onBack, onNext }) {
+function ResearchPaperThree({ onBack, onNext }) {
   return (
     <motion.section
       initial={{ opacity: 0 }}
@@ -85,7 +85,7 @@ function ResearchPaperTwo({ onBack, onNext }) {
       />
 
       {/* ================================================= */}
-      {/* PREVIOUS BUTTON */}
+      {/* LEFT BUTTON — BACK TO PAPER 2 */}
       {/* ================================================= */}
 
       <motion.button
@@ -102,21 +102,32 @@ function ResearchPaperTwo({ onBack, onNext }) {
         className="
           group
           absolute
-          left-6
+          left-3
+          sm:left-4
+          md:left-5
           top-1/2
           z-40
+
           flex
-          h-[68px]
-          w-[68px]
+          h-11
+          w-11
+          sm:h-12
+          sm:w-12
+          md:h-14
+          md:w-14
+
           -translate-y-1/2
           items-center
           justify-center
+
           rounded-full
           border-2
           border-blue-600
           bg-blue-600
           text-white
+
           shadow-[0_12px_35px_rgba(37,99,235,0.22)]
+
           transition-all
           duration-300
 
@@ -126,29 +137,36 @@ function ResearchPaperTwo({ onBack, onNext }) {
           hover:shadow-[0_18px_45px_rgba(37,99,235,0.20)]
 
           lg:left-8
+          lg:h-[68px]
+          lg:w-[68px]
+
           xl:left-10
         "
       >
         <ArrowLeft
-          size={29}
+          size={22}
           weight="bold"
           className="
             transition-transform
             duration-300
             group-hover:-translate-x-1
             group-hover:scale-125
+
+            sm:size-[24px]
+            md:size-[26px]
+            lg:size-[29px]
           "
         />
       </motion.button>
 
       {/* ================================================= */}
-      {/* NEXT BUTTON */}
+      {/* RIGHT BUTTON — BACK TO RESEARCH OVERVIEW */}
       {/* ================================================= */}
 
       <motion.button
         type="button"
         onClick={onNext}
-        aria-label="Next research paper"
+        aria-label="Return to research overview"
         initial={{ opacity: 0, x: 30 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{
@@ -159,21 +177,32 @@ function ResearchPaperTwo({ onBack, onNext }) {
         className="
           group
           absolute
-          right-6
+          right-3
+          sm:right-4
+          md:right-5
           top-1/2
           z-40
+
           flex
-          h-[68px]
-          w-[68px]
+          h-11
+          w-11
+          sm:h-12
+          sm:w-12
+          md:h-14
+          md:w-14
+
           -translate-y-1/2
           items-center
           justify-center
+
           rounded-full
           border-2
           border-blue-600
           bg-blue-600
           text-white
+
           shadow-[0_12px_35px_rgba(37,99,235,0.22)]
+
           transition-all
           duration-300
 
@@ -183,17 +212,24 @@ function ResearchPaperTwo({ onBack, onNext }) {
           hover:shadow-[0_18px_45px_rgba(37,99,235,0.20)]
 
           lg:right-8
+          lg:h-[68px]
+          lg:w-[68px]
+
           xl:right-10
         "
       >
         <ArrowRight
-          size={29}
+          size={22}
           weight="bold"
           className="
             transition-transform
             duration-300
             group-hover:translate-x-1
             group-hover:scale-125
+
+            sm:size-[24px]
+            md:size-[26px]
+            lg:size-[29px]
           "
         />
       </motion.button>
@@ -213,14 +249,28 @@ function ResearchPaperTwo({ onBack, onNext }) {
           max-w-[1420px]
           grid-cols-1
           items-center
-          gap-16
 
-          px-28
-          pb-28
-          pt-16
+          gap-10
+
+          px-14
+          pb-20
+          pt-12
+
+          sm:gap-12
+          sm:px-16
+          sm:pb-20
+          sm:pt-14
+
+          md:gap-14
+          md:px-20
+          md:pb-24
+          md:pt-14
 
           lg:grid-cols-[1.05fr_0.78fr]
           lg:gap-24
+          lg:px-28
+          lg:pb-28
+          lg:pt-16
 
           xl:px-36
         "
@@ -245,7 +295,12 @@ function ResearchPaperTwo({ onBack, onNext }) {
             }}
             className="
               w-full
-              max-w-[620px]
+              max-w-[520px]
+
+              sm:max-w-[560px]
+              md:max-w-[590px]
+
+              lg:max-w-[620px]
               lg:pr-4
             "
           >
@@ -265,22 +320,39 @@ function ResearchPaperTwo({ onBack, onNext }) {
                 delay: 0.1,
               }}
               className="
-                mb-8
+                mb-5
                 flex
                 items-center
-                gap-5
+                gap-3
+
+                sm:mb-6
+                sm:gap-4
+
+                md:mb-7
+                md:gap-4
+
+                lg:mb-8
+                lg:gap-5
               "
             >
               <span
                 className="
-                  text-sm
+                  text-[10px]
                   font-bold
                   uppercase
-                  tracking-[0.4em]
+                  tracking-[0.25em]
                   text-blue-600
+
+                  sm:text-xs
+                  sm:tracking-[0.3em]
+
+                  md:text-sm
+                  md:tracking-[0.35em]
+
+                  lg:tracking-[0.4em]
                 "
               >
-                Paper 02 / 03
+                Paper 03 / 03
               </span>
 
               <motion.div
@@ -290,7 +362,16 @@ function ResearchPaperTwo({ onBack, onNext }) {
                   duration: 0.8,
                   delay: 0.35,
                 }}
-                className="h-px bg-blue-400"
+                className="
+                  h-px
+                  w-12
+                  bg-blue-400
+
+                  sm:w-16
+                  md:w-20
+
+                  lg:w-auto
+                "
               />
             </motion.div>
 
@@ -310,17 +391,28 @@ function ResearchPaperTwo({ onBack, onNext }) {
                 delay: 0.15,
               }}
               className="
-                max-w-[620px]
-                text-[2.8rem]
+                max-w-[520px]
+
+                text-[1.8rem]
                 font-black
-                leading-[1.07]
-                tracking-[-0.035em]
+                leading-[1.1]
+                tracking-[-0.025em]
                 text-slate-950
+
+                sm:text-[2.1rem]
+
+                md:text-[2.4rem]
+
+                lg:max-w-[620px]
+                lg:text-[2.8rem]
+                lg:leading-[1.07]
+                lg:tracking-[-0.035em]
 
                 xl:text-[3.35rem]
               "
             >
-              Embedding Model Selection for Domain-Specific Retrieval-Augmented Generation
+              Intelligent Blood Allocation
+              Using GeoAI
             </motion.h2>
 
             {/* SUBTITLE */}
@@ -339,19 +431,32 @@ function ResearchPaperTwo({ onBack, onNext }) {
                 delay: 0.3,
               }}
               className="
-                mt-7
-                max-w-[580px]
-                text-lg
-                leading-8
+                mt-5
+                max-w-[500px]
+
+                text-sm
+                leading-6
                 text-slate-600
+
+                sm:mt-6
+                sm:text-base
+                sm:leading-7
+
+                md:mt-7
+                md:text-lg
+                md:leading-8
+
+                lg:max-w-[580px]
+                lg:text-lg
+                lg:leading-8
 
                 xl:text-xl
                 xl:leading-9
               "
             >
-              A Comparative Study on Indian Cultural Heritage Corpora:
-              Retrieval-Augmented Generation for domain-specific cultural
-              corpora and knowledge-intensive language model systems.
+              Exploring intelligent and location-aware approaches for
+              improving blood allocation and healthcare resource
+              distribution.
             </motion.p>
 
             {/* TAGS */}
@@ -364,10 +469,19 @@ function ResearchPaperTwo({ onBack, onNext }) {
                 delay: 0.4,
               }}
               className="
-                mt-7
+                mt-5
                 flex
                 flex-wrap
-                gap-3
+                gap-2
+
+                sm:mt-6
+                sm:gap-2.5
+
+                md:mt-7
+                md:gap-3
+
+                lg:mt-7
+                lg:gap-3
               "
             >
               {tags.map((tag, index) => (
@@ -394,13 +508,27 @@ function ResearchPaperTwo({ onBack, onNext }) {
                     border
                     border-blue-100
                     bg-blue-50/80
-                    px-4
-                    py-2
-                    text-sm
+
+                    px-3
+                    py-1.5
+
+                    text-[11px]
                     font-medium
                     text-blue-700
                     shadow-sm
                     backdrop-blur
+
+                    sm:px-3.5
+                    sm:py-1.5
+                    sm:text-xs
+
+                    md:px-4
+                    md:py-2
+                    md:text-sm
+
+                    lg:px-4
+                    lg:py-2
+                    lg:text-sm
                   "
                 >
                   {tag}
@@ -421,10 +549,19 @@ function ResearchPaperTwo({ onBack, onNext }) {
                 transformOrigin: "left",
               }}
               className="
-                mt-10
+                mt-7
                 h-px
-                w-[88%]
+                w-full
                 bg-slate-200
+
+                sm:mt-8
+                sm:w-[92%]
+
+                md:mt-9
+                md:w-[90%]
+
+                lg:mt-10
+                lg:w-[88%]
               "
             />
 
@@ -443,14 +580,33 @@ function ResearchPaperTwo({ onBack, onNext }) {
                 duration: 0.55,
                 delay: 0.6,
               }}
-              className="mt-16"
+              className="
+                mt-8
+
+                sm:mt-10
+
+                md:mt-12
+
+                lg:mt-16
+              "
             >
-              <p className="text-xl text-slate-900">
+              <p
+                className="
+                  text-sm
+                  text-slate-900
+
+                  sm:text-base
+
+                  md:text-lg
+
+                  lg:text-xl
+                "
+              >
                 <span className="font-semibold text-slate-500">
                   Author:
                 </span>
 
-                <span className="ml-3 font-bold text-slate-950">
+                <span className="ml-2 font-bold text-slate-950 sm:ml-3">
                   Priyanka Asthana
                 </span>
               </p>
@@ -483,22 +639,42 @@ function ResearchPaperTwo({ onBack, onNext }) {
               }}
               className="
                 group
-                mt-8
+                mt-6
                 inline-flex
-                min-w-[190px]
+                min-w-[150px]
                 items-center
                 justify-center
-                gap-4
+                gap-2
                 rounded-full
                 bg-blue-600
-                px-10
-                py-5
-                text-lg
+
+                px-6
+                py-3
+
+                text-sm
                 font-bold
                 text-white
+
                 shadow-[0_12px_32px_rgba(37,99,235,0.30)]
                 transition-all
                 duration-300
+
+                sm:mt-7
+                sm:min-w-[170px]
+                sm:px-7
+                sm:py-3.5
+                sm:text-base
+
+                md:mt-8
+                md:min-w-[180px]
+                md:px-8
+                md:py-4
+                md:text-base
+
+                lg:min-w-[190px]
+                lg:px-10
+                lg:py-5
+                lg:text-lg
 
                 hover:bg-blue-700
                 hover:shadow-[0_18px_40px_rgba(37,99,235,0.38)]
@@ -507,11 +683,18 @@ function ResearchPaperTwo({ onBack, onNext }) {
               View Paper
 
               <ArrowUpRight
-                size={23}
+                size={18}
                 weight="bold"
                 className="
                   transition-transform
                   duration-300
+
+                  sm:size-[20px]
+
+                  md:size-[21px]
+
+                  lg:size-[23px]
+
                   group-hover:translate-x-1
                   group-hover:-translate-y-1
                   group-hover:scale-110
@@ -546,8 +729,14 @@ function ResearchPaperTwo({ onBack, onNext }) {
               relative
               mx-auto
               w-full
-              max-w-[430px]
+              max-w-[285px]
               min-w-0
+
+              sm:max-w-[320px]
+
+              md:max-w-[370px]
+
+              lg:max-w-[430px]
             "
           >
             {/* BACKGROUND GLOW */}
@@ -565,11 +754,19 @@ function ResearchPaperTwo({ onBack, onNext }) {
               className="
                 pointer-events-none
                 absolute
-                inset-8
+                inset-6
                 -z-10
-                rounded-[40px]
+                rounded-[30px]
                 bg-blue-200/40
-                blur-[55px]
+                blur-[45px]
+
+                md:inset-7
+                md:rounded-[35px]
+                md:blur-[50px]
+
+                lg:inset-8
+                lg:rounded-[40px]
+                lg:blur-[55px]
               "
             />
 
@@ -585,11 +782,21 @@ function ResearchPaperTwo({ onBack, onNext }) {
               className="
                 w-full
                 min-w-0
-                rounded-[12px]
+                rounded-[10px]
                 border
                 border-slate-200
                 bg-white
-                p-5
+
+                p-3
+
+                sm:rounded-[11px]
+                sm:p-4
+
+                md:rounded-[12px]
+                md:p-5
+
+                lg:p-5
+
                 shadow-[0_30px_80px_rgba(15,23,42,0.15)]
               "
             >
@@ -599,16 +806,25 @@ function ResearchPaperTwo({ onBack, onNext }) {
                 className="
                   group
                   relative
-                  h-[500px]
+
+                  h-[330px]
+
                   w-full
                   min-w-0
                   overflow-hidden
+
                   border
                   border-slate-200
                   bg-slate-100
+
+                  sm:h-[380px]
+
+                  md:h-[440px]
+
+                  lg:h-[500px]
                 "
               >
-                {/* STATIC PDF VIEWPORT */}
+                {/* PDF VIEWPORT */}
 
                 <div
                   className="
@@ -619,7 +835,7 @@ function ResearchPaperTwo({ onBack, onNext }) {
                 >
                   <iframe
                     src={`${paperPdf}#page=1&toolbar=0&navpanes=0&scrollbar=0&view=FitH`}
-                    title="RAG and Cultural Corpora paper preview"
+                    title="Blood allocation research paper preview"
                     scrolling="no"
                     tabIndex={-1}
                     className="
@@ -648,7 +864,7 @@ function ResearchPaperTwo({ onBack, onNext }) {
                   "
                 />
 
-                {/* CLICKABLE HOVER BUTTON */}
+                {/* HOVER VIEW PAPER BUTTON */}
 
                 <a
                   href={paperLink}
@@ -665,16 +881,18 @@ function ResearchPaperTwo({ onBack, onNext }) {
                     -translate-x-1/2
                     -translate-y-[35%]
                     items-center
-                    gap-3
+                    gap-2
 
                     whitespace-nowrap
                     rounded-full
                     border
                     border-white/80
                     bg-white/95
-                    px-6
-                    py-3.5
 
+                    px-4
+                    py-2.5
+
+                    text-xs
                     font-semibold
                     text-blue-600
 
@@ -684,6 +902,20 @@ function ResearchPaperTwo({ onBack, onNext }) {
 
                     transition-all
                     duration-300
+
+                    sm:gap-2.5
+                    sm:px-5
+                    sm:py-3
+                    sm:text-sm
+
+                    md:px-6
+                    md:py-3.5
+                    md:text-sm
+
+                    lg:gap-3
+                    lg:px-6
+                    lg:py-3.5
+                    lg:text-base
 
                     group-hover:-translate-y-1/2
                     group-hover:opacity-100
@@ -696,13 +928,9 @@ function ResearchPaperTwo({ onBack, onNext }) {
                   View Paper
 
                   <ArrowUpRight
-                    size={20}
+                    size={17}
                     weight="bold"
-                    className="
-                      transition-transform
-                      duration-300
-                      group-hover:translate-x-0.5
-                    "
+                    className="sm:size-[18px] lg:size-[20px]"
                   />
                 </a>
               </div>
@@ -713,18 +941,33 @@ function ResearchPaperTwo({ onBack, onNext }) {
                 className="
                   w-full
                   min-w-0
-                  px-2
-                  pb-2
-                  pt-5
+
+                  px-1
+                  pb-1
+                  pt-3
+
+                  sm:px-1.5
+                  sm:pb-1.5
+                  sm:pt-4
+
+                  md:px-2
+                  md:pb-2
+                  md:pt-5
                 "
               >
                 <p
                   className="
                     break-words
-                    text-base
+                    text-xs
                     font-bold
-                    leading-6
+                    leading-5
                     text-slate-900
+
+                    sm:text-sm
+                    sm:leading-5
+
+                    md:text-base
+                    md:leading-6
                   "
                 >
                   View full paper
@@ -735,9 +978,14 @@ function ResearchPaperTwo({ onBack, onNext }) {
                     mt-1
                     max-w-full
                     break-words
-                    text-sm
-                    leading-6
+                    text-[11px]
+                    leading-5
                     text-slate-500
+
+                    sm:text-xs
+
+                    md:text-sm
+                    md:leading-6
                   "
                 >
                   Open on Zenodo
@@ -749,7 +997,7 @@ function ResearchPaperTwo({ onBack, onNext }) {
       </div>
 
       {/* ================================================= */}
-      {/* PROGRESS DOTS — SECOND ACTIVE */}
+      {/* PROGRESS DOTS — THIRD ACTIVE */}
       {/* ================================================= */}
 
       <motion.div
@@ -767,41 +1015,62 @@ function ResearchPaperTwo({ onBack, onNext }) {
         }}
         className="
           absolute
-          bottom-8
+          bottom-5
           left-1/2
           z-30
           flex
           -translate-x-1/2
           items-center
-          gap-4
+          gap-3
+
+          sm:bottom-6
+          sm:gap-3.5
+
+          md:bottom-7
+          md:gap-4
+
+          lg:bottom-8
         "
       >
         <div
           className="
-            h-2.5
-            w-2.5
+            h-2
+            w-2
             rounded-full
             bg-slate-300
+
+            sm:h-2.5
+            sm:w-2.5
+          "
+        />
+
+        <div
+          className="
+            h-2
+            w-2
+            rounded-full
+            bg-slate-300
+
+            sm:h-2.5
+            sm:w-2.5
           "
         />
 
         <motion.div
           layout
           className="
-            h-2.5
-            w-11
+            h-2
+            w-8
             rounded-full
             bg-blue-600
             shadow-[0_0_12px_rgba(37,99,235,0.45)]
-          "
-        />
 
-        <div
-          className="
-            h-2.5
-            w-2.5
-            rounded-full
-            bg-slate-300
+            sm:h-2.5
+            sm:w-9
+
+            md:w-10
+
+            lg:w-11
           "
         />
       </motion.div>
@@ -809,4 +1078,4 @@ function ResearchPaperTwo({ onBack, onNext }) {
   );
 }
 
-export default ResearchPaperTwo;
+export default ResearchPaperThree;
