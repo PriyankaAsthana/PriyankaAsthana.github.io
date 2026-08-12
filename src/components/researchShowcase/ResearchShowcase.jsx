@@ -1,4 +1,5 @@
 import { useState } from "react";
+
 import {
   AnimatePresence,
   motion,
@@ -29,6 +30,7 @@ function ResearchShowcase() {
     >
 
       <AnimatePresence mode="sync">
+
 
         {/* ================================= */}
         {/* RESEARCH COVER */}
@@ -75,6 +77,7 @@ function ResearchShowcase() {
               to-blue-50/30
             "
           >
+
 
             {/* ================================= */}
             {/* GRAPH */}
@@ -145,6 +148,10 @@ function ResearchShowcase() {
                 sm:pb-7
                 md:pb-8
                 lg:pb-0
+
+                /* VERY SMALL PHONES ONLY */
+                -translate-y-10
+                sm:translate-y-0
               "
             >
 
@@ -155,6 +162,7 @@ function ResearchShowcase() {
               />
 
             </div>
+
 
           </motion.div>
         )}
@@ -305,6 +313,7 @@ function ResearchShowcase() {
 
           </motion.div>
         )}
+
 
       </AnimatePresence>
 

@@ -18,31 +18,37 @@ import HeroNetwork from "./HeroNetwork";
 function Hero() {
   return (
     <Section
-  id="hero"
-  className="
-    relative
-    overflow-hidden
+      id="hero"
+      className="
+        relative
+        overflow-hidden
 
-    flex
-    items-center
-    justify-center
+        flex
+        items-center
+        justify-center
 
-    min-h-[700px]
+        /* VERY SMALL PHONE ONLY */
+        min-h-[750px]
 
-    py-12
-    sm:py-16
+        py-12
 
-    md:min-h-[900px]
+        /* EXISTING SIZES — UNCHANGED */
+        sm:min-h-[700px]
+        sm:py-16
 
-    lg:min-h-[calc(100vh-80px)]
-    lg:py-0
-  "
->
+        md:min-h-[900px]
+
+        lg:min-h-[calc(100vh-80px)]
+        lg:py-0
+      "
+    >
+
       {/* ===============================
             AI NETWORK BACKGROUND
       =============================== */}
 
       <HeroNetwork />
+
 
       {/* ===============================
             CONTENT
@@ -77,6 +83,7 @@ function Hero() {
           lg:gap-24
         "
       >
+
         {/* ===============================
               LEFT
         =============================== */}
@@ -84,8 +91,10 @@ function Hero() {
         <motion.div
           className="
             w-full
+
             translate-x-[4%]
             sm:translate-x-0
+
             lg:pl-8
             lg:px-0
           "
@@ -101,6 +110,7 @@ function Hero() {
             duration: 0.8,
           }}
         >
+
           {/* ROLE */}
 
           <span
@@ -115,6 +125,7 @@ function Hero() {
               py-1.5
 
               text-xs
+
               sm:px-4
               sm:py-2
               sm:text-sm
@@ -126,6 +137,7 @@ function Hero() {
           >
             AI Researcher • Software Engineer
           </span>
+
 
           {/* NAME */}
 
@@ -151,6 +163,7 @@ function Hero() {
             </span>
           </h1>
 
+
           {/* DESCRIPTION */}
 
           <p
@@ -171,7 +184,7 @@ function Hero() {
           >
             AI researcher focused on Natural Language
             Processing, trustworthy Healthcare AI,
-            and intelligent software systems.I enjoy
+            and intelligent software systems. I enjoy
             building research-driven applications
             that combine machine learning with
             real-world impact.
@@ -196,6 +209,7 @@ function Hero() {
               sm:gap-5
             "
           >
+
             <Button
               href="/resume-Priyanka.pdf"
               variant="primary"
@@ -208,6 +222,7 @@ function Hero() {
               CV
             </Button>
 
+
             <Button
               href="https://github.com/PriyankaAsthana"
               variant="secondary"
@@ -219,6 +234,7 @@ function Hero() {
 
               GitHub
             </Button>
+
 
             <Button
               href="https://scholar.google.com/citations?user=_cNMAsEc3DcC&hl=en"
@@ -236,8 +252,11 @@ function Hero() {
                 weight="bold"
               />
             </Button>
+
           </div>
+
         </motion.div>
+
 
         {/* ===============================
               RIGHT
@@ -274,6 +293,7 @@ function Hero() {
             once: true,
           }}
         >
+
           {/* ===============================
                 RESPONSIVE BLOB
           =============================== */}
@@ -281,6 +301,7 @@ function Hero() {
           <div
             className="
               pointer-events-none
+
               absolute
               inset-0
 
@@ -289,13 +310,14 @@ function Hero() {
               justify-center
 
               scale-[0.85]
-sm:scale-[0.90]
-md:scale-[0.95]
-lg:scale-100
+              sm:scale-[0.90]
+              md:scale-[0.95]
+              lg:scale-100
             "
           >
             <HeroBlob />
           </div>
+
 
           {/* =====================================
                 PROFILE IMAGE
@@ -338,15 +360,19 @@ lg:scale-100
                 "40% 60% 58% 42% / 45% 35% 65% 55%",
             }}
           >
+
             <motion.img
               src={profileImage}
               alt="Priyanka Asthana"
+
               whileHover={{
                 scale: 1.08,
               }}
+
               transition={{
                 duration: 0.8,
               }}
+
               className="
                 h-full
                 w-full
@@ -354,9 +380,13 @@ lg:scale-100
                 object-cover
               "
             />
+
           </motion.div>
+
         </motion.div>
+
       </div>
+
     </Section>
   );
 }
