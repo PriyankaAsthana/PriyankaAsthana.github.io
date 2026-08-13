@@ -84,7 +84,7 @@ export default function FloatingMenu({
 
               overflow-hidden
 
-              rounded-[34px]
+              rounded-[10px]
 
               border
               border-white/30
@@ -110,7 +110,7 @@ export default function FloatingMenu({
               <p
                 className="
                   text-xs
-
+                  
                   uppercase
 
                   tracking-[0.35em]
