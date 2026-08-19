@@ -211,7 +211,7 @@ export default function StatusCard() {
             </p>
 
             <h3 className="font-semibold text-slate-800">
-              AI • Research • Software Engineering
+              AI • Data Science • Software Engineering
             </h3>
 
           </div>

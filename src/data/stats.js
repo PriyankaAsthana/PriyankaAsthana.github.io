@@ -39,7 +39,7 @@ export const stats = [
   {
     id: 3,
     icon: FileText,
-    value: "4+",
+    value: "3+",
     title: "Research Papers",
     color: "from-violet-500 to-purple-500",
 

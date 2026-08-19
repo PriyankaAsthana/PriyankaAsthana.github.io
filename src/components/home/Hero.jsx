@@ -183,12 +183,12 @@ function Hero() {
               text-gray-600
             "
           >
-            AI researcher focused on Natural Language
-            Processing, trustworthy Healthcare AI,
-            and intelligent software systems. I enjoy
-            building research-driven applications
-            that combine machine learning with
-            real-world impact.
+            AI researcher and data analyst working across
+            Natural Language Processing, trustworthy
+            Healthcare AI, and applied data science. I
+            enjoy turning messy data and research
+            questions into systems and insights that
+            hold up in the real world.
           </p>
 
 
