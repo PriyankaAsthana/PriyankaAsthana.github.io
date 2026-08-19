@@ -70,7 +70,7 @@ export default function ContactSection() {
           className=" mx-auto mt-7 max-w-[1560px] text-lg leading-8 text-center text-slate-500 "
         >
           Whether it's artificial intelligence,
-          research, engineering, or international
+          data science, engineering, or international
           collaboration, I'd love to hear about
           ambitious ideas worth building together.
         </p>
