@@ -16,7 +16,6 @@ import {
 
 import { useRef } from "react";
 
-import questLogo from "../../assets/logos/quest.jpg";
 import armyLogo from "../../assets/logos/army.webp";
 import bhuLogo from "../../assets/logos/bhu_logo.webp";
 import bsercLogo from "../../assets/logos/BSERC_logo.webp";
@@ -36,36 +35,6 @@ const experiences = [
 
   {
     id: "01",
-
-    company: "Quest Global",
-
-    role: "Data Analyst",
-
-    date: "Dec 2026",
-
-    duration: "Incoming | Full Time",
-
-    logo: questLogo,
-
-    description:
-      "Selected for a production SAP data migration project: profiling and cleansing large technical asset datasets from source APM systems to maintain data quality and integrity during source-to-target mapping. Applying rule-based and NLP techniques to standardize unstructured free-text fields into structured picklist values, and building reconciliation dashboards using SQL, Python (Pandas, NumPy), and BI tools including Tableau, Power BI, and Spotfire.",
-
-    metrics: [
-      {
-        icon: ChartLineUp,
-        value: "SAP",
-        label: "Data Migration",
-      },
-
-      {
-        icon: Brain,
-        value: "NLP",
-        label: "Text Standardization",
-      },
-    ],
-  },
-  {
-    id: "02",
 
     company: "Indian Army - DGIS",
 
@@ -100,7 +69,7 @@ const experiences = [
   ========================================================= */
 
   {
-    id: "03",
+    id: "02",
 
     company:
       "Indian Institute of Technology (Banaras Hindu University), Varanasi",
@@ -141,7 +110,7 @@ const experiences = [
   ========================================================= */
 
   {
-    id: "04",
+    id: "03",
 
     company:
       "Bharat Space Education Research Centre (B.S.E.R.C)",
@@ -182,7 +151,7 @@ const experiences = [
   ========================================================= */
 
   {
-    id: "05",
+    id: "04",
 
     company: "Hindalco Industries Limited",
 
@@ -222,7 +191,7 @@ const experiences = [
   ========================================================= */
 
   {
-    id: "06",
+    id: "05",
 
     company: "Edunet Foundation",
 
